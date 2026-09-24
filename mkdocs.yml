@@ -1,0 +1,29 @@
+site_name: Entornos de Desarrollo - IES Los Albares
+theme:
+  name: material
+  language: es
+  palette:
+    primary: indigo
+  features:
+    - navigation.tab
+    - navigation.sections
+    - search
+    - content.code.copy
+    - awesome-pages
+
+markdown_extensions:
+  - pymdownx.arithmatex:
+      generic: true
+  - pymdownx.superfences
+  - pymdownx.highlight
+  - admonition
+
+extra_javascript:
+  - javascripts/mathjax.js
+  - https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js
+
+nav:
+  - HOME: https://joaquinalbares.github.io/
+  - UT01:
+    - CONTENIDOS: ut01.md
+    - EJ. DE CLASE: practicas/ut01.md
