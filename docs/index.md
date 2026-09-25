@@ -2,4 +2,4 @@
 
 Bienevenidos a la materia de "Entornos de Desarrollo" - Curso 2026/27.
 
-Aquín podrá encontrar toda la información sobre la materia.
+Aquí Se irá publicando toda la información sobre la materia a lo largo del curso.
