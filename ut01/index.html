@@ -1,990 +1,136 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="es" >
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <link rel="shortcut icon" href="../img/favicon.ico" />
+    <title>CONTENIDOS - Entornos de Desarrollo - IES Los Albares</title>
+    <link rel="stylesheet" href="../css/theme.css" />
+    <link rel="stylesheet" href="../css/theme_extra.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" />
+        <link href="../css/estilo.css" rel="stylesheet" />
+    
+      <script>
+        // Current page data
+        var properdocs_page_name = "CONTENIDOS";
+        var properdocs_page_input_path = "ut01.md";
+        var properdocs_page_url = null;
+      </script>
+    
+    <!--[if lt IE 9]>
+      <script src="../js/html5shiv.min.js"></script>
+    <![endif]-->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+      <script>hljs.highlightAll();</script> 
+</head>
 
-<!doctype html>
-<html lang="es" class="no-js">
-  <head>
-    
-      <meta charset="utf-8">
-      <meta name="viewport" content="width=device-width,initial-scale=1">
-      
-      
-      
-      
-      
-        <link rel="next" href="../practicas/ut01p01/">
-      
-      
-        
-      
-      
-      <link rel="icon" href="../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-ProperDocs 1.6.7, mkdocs-material-9.7.1">
-    
-    
-      
-        <title>CONTENIDOS - Entornos de Desarrollo - IES Los Albares</title>
-      
-    
-    
-      <link rel="stylesheet" href="../assets/stylesheets/main.484c7ddc.min.css">
-      
-        
-        <link rel="stylesheet" href="../assets/stylesheets/palette.ab4e12ef.min.css">
-      
-      
+<body class="wy-body-for-nav" role="document">
 
-
-    
-    
-      
-    
-    
-      
-        
-        
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
-        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
-      
-    
-    
-    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
-    
-      
-
-    
-    
-  </head>
-  
-  
-    
-    
-    
-    
-    
-    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo">
-  
-    
-    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
-    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
-    <label class="md-overlay" for="__drawer"></label>
-    <div data-md-component="skip">
-      
-        
-        <a href="#contenidos-teoricos" class="md-skip">
-          Saltar a contenido
-        </a>
-      
-    </div>
-    <div data-md-component="announce">
-      
-    </div>
-    
-    
-      
-
-  
-
-<header class="md-header md-header--shadow" data-md-component="header">
-  <nav class="md-header__inner md-grid" aria-label="Cabecera">
-    <a href=".." title="Entornos de Desarrollo - IES Los Albares" class="md-header__button md-logo" aria-label="Entornos de Desarrollo - IES Los Albares" data-md-component="logo">
-      
-  
-  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
-
-    </a>
-    <label class="md-header__button md-icon" for="__drawer">
-      
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
-    </label>
-    <div class="md-header__title" data-md-component="header-title">
-      <div class="md-header__ellipsis">
-        <div class="md-header__topic">
-          <span class="md-ellipsis">
-            Entornos de Desarrollo - IES Los Albares
-          </span>
-        </div>
-        <div class="md-header__topic" data-md-component="header-topic">
-          <span class="md-ellipsis">
-            
-              CONTENIDOS
-            
-          </span>
-        </div>
-      </div>
-    </div>
-    
-      
-    
-    
-    
-    
-      
-      
-        <label class="md-header__button md-icon" for="__search">
-          
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
-        </label>
-        <div class="md-search" data-md-component="search" role="dialog">
-  <label class="md-search__overlay" for="__search"></label>
-  <div class="md-search__inner" role="search">
-    <form class="md-search__form" name="search">
-      <input type="text" class="md-search__input" name="query" aria-label="Búsqueda" placeholder="Búsqueda" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
-      <label class="md-search__icon md-icon" for="__search">
-        
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
-        
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
-      </label>
-      <nav class="md-search__options" aria-label="Buscar">
-        
-        <button type="reset" class="md-search__icon md-icon" title="Limpiar" aria-label="Limpiar" tabindex="-1">
-          
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
-        </button>
-      </nav>
-      
-    </form>
-    <div class="md-search__output">
-      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
-        <div class="md-search-result" data-md-component="search-result">
-          <div class="md-search-result__meta">
-            Inicializando búsqueda
-          </div>
-          <ol class="md-search-result__list" role="presentation"></ol>
-        </div>
-      </div>
-    </div>
-  </div>
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+          <a href=".." class="icon icon-home"> Entornos de Desarrollo - IES Los Albares
+        </a><div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../search.html" method="get">
+      <input type="text" name="q" placeholder="Buscar documentos" aria-label="Buscar documentos" title="Escriba el término de búsqueda aquí" />
+  </form>
 </div>
-      
-    
-    
-  </nav>
-  
-</header>
-    
-    <div class="md-container" data-md-component="container">
-      
-      
-        
-          
-        
-      
-      <main class="md-main" data-md-component="main">
-        <div class="md-main__inner md-grid">
-          
-            
-              
-              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
-                <div class="md-sidebar__scrollwrap">
-                  <div class="md-sidebar__inner">
-                    
+      </div>
 
-
-
-<nav class="md-nav md-nav--primary" aria-label="Navegación" data-md-level="0">
-  <label class="md-nav__title" for="__drawer">
-    <a href=".." title="Entornos de Desarrollo - IES Los Albares" class="md-nav__button md-logo" aria-label="Entornos de Desarrollo - IES Los Albares" data-md-component="logo">
-      
-  
-  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
-
-    </a>
-    Entornos de Desarrollo - IES Los Albares
-  </label>
-  
-  <ul class="md-nav__list" data-md-scrollfix>
-    
-      
-      
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="https://joaquinalbares.github.io/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    HOME
-  
-
-    
-  </span>
-  
-  
-
-      </a>
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Menu de navegación">
+              <ul>
+                <li class="toctree-l1"><a class="" href="https://joaquinalbares.github.io/">HOME</a>
+                </li>
+              </ul>
+              <p class="caption"><span class="caption-text">UT01</span></p>
+              <ul class="current">
+                  <li class="toctree-l1 current"><a class="reference internal current" href="#">CONTENIDOS</a>
+    <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#1-origenes-y-concepto-del-software">1. Orígenes y Concepto del Software</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#evolucion-historica">Evolución Histórica</a>
     </li>
-  
-
-    
-      
-      
-  
-  
-    
-  
-  
-  
-    
-    
-    
-    
-      
-        
-        
-      
-    
-    
-    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
-      
-        
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
-        
-          
-          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="">
-            
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    UT01
-  
-
-    
-  </span>
-  
-  
-
-            <span class="md-nav__icon md-icon"></span>
-          </label>
-        
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
-          <label class="md-nav__title" for="__nav_2">
-            <span class="md-nav__icon md-icon"></span>
-            
-  
-    UT01
-  
-
-          </label>
-          <ul class="md-nav__list" data-md-scrollfix>
-            
-              
-                
-  
-  
-    
-  
-  
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    CONTENIDOS
-  
-
-    
-  </span>
-  
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    CONTENIDOS
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Tabla de contenidos">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Tabla de contenidos
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#1-origenes-y-concepto-del-software" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        1. Orígenes y Concepto del Software
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="1. Orígenes y Concepto del Software">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#evolucion-historica" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Evolución Histórica
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#2-arquitectura-del-ordenador-y-ejecucion-de-programas" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        2. Arquitectura del Ordenador y Ejecución de Programas
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="2. Arquitectura del Ordenador y Ejecución de Programas">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#datos-e-instrucciones" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Datos e Instrucciones
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Datos e Instrucciones">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#codificacion-de-caracteres" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Codificación de Caracteres
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#la-arquitectura-von-neumann-1946" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        La Arquitectura Von Neumann (1946)
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#tipos-de-software" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Tipos de Software
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#3-ingenieria-del-software-y-ciclo-de-vida-sdlc" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        3. Ingeniería del Software y Ciclo de Vida (SDLC)
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="3. Ingeniería del Software y Ciclo de Vida (SDLC)">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#fases-del-desarrollo-de-software" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Fases del Desarrollo de Software
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#modelos-de-proceso" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Modelos de Proceso
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#metodologias-agiles" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Metodologías Ágiles
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#herramientas-case" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Herramientas CASE
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#4-obtencion-de-codigo-ejecutable" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        4. Obtención de Código Ejecutable
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="4. Obtención de Código Ejecutable">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#niveles-de-codigo" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Niveles de Código
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#metodos-de-traduccion" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Métodos de Traducción
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#5-clasificacion-de-los-lenguajes-de-programacion" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        5. Clasificación de los Lenguajes de Programación
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#6-gestion-de-errores-y-reutilizacion-de-codigo" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        6. Gestión de Errores y Reutilización de Código
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="6. Gestión de Errores y Reutilización de Código">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#errores-comunes-en-el-desarrollo" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Errores Comunes en el Desarrollo
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#2-arquitectura-del-ordenador-y-ejecucion-de-programas">2. Arquitectura del Ordenador y Ejecución de Programas</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#datos-e-instrucciones">Datos e Instrucciones</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#codificacion-de-caracteres">Codificación de Caracteres</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#la-arquitectura-von-neumann-1946">La Arquitectura Von Neumann (1946)</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#tipos-de-software">Tipos de Software</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#3-ingenieria-del-software-y-ciclo-de-vida-sdlc">3. Ingeniería del Software y Ciclo de Vida (SDLC)</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#fases-del-desarrollo-de-software">Fases del Desarrollo de Software</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#modelos-de-proceso">Modelos de Proceso</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#metodologias-agiles">Metodologías Ágiles</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#herramientas-case">Herramientas CASE</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#4-obtencion-de-codigo-ejecutable">4. Obtención de Código Ejecutable</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#niveles-de-codigo">Niveles de Código</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#metodos-de-traduccion">Métodos de Traducción</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#5-clasificacion-de-los-lenguajes-de-programacion">5. Clasificación de los Lenguajes de Programación</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#6-gestion-de-errores-y-reutilizacion-de-codigo">6. Gestión de Errores y Reutilización de Código</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#errores-comunes-en-el-desarrollo">Errores Comunes en el Desarrollo</a>
+    </li>
+        </ul>
+    </li>
     </ul>
-  
-</nav>
-      
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../practicas/ut01p01/">EJ. DE CLASE</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">UT02</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../practicas/ut02p01/">PRACTICA 01</a>
+                  </li>
+              </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+      <nav class="wy-nav-top" role="navigation" aria-label="Menú de navegación en móvil">
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="..">Entornos de Desarrollo - IES Los Albares</a>
+        
+      </nav>
+      <div class="wy-nav-content">
+        <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href=".." class="icon icon-home" aria-label="Documentos"></a></li>
+          <li class="breadcrumb-item">UT01</li>
+      <li class="breadcrumb-item active">CONTENIDOS</li>
+    <li class="wy-breadcrumbs-aside">
     </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../practicas/ut01p01/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    EJ. DE CLASE
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-          </ul>
-        </nav>
-      
-    </li>
-  
-
-    
-      
-      
-  
-  
-  
-  
-    
-    
-    
-    
-      
-        
-        
-      
-    
-    
-    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
-      
-        
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
-        
-          
-          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="">
-            
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    UT02
-  
-
-    
-  </span>
-  
-  
-
-            <span class="md-nav__icon md-icon"></span>
-          </label>
-        
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_3">
-            <span class="md-nav__icon md-icon"></span>
-            
-  
-    UT02
-  
-
-          </label>
-          <ul class="md-nav__list" data-md-scrollfix>
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../practicas/ut02p01/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    PRACTICA 01
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-          </ul>
-        </nav>
-      
-    </li>
-  
-
-    
   </ul>
-</nav>
-                  </div>
-                </div>
-              </div>
-            
-            
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+            <div class="section" itemprop="articleBody">
               
-              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
-                <div class="md-sidebar__scrollwrap">
-                  <div class="md-sidebar__inner">
-                    
-
-<nav class="md-nav md-nav--secondary" aria-label="Tabla de contenidos">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Tabla de contenidos
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#1-origenes-y-concepto-del-software" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        1. Orígenes y Concepto del Software
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="1. Orígenes y Concepto del Software">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#evolucion-historica" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Evolución Histórica
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#2-arquitectura-del-ordenador-y-ejecucion-de-programas" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        2. Arquitectura del Ordenador y Ejecución de Programas
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="2. Arquitectura del Ordenador y Ejecución de Programas">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#datos-e-instrucciones" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Datos e Instrucciones
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Datos e Instrucciones">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#codificacion-de-caracteres" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Codificación de Caracteres
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#la-arquitectura-von-neumann-1946" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        La Arquitectura Von Neumann (1946)
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#tipos-de-software" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Tipos de Software
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#3-ingenieria-del-software-y-ciclo-de-vida-sdlc" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        3. Ingeniería del Software y Ciclo de Vida (SDLC)
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="3. Ingeniería del Software y Ciclo de Vida (SDLC)">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#fases-del-desarrollo-de-software" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Fases del Desarrollo de Software
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#modelos-de-proceso" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Modelos de Proceso
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#metodologias-agiles" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Metodologías Ágiles
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#herramientas-case" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Herramientas CASE
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#4-obtencion-de-codigo-ejecutable" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        4. Obtención de Código Ejecutable
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="4. Obtención de Código Ejecutable">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#niveles-de-codigo" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Niveles de Código
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#metodos-de-traduccion" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Métodos de Traducción
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#5-clasificacion-de-los-lenguajes-de-programacion" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        5. Clasificación de los Lenguajes de Programación
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#6-gestion-de-errores-y-reutilizacion-de-codigo" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        6. Gestión de Errores y Reutilización de Código
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="6. Gestión de Errores y Reutilización de Código">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#errores-comunes-en-el-desarrollo" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Errores Comunes en el Desarrollo
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-                  </div>
-                </div>
-              </div>
-            
-          
-          
-            <div class="md-content" data-md-component="content">
-              
-              <article class="md-content__inner md-typeset">
-                
-                  
-
-
-
-<h1 id="contenidos-teoricos">CONTENIDOS TEÓRICOS</h1>
+                <h1 id="contenidos-teoricos">CONTENIDOS TEÓRICOS</h1>
 <h2 id="1-origenes-y-concepto-del-software">1. Orígenes y Concepto del Software</h2>
 <p>El término <strong>informática</strong> nace como un acrónimo derivado de la frase: <strong>INFOR</strong>mación de forma auto<strong>MÁTICA</strong>.</p>
 <h3 id="evolucion-historica">Evolución Histórica</h3>
@@ -994,10 +140,8 @@
 <li><strong>Alan Turing (1912-1954):</strong> Matemático y criptógrafo clave en el desciframiento de los códigos de la máquina <em>ENIGMA</em> en la Segunda Guerra Mundial. Diseñó el modelo teórico de la <strong>Máquina de Turing</strong> y desarrolló la teoría de la computación fundamental para la ciencia de la computación moderna.</li>
 <li><strong>John Wilder Tukey (1915-2000):</strong> Empleó formalmente el término <strong>"computer software"</strong> por primera vez en un artículo publicado en 1958 en la revista <em>American Mathematical Monthly</em>. En él describió la capacidad de escribir conjuntos de instrucciones complejas que luego se traducirían para las máquinas, sentando las bases de los compiladores modernos. Adicionalmente, acuñó el término <strong>bit</strong> como contracción de <em>binary digit</em>.</li>
 </ul>
-<div class="admonition info">
-<p class="admonition-title">Nota histórica</p>
-<p>Parte del cerebro de Charles Babbage se encuentra conservado en formol en el <em>Royal College of Surgeons</em> de Londres.</p>
-</div>
+<p>!!! info "Nota histórica"
+    Parte del cerebro de Charles Babbage se encuentra conservado en formol en el <em>Royal College of Surgeons</em> de Londres.</p>
 <hr />
 <h2 id="2-arquitectura-del-ordenador-y-ejecucion-de-programas">2. Arquitectura del Ordenador y Ejecución de Programas</h2>
 <h3 id="datos-e-instrucciones">Datos e Instrucciones</h3>
@@ -1007,8 +151,8 @@
 <li><strong>Las Instrucciones:</strong> Acciones atómicas elementales con un significado concreto y una duración de ejecución limitada en el tiempo.</li>
 </ul>
 <h4 id="codificacion-de-caracteres">Codificación de Caracteres</h4>
-<p>Para que el hardware interprete los datos, los caracteres se transforman numéricamente mediante tablas de correspondencia. Para codificar un número <span class="arithmatex">\(N\)</span> de símbolos distintos se requiere una cantidad <span class="arithmatex">\(x\)</span> de bits, definida por la relación matemática:</p>
-<p><span class="arithmatex">\(2^{x-1} &lt; N \le 2^x\)</span></p>
+<p>Para que el hardware interprete los datos, los caracteres se transforman numéricamente mediante tablas de correspondencia. Para codificar un número <span class="arithmatex"><span class="MathJax_Preview">N</span><script type="math/tex">N</script></span> de símbolos distintos se requiere una cantidad <span class="arithmatex"><span class="MathJax_Preview">x</span><script type="math/tex">x</script></span> de bits, definida por la relación matemática:</p>
+<p><span class="arithmatex"><span class="MathJax_Preview">2^{x-1} &lt; N \le 2^x</span><script type="math/tex">2^{x-1} < N \le 2^x</script></span></p>
 <ul>
 <li><strong>ASCII:</strong> Codificación basada en 7 bits.</li>
 <li><strong>ISO-8859:</strong> Codificación basada en 8 bits.</li>
@@ -1036,10 +180,8 @@
 <li><strong>Software de Programación:</strong> Herramientas especializadas concebidas para que los profesionales desarrollen nuevos programas informáticos (compiladores, editores).</li>
 <li><strong>Aplicación Informática:</strong> Software en contacto directo con el usuario final para automatizar tareas específicas (procesadores de texto, hojas de cálculo, contabilidad).</li>
 </ol>
-<div class="admonition tip">
-<p class="admonition-title">El Firmware y la BIOS</p>
-<p>La BIOS (<em>Basic Input-Output System</em>) es el software integrado en un chip de la placa base que chequea el hardware al encender el equipo y actúa de interfaz primaria entre el sistema operativo y los componentes. Este tipo de software con un alto acoplamiento físico se denomina <strong>firmware</strong>.</p>
-</div>
+<p>!!! tip "El Firmware y la BIOS"
+    La BIOS (<em>Basic Input-Output System</em>) es el software integrado en un chip de la placa base que chequea el hardware al encender el equipo y actúa de interfaz primaria entre el sistema operativo y los componentes. Este tipo de software con un alto acoplamiento físico se denomina <strong>firmware</strong>.</p>
 <hr />
 <h2 id="3-ingenieria-del-software-y-ciclo-de-vida-sdlc">3. Ingeniería del Software y Ciclo de Vida (SDLC)</h2>
 <p>La Ingeniería del Software aplica metodologías estructuradas para asegurar la construcción de programas correctos, fiables y modulares que faciliten el trabajo colaborativo y la evolución del código sin introducir errores.</p>
@@ -1116,7 +258,7 @@
 <hr />
 <h2 id="5-clasificacion-de-los-lenguajes-de-programacion">5. Clasificación de los Lenguajes de Programación</h2>
 <ol>
-<li><strong>Lenguaje Máquina:</strong> Instrucciones complejas e ininteligibles estructuradas puramente en cadenas de unos y ceros (<span class="arithmatex">\(0\)</span> y <span class="arithmatex">\(1\)</span>). Es el único lenguaje que el procesador entiende de forma directa sin traducción, pero carece de portabilidad al cambiar según el modelo de CPU.</li>
+<li><strong>Lenguaje Máquina:</strong> Instrucciones complejas e ininteligibles estructuradas puramente en cadenas de unos y ceros (<span class="arithmatex"><span class="MathJax_Preview">0</span><script type="math/tex">0</script></span> y <span class="arithmatex"><span class="MathJax_Preview">1</span><script type="math/tex">1</script></span>). Es el único lenguaje que el procesador entiende de forma directa sin traducción, pero carece de portabilidad al cambiar según el modelo de CPU.</li>
 <li><strong>Lenguaje de Medio Nivel (Ensamblador):</strong> Sustituto directo del lenguaje máquina para facilitar la labor de desarrollo. Sigue ligado estrechamente al hardware, pero emplea instrucciones codificadas en términos <strong>mnemotécnicos</strong> (ej. abreviaciones legibles) y trabaja con los registros de la CPU. Requiere compilarse a código máquina.</li>
 <li><strong>Lenguaje de Alto Nivel:</strong> Los lenguajes modernos mayoritarios. Presentan una sintaxis intuitiva cercana al lenguaje humano, manejan altos niveles de abstracción, encapsulamiento y orientación a objetos, e incorporan extensas librerías prediseñadas para agilizar la codificación.</li>
 </ol>
@@ -1131,73 +273,57 @@
 <li><strong>Dependencia de tecnologías inexploradas:</strong> Confiar la infraestructura central en herramientas o frameworks novedosos cuya curva de aprendizaje o madurez no ha sido contrastada por el equipo.</li>
 <li><strong>Añadir personal a proyectos retrasados:</strong> Práctica contraproducente que incrementa el retraso del proyecto debido a la sobrecarga de comunicación y acoplamiento técnico (Ley de Brooks).</li>
 </ul>
-<div class="admonition tip">
-<p class="admonition-title">Importancia de la Reutilización</p>
-<p>La reutilización de software consiste en el empleo estratégico de activos preexistentes (módulos, especificaciones de análisis, pruebas) para optimizar la eficiencia y rapidez del desarrollo.</p>
-</div>
+<p>!!! tip "Importancia de la Reutilización"
+    La reutilización de software consiste en el empleo estratégico de activos preexistentes (módulos, especificaciones de análisis, pruebas) para optimizar la eficiencia y rapidez del desarrollo.</p>
 <ul>
 <li><strong>Indicador de Comunalidad:</strong> Entre el <strong>40% y el 60%</strong> de los componentes de una aplicación estándar son completamente reutilizables en otros sistemas.</li>
 <li><strong>Funciones Estándar:</strong> Aproximadamente el <strong>75%</strong> de las funciones operativas analizadas en el software comercial son comunes entre múltiples programas.</li>
 <li><strong>Innovación Real:</strong> En promedio, solo el <strong>15%</strong> del código fuente escrito para una aplicación nueva representa una lógica algorítmica totalmente única o novedosa.</li>
 </ul>
-
-
-
-
-
-
-
-
-
-
-
-
-                
-              </article>
+              
             </div>
-          
-          
-<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
-        </div>
-        
-      </main>
-      
-        <footer class="md-footer">
-  
-  <div class="md-footer-meta md-typeset">
-    <div class="md-footer-meta__inner md-grid">
-      <div class="md-copyright">
-  
-  
-    Made with
-    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
-      Material for MkDocs
-    </a>
-  
-</div>
-      
+          </div><footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="Navegación de pie de página">
+        <a href="../practicas/ut01p01/" class="btn btn-neutral float-right" title="EJ. DE CLASE">Siguiente <span class="icon icon-circle-arrow-right"></span></a>
     </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
   </div>
+
+  Construído con <a href="https://properdocs.org/">ProperDocs</a> usando un <a href="https://github.com/readthedocs/sphinx_rtd_theme">tema</a> provisto por <a href="https://readthedocs.org">Read the Docs</a>.
 </footer>
-      
-    </div>
-    <div class="md-dialog" data-md-component="dialog">
-      <div class="md-dialog__inner md-typeset"></div>
-    </div>
+          
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="Versiones">
+  <span class="rst-current-version" data-toggle="rst-current-version">
     
     
     
-      
-      
-      <script id="__config" type="application/json">{"annotate": null, "base": "..", "features": ["navigation.tab", "navigation.sections", "search", "content.code.copy", "awesome-pages"], "search": "../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copiado al portapapeles", "clipboard.copy": "Copiar al portapapeles", "search.result.more.one": "1 m\u00e1s en esta p\u00e1gina", "search.result.more.other": "# m\u00e1s en esta p\u00e1gina", "search.result.none": "No se encontraron documentos", "search.result.one": "1 documento encontrado", "search.result.other": "# documentos encontrados", "search.result.placeholder": "Teclee para comenzar b\u00fasqueda", "search.result.term.missing": "Falta", "select.version": "Seleccionar versi\u00f3n"}, "version": null}</script>
+      <span><a href="../practicas/ut01p01/" style="color: #fcfcfc">Siguiente &raquo;</a></span>
     
-    
-      <script src="../assets/javascripts/bundle.79ae519e.min.js"></script>
-      
-        <script src="../javascripts/mathjax.js"></script>
-      
-        <script src="https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js"></script>
-      
-    
-  </body>
+  </span>
+</div>
+    <script src="../js/jquery-3.6.0.min.js"></script>
+    <script>var base_url = "..";</script>
+    <script src="../js/theme_extra.js"></script>
+    <script src="../js/theme.js"></script>
+      <script src="../js/copy-button.js"></script>
+      <script src="https://cdn.jsdelivr.net/npm/mathjax@4/tex-mml-chtml.js"></script>
+      <script src="../search/main.js"></script>
+    <script>
+        jQuery(function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        });
+    </script>
+
+</body>
 </html>
