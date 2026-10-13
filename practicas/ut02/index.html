@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="es" >
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <link rel="shortcut icon" href="../../img/favicon.ico" />
+    <title>EJ. DE CLASE - Entornos de Desarrollo - IES Los Albares</title>
+    <link rel="stylesheet" href="../../css/theme.css" />
+    <link rel="stylesheet" href="../../css/theme_extra.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" />
+        <link href="../../css/estilo.css" rel="stylesheet" />
+    
+      <script>
+        // Current page data
+        var properdocs_page_name = "EJ. DE CLASE";
+        var properdocs_page_input_path = "practicas/ut02.md";
+        var properdocs_page_url = null;
+      </script>
+    
+    <!--[if lt IE 9]>
+      <script src="../../js/html5shiv.min.js"></script>
+    <![endif]-->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+      <script>hljs.highlightAll();</script> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+          <a href="../.." class="icon icon-home"> Entornos de Desarrollo - IES Los Albares
+        </a><div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+      <input type="text" name="q" placeholder="Buscar documentos" aria-label="Buscar documentos" title="Escriba el término de búsqueda aquí" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Menu de navegación">
+              <ul>
+                <li class="toctree-l1"><a class="" href="https://joaquinalbares.github.io/">HOME</a>
+                </li>
+              </ul>
+              <p class="caption"><span class="caption-text">UT01</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../ut01/">CONTENIDOS</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../ut01/">EJ. DE CLASE</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">UT02</span></p>
+              <ul class="current">
+                  <li class="toctree-l1"><a class="reference internal" href="../../ut02/">CONTENIDOS</a>
+                  </li>
+                  <li class="toctree-l1 current"><a class="reference internal current" href="#">EJ. DE CLASE</a>
+    <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#guia-de-instalacion-paso-a-paso">🛠️ Guía de Instalación Paso a Paso</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#1-java-jdk">1. Java (JDK)</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#paso-1-instalar-openjdk">Paso 1: Instalar OpenJDK</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#paso-2-verificar-la-instalacion">Paso 2: Verificar la instalación</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#2-python-3-pip">2. Python 3 &amp; Pip</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#paso-1-verificar-la-version-de-python">Paso 1: Verificar la versión de Python</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#paso-2-instalar-pip-y-entornos-virtuales">Paso 2: Instalar pip y entornos virtuales</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#paso-3-verificar-la-instalacion-de-pip">Paso 3: Verificar la instalación de pip</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#3-rust-rustup">3. Rust (rustup)</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#paso-1-instalar-dependencias-del-sistema">Paso 1: Instalar dependencias del sistema</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#paso-2-ejecutar-el-script-oficial-de-instalacion">Paso 2: Ejecutar el script oficial de instalación</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#paso-3-cargar-las-variables-de-entorno">Paso 3: Cargar las variables de entorno</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#paso-4-verificar-la-instalacion-de-rust-y-cargo">Paso 4: Verificar la instalación de Rust y Cargo</a>
+    </li>
+        </ul>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#entregables-de-la-practica">📑 Entregables de la Práctica</a>
+    </li>
+    </ul>
+                  </li>
+              </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+      <nav class="wy-nav-top" role="navigation" aria-label="Menú de navegación en móvil">
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../..">Entornos de Desarrollo - IES Los Albares</a>
+        
+      </nav>
+      <div class="wy-nav-content">
+        <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../.." class="icon icon-home" aria-label="Documentos"></a></li>
+          <li class="breadcrumb-item">UT02</li>
+      <li class="breadcrumb-item active">EJ. DE CLASE</li>
+    <li class="wy-breadcrumbs-aside">
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+            <div class="section" itemprop="articleBody">
+              
+                <h1 id="practica-ut02-instalacion-de-entornos-de-ejecucion-en-xubuntu">Práctica UT02: Instalación de Entornos de Ejecución en Xubuntu</h1>
+<hr />
+<div class="admonition warning">
+<p class="admonition-title">Actualización Inicial de Repositorios</p>
+<p>Antes de comenzar cualquier instalación, ejecuta siempre en tu terminal el comando de actualización del sistema:</p>
+<div class="highlight"><span class="filename">Terminal</span><pre><span></span><code>sudo<span class="w"> </span>apt<span class="w"> </span>update<span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span>sudo<span class="w"> </span>apt<span class="w"> </span>upgrade<span class="w"> </span>-y
+</code></pre></div>
+</div>
+<hr />
+<h2 id="guia-de-instalacion-paso-a-paso">🛠️ Guía de Instalación Paso a Paso</h2>
+<h3 id="1-java-jdk">1. Java (JDK)</h3>
+<h4 id="paso-1-instalar-openjdk">Paso 1: Instalar OpenJDK</h4>
+<p>Instala la versión por defecto del Kit de Desarrollo de Java desde los repositorios oficiales de Ubuntu:</p>
+<div class="highlight"><span class="filename">Terminal - Instalación de Java</span><pre><span></span><code>sudo<span class="w"> </span>apt<span class="w"> </span>install<span class="w"> </span>default-jdk<span class="w"> </span>-y
+</code></pre></div>
+<div class="admonition">
+<p class="admonition-title">"Instalación de una versión específica (Opcional)"</p>
+<p>Si necesitas una versión concreta como <strong>OpenJDK 21</strong>, puedes ejecutar:
+<div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>apt<span class="w"> </span>install<span class="w"> </span>openjdk-21-jdk<span class="w"> </span>-y
+</code></pre></div></p>
+</div>
+<h4 id="paso-2-verificar-la-instalacion">Paso 2: Verificar la instalación</h4>
+<p>Comprueba que tanto el entorno de ejecución (<code>java</code>) como el compilador (<code>javac</code>) están correctamente instalados:</p>
+<div class="highlight"><span class="filename">Comandos de Verificación</span><pre><span></span><code>java<span class="w"> </span>-version
+javac<span class="w"> </span>-version
+</code></pre></div>
+<h3 id="2-python-3-pip">2. Python 3 &amp; Pip</h3>
+<p>Xubuntu incluye Python 3 preinstalado, pero es necesario instalar las herramientas de desarrollo y gestión de paquetes.</p>
+<h4 id="paso-1-verificar-la-version-de-python">Paso 1: Verificar la versión de Python</h4>
+<p>Comprueba qué versión de Python 3 está activa en el sistema:</p>
+<div class="highlight"><span class="filename">Terminal</span><pre><span></span><code>python3<span class="w"> </span>--version
+</code></pre></div>
+<h4 id="paso-2-instalar-pip-y-entornos-virtuales">Paso 2: Instalar <code>pip</code> y entornos virtuales</h4>
+<p>Instala el gestor de paquetes <code>pip</code> y el módulo para entornos virtuales <code>venv</code>:</p>
+<div class="highlight"><span class="filename">Terminal - Instalación de herramientas Python</span><pre><span></span><code>sudo<span class="w"> </span>apt<span class="w"> </span>install<span class="w"> </span>python3-pip<span class="w"> </span>python3-venv<span class="w"> </span>-y
+</code></pre></div>
+<h4 id="paso-3-verificar-la-instalacion-de-pip">Paso 3: Verificar la instalación de <code>pip</code></h4>
+<p>Asegúrate de que <code>pip3</code> está listo para su uso:</p>
+<div class="highlight"><span class="filename">Comando de Verificación</span><pre><span></span><code>pip3<span class="w"> </span>--version
+</code></pre></div>
+<h3 id="3-rust-rustup">3. Rust (<code>rustup</code>)</h3>
+<p>La vía oficial y recomendada para instalar Rust en entornos Unix es mediante <strong><code>rustup</code></strong>.</p>
+<h4 id="paso-1-instalar-dependencias-del-sistema">Paso 1: Instalar dependencias del sistema</h4>
+<p>Rust requiere un compilador de C y herramientas de construcción nativas:</p>
+<div class="highlight"><span class="filename">Terminal - Instalación de dependencias</span><pre><span></span><code>sudo<span class="w"> </span>apt<span class="w"> </span>install<span class="w"> </span>build-essential<span class="w"> </span>curl<span class="w"> </span>-y
+</code></pre></div>
+<h4 id="paso-2-ejecutar-el-script-oficial-de-instalacion">Paso 2: Ejecutar el script oficial de instalación</h4>
+<p>Descarga e inicia el instalador interactivamente:</p>
+<div class="highlight"><span class="filename">Terminal - Descarga de Rustup</span><pre><span></span><code>curl<span class="w"> </span>--proto<span class="w"> </span><span class="s1">'=https'</span><span class="w"> </span>--tlsv1.2<span class="w"> </span>-sSf<span class="w"> </span><span class="o">[</span>https://sh.rustup.rs<span class="o">](</span>https://sh.rustup.rs<span class="o">)</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>sh
+</code></pre></div>
+<div class="admonition">
+<p class="admonition-title">Proceso interactivo</p>
+<div class="highlight"><pre><span></span><code>Cuando la terminal solicite seleccionar el tipo de instalación, presiona ++1++ (opción *default*) y a continuación ++enter++.
+</code></pre></div>
+</div>
+<h4 id="paso-3-cargar-las-variables-de-entorno">Paso 3: Cargar las variables de entorno</h4>
+<p>Aplica los cambios en el PATH de tu sesión actual sin necesidad de cerrar sesión:</p>
+<div class="highlight"><span class="filename">Terminal</span><pre><span></span><code><span class="nb">source</span><span class="w"> </span><span class="s2">"</span><span class="nv">$HOME</span><span class="s2">/.cargo/env"</span>
+</code></pre></div>
+<h4 id="paso-4-verificar-la-instalacion-de-rust-y-cargo">Paso 4: Verificar la instalación de Rust y Cargo</h4>
+<p>Verifica que el compilador <code>rustc</code> y el gestor de paquetes y proyectos <code>cargo</code> funcionan correctamente:</p>
+<div class="highlight"><span class="filename">Comandos de Verificación</span><pre><span></span><code>rustc<span class="w"> </span>--version
+cargo<span class="w"> </span>--version
+</code></pre></div>
+<hr />
+<h2 id="entregables-de-la-practica">📑 Entregables de la Práctica</h2>
+<div class="admonition check">
+<p class="admonition-title">Lista de Comprobación para la Entrega</p>
+<p>Toma captura de pantalla de la terminal mostrando la salida de los siguientes comandos y adjúntalas a la entrega de la práctica en la plataforma:</p>
+<ul class="task-list">
+<li class="task-list-item"><input type="checkbox" disabled/> <strong>Captura 1 (Java):</strong> Salida gráfica de los comandos <code>java -version</code> y <code>javac -version</code>.</li>
+<li class="task-list-item"><input type="checkbox" disabled/> <strong>Captura 2 (Python):</strong> Salida gráfica de los comandos <code>python3 --version</code> y <code>pip3 --version</code>.</li>
+<li class="task-list-item"><input type="checkbox" disabled/> <strong>Captura 3 (Rust):</strong> Salida gráfica de los comandos <code>rustc --version</code> y <code>cargo --version</code>.</li>
+</ul>
+</div>
+              
+            </div>
+          </div><footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="Navegación de pie de página">
+        <a href="../../ut02/" class="btn btn-neutral float-left" title="CONTENIDOS"><span class="icon icon-circle-arrow-left"></span> Anterior</a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+  </div>
+
+  Construído con <a href="https://properdocs.org/">ProperDocs</a> usando un <a href="https://github.com/readthedocs/sphinx_rtd_theme">tema</a> provisto por <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+          
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="Versiones">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+    
+      <span><a href="../../ut02/" style="color: #fcfcfc">&laquo; Anterior</a></span>
+    
+    
+  </span>
+</div>
+    <script src="../../js/jquery-3.6.0.min.js"></script>
+    <script>var base_url = "../..";</script>
+    <script src="../../js/theme_extra.js"></script>
+    <script src="../../js/theme.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+      <script src="../../js/copy-button.js"></script>
+      <script src="../../search/main.js"></script>
+    <script>
+        jQuery(function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        });
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="es" >
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <link rel="shortcut icon" href="../img/favicon.ico" />
+    <title>CONTENIDOS - Entornos de Desarrollo - IES Los Albares</title>
+    <link rel="stylesheet" href="../css/theme.css" />
+    <link rel="stylesheet" href="../css/theme_extra.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" />
+        <link href="../css/estilo.css" rel="stylesheet" />
+    
+      <script>
+        // Current page data
+        var properdocs_page_name = "CONTENIDOS";
+        var properdocs_page_input_path = "ut02.md";
+        var properdocs_page_url = null;
+      </script>
+    
+    <!--[if lt IE 9]>
+      <script src="../js/html5shiv.min.js"></script>
+    <![endif]-->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+      <script>hljs.highlightAll();</script> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+          <a href=".." class="icon icon-home"> Entornos de Desarrollo - IES Los Albares
+        </a><div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../search.html" method="get">
+      <input type="text" name="q" placeholder="Buscar documentos" aria-label="Buscar documentos" title="Escriba el término de búsqueda aquí" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Menu de navegación">
+              <ul>
+                <li class="toctree-l1"><a class="" href="https://joaquinalbares.github.io/">HOME</a>
+                </li>
+              </ul>
+              <p class="caption"><span class="caption-text">UT01</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../ut01/">CONTENIDOS</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../practicas/ut01/">EJ. DE CLASE</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">UT02</span></p>
+              <ul class="current">
+                  <li class="toctree-l1 current"><a class="reference internal current" href="#">CONTENIDOS</a>
+    <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#1-concepto-y-funciones-de-un-entorno-integrado-de-desarrollo-ide">1. CONCEPTO Y FUNCIONES DE UN ENTORNO INTEGRADO DE DESARROLLO (IDE)</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#funciones-principales-de-un-ide">Funciones Principales de un IDE</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#2-tipos-de-entornos-de-desarrollo-y-sus-caracteristicas">2. TIPOS DE ENTORNOS DE DESARROLLO Y SUS CARACTERÍSTICAS</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#clasificacion-segun-su-licencia-ce-a">Clasificación Según su Licencia (CE a)</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#clasificacion-segun-la-soporte-de-lenguajes">Clasificación Según la Soporte de Lenguajes</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#caracteristicas-comunes-y-especificas-de-diversos-ides-ce-g">Características Comunes y Específicas de Diversos IDEs (CE g)</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#3-instalacion-y-uso-basico-de-un-entorno-de-desarrollo">3. INSTALACIÓN Y USO BÁSICO DE UN ENTORNO DE DESARROLLO</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#instalacion-de-un-ide-ce-a">Instalación de un IDE (CE a)</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#paneles-vistas-y-espacios-de-trabajo-workspaces">Paneles, Vistas y Espacios de Trabajo (Workspaces)</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#gestion-de-proyectos-e-incorporacion-de-elementos">Gestión de Proyectos e Incorporación de Elementos</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#edicion-de-codigo-formateo-y-asistencia-a-la-programacion">Edición de Código, Formateo y Asistencia a la Programación</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#compilacion-deteccion-de-errores-y-ejecucion">Compilación, Detección de Errores y Ejecución</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#4-instalacion-y-gestion-de-modulos-plugins-y-extensiones">4. INSTALACIÓN Y GESTIÓN DE MÓDULOS, PLUGINS Y EXTENSIONES</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#gestion-del-ciclo-de-vida-de-un-modulo-ce-b">Gestión del Ciclo de Vida de un Módulo (CE b)</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#5-personalizacion-automatizacion-y-configuracion-de-actualizaciones">5. PERSONALIZACIÓN, AUTOMATIZACIÓN Y CONFIGURACIÓN DE ACTUALIZACIONES</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#personalizacion-del-entorno-ce-c">Personalización del Entorno (CE c)</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#automatizacion-de-tareas-ce-c">Automatización de Tareas (CE c)</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#configuracion-del-sistema-de-actualizacion-ce-d">Configuración del Sistema de Actualización (CE d)</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#6-generacion-multilenguaje-y-multi-ide">6. GENERACIÓN MULTILENGUAJE Y MULTI-IDE</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#generacion-de-ejecutables-multilenguaje-en-un-mismo-ide-ce-e">Generación de Ejecutables Multilenguaje en un Mismo IDE (CE e)</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#generacion-de-ejecutables-multi-ide-a-partir-del-mismo-codigo-fuente-ce-f">Generación de Ejecutables Multi-IDE a partir del Mismo Código Fuente (CE f)</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#7-acceso-a-documentacion-y-ayuda-integrada">7. ACCESO A DOCUMENTACIÓN Y AYUDA INTEGRADA</a>
+    </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../practicas/ut02/">EJ. DE CLASE</a>
+                  </li>
+              </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+      <nav class="wy-nav-top" role="navigation" aria-label="Menú de navegación en móvil">
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="..">Entornos de Desarrollo - IES Los Albares</a>
+        
+      </nav>
+      <div class="wy-nav-content">
+        <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href=".." class="icon icon-home" aria-label="Documentos"></a></li>
+          <li class="breadcrumb-item">UT02</li>
+      <li class="breadcrumb-item active">CONTENIDOS</li>
+    <li class="wy-breadcrumbs-aside">
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+            <div class="section" itemprop="articleBody">
+              
+                <h1 id="ut-02-entornos-integrados-de-desarrollo-ide">UT 02: ENTORNOS INTEGRADOS DE DESARROLLO (IDE)</h1>
+<hr />
+<h2 id="1-concepto-y-funciones-de-un-entorno-integrado-de-desarrollo-ide">1. CONCEPTO Y FUNCIONES DE UN ENTORNO INTEGRADO DE DESARROLLO (IDE)</h2>
+<p>Un <strong>Entorno Integrado de Desarrollo</strong> (IDE, <em>Integrated Development Environment</em>) es una aplicación software que proporciona un conjunto consolidado de herramientas para facilitar y optimizar el ciclo de vida de creación de programas informáticos.</p>
+<h3 id="funciones-principales-de-un-ide">Funciones Principales de un IDE</h3>
+<ol>
+<li><strong>Edición de código fuente avanzada:</strong> Editores de texto inteligentes orientados a lenguajes específicos.</li>
+<li><strong>Gestión de proyectos:</strong> Organización jerárquica de ficheros, librerías, dependencias y recursos.</li>
+<li><strong>Automatización de compilación y construcción (<em>Build Automation</em>):</strong> Invocación de compiladores, enlazadores y herramientas de empaquetado mediante un solo clic o atajo.</li>
+<li><strong>Depuración (<em>Debugging</em>):</strong> Detección e inspección de errores en tiempo de ejecución de manera gráfica.</li>
+<li><strong>Generación de ejecutables y despliegue:</strong> Empaquetado final de aplicaciones (ej. archivos <code>.exe</code>, <code>.jar</code>, <code>.war</code>).</li>
+<li><strong>Integración con sistemas externos:</strong> Conexión con control de versiones (Git), analizadores estáticos de código y gestores de bases de datos.</li>
+</ol>
+<hr />
+<h2 id="2-tipos-de-entornos-de-desarrollo-y-sus-caracteristicas">2. TIPOS DE ENTORNOS DE DESARROLLO Y SUS CARACTERÍSTICAS</h2>
+<p><em>(Atiende a los Criterios de Evaluación a y g)</em></p>
+<h3 id="clasificacion-segun-su-licencia-ce-a">Clasificación Según su Licencia (CE a)</h3>
+<ul>
+<li><strong>Entornos de Desarrollo Libres / Open Source:</strong></li>
+<li>Distribuidos bajo licencias de código abierto (GPL, Apache, MIT).</li>
+<li>Permiten su uso, modificación y redistribución de forma gratuita sin restricciones comerciales.</li>
+<li><em>Ejemplos:</em> Eclipse, NetBeans, VSCodium, KDevelop.</li>
+<li><strong>Entornos de Desarrollo Propietarios / Comerciales:</strong></li>
+<li>Desarrollados por empresas bajo licencias de pago o de suscripción.</li>
+<li>Suelen ofrecer versiones comunitarias (<em>Community Edition</em>) con funcionalidades reducidas y versiones comerciales (<em>Ultimate/Enterprise</em>) con soporte oficial avanzado.</li>
+<li><em>Ejemplos:</em> IntelliJ IDEA (Ultimate), Microsoft Visual Studio (Professional/Enterprise), CLion, RAD Studio.</li>
+</ul>
+<h3 id="clasificacion-segun-la-soporte-de-lenguajes">Clasificación Según la Soporte de Lenguajes</h3>
+<ul>
+<li><strong>IDE Monolenguaje / Especializado:</strong> Diseñado para un único lenguaje o ecosistema específico (ej. PyCharm para Python, Xcode para Swift/Objective-C).</li>
+<li><strong>IDE Multilenguaje / Políglota:</strong> Diseñado para trabajar con múltiples lenguajes mediante el uso de plugins y extensiones (ej. Eclipse, VS Code, NetBeans).</li>
+</ul>
+<h3 id="caracteristicas-comunes-y-especificas-de-diversos-ides-ce-g">Características Comunes y Específicas de Diversos IDEs (CE g)</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Entorno de Desarrollo</th>
+<th style="text-align: left;">Licencia</th>
+<th style="text-align: left;">Lenguajes Principales</th>
+<th style="text-align: left;">Características Comunes</th>
+<th style="text-align: left;">Características Específicas</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><strong>Eclipse</strong></td>
+<td style="text-align: left;">Libre (EPL)</td>
+<td style="text-align: left;">Java, C/C++, PHP</td>
+<td style="text-align: left;">Editor avanzado, gestión de proyectos, depuración, sistema de plugins</td>
+<td style="text-align: left;">Arquitectura basada en la plataforma <em>OSGi</em>, gran consumo de memoria RAM</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>IntelliJ IDEA</strong></td>
+<td style="text-align: left;">Mixta (Community / Propietaria)</td>
+<td style="text-align: left;">Java, Kotlin, Scala, Python</td>
+<td style="text-align: left;">Autocompletado inteligente, refactorización, integraciones VCS</td>
+<td style="text-align: left;">Análisis estático de código en tiempo real de alta precisión, autocompletado con IA</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Visual Studio Code</strong></td>
+<td style="text-align: left;">Libre (Core MIT) / Propietario (Binario MS)</td>
+<td style="text-align: left;">Políglota (Python, JS, C++, Java)</td>
+<td style="text-align: left;">Formateo, sintaxis, terminal integrada, extensiones</td>
+<td style="text-align: left;">Ligero (basado en Electron), arquitectura centrada en ficheros/carpetas más que en proyectos rígidos</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Microsoft Visual Studio</strong></td>
+<td style="text-align: left;">Propietaria</td>
+<td style="text-align: left;">C#, C++, VB.NET, F#</td>
+<td style="text-align: left;">Asistentes gráficos, depuración avanzada, diseñador UI</td>
+<td style="text-align: left;">Diseñadores WYSIWYG integrados para desarrollo en Windows (WPF, .NET MAUI), compilador MSVC nativo</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="3-instalacion-y-uso-basico-de-un-entorno-de-desarrollo">3. INSTALACIÓN Y USO BÁSICO DE UN ENTORNO DE DESARROLLO</h2>
+<p><em>(Atiende al Criterio de Evaluación a)</em></p>
+<h3 id="instalacion-de-un-ide-ce-a">Instalación de un IDE (CE a)</h3>
+<p>El proceso de instalación de un entorno de desarrollo varía según la plataforma y la naturaleza del IDE:
+* <strong>Instalación mediante Instaladores Ejecutables / Binarios:</strong> Archivos <code>.exe</code> (Windows), <code>.dmg</code> (macOS) o <code>.deb</code>/<code>.rpm</code> (Linux).
+* <strong>Instalación mediante Gestores de Paquetes / Cajas de Herramientas:</strong> Empleo de aplicaciones centralizadas como <em>JetBrains Toolbox</em> o comandos del sistema (<code>sudo apt install</code>, <code>winget</code>, <code>brew</code>).
+* <strong>Verificación de Requisitos Previos:</strong> Muchos IDEs basados en Java (como Eclipse o NetBeans) requieren la presencia previa de un <strong>JDK (Java Development Kit)</strong> en el sistema operativo.</p>
+<h3 id="paneles-vistas-y-espacios-de-trabajo-workspaces">Paneles, Vistas y Espacios de Trabajo (<em>Workspaces</em>)</h3>
+<ul>
+<li><strong>Workspace / Espacio de Trabajo:</strong> Directorio del sistema donde el IDE almacena los proyectos, configuraciones y metadatos del usuario.</li>
+<li><strong>Vistas (<em>Views</em>):</strong> Paneles individuales que muestran información específica (ej. Explorador de archivos, Consola, Estructura de clases/Outline, Lista de errores).</li>
+<li><strong>Perspectivas (<em>Perspectives</em>):</strong> Disposiciones preconfiguradas de paneles orientadas a una tarea concreta (ej. Perspectiva de <em>Desarrollo</em>, Perspectiva de <em>Depuración</em>, Perspectiva de <em>Bases de Datos</em>).</li>
+</ul>
+<h3 id="gestion-de-proyectos-e-incorporacion-de-elementos">Gestión de Proyectos e Incorporación de Elementos</h3>
+<ol>
+<li><strong>Uso de Asistentes (<em>Wizards</em>):</strong> Herramientas guiadas para la creación de proyectos definiendo el nombre, la ubicación, la versión del SDK/JDK y las plantillas iniciales.</li>
+<li><strong>Creación de Proyectos:</strong> Estructuración de directorios estándar (ej. <code>src/</code> para código fuente, <code>lib/</code> para bibliotecas externas, <code>bin/</code> o <code>target/</code> para archivos compilados).</li>
+<li><strong>Incorporación de Elementos:</strong> Adición de paquetes, módulos, clases, interfaces, archivos de configuración (XML, JSON, YAML) y recursos multimedia.</li>
+</ol>
+<h3 id="edicion-de-codigo-formateo-y-asistencia-a-la-programacion">Edición de Código, Formateo y Asistencia a la Programación</h3>
+<ul>
+<li><strong>Resaltado de Sintaxis (<em>Syntax Highlighting</em>):</strong> Coloreado diferenciado de palabras reservadas, variables, cadenas de texto y comentarios.</li>
+<li><strong>Autocompletado de Código (<em>IntelliSense / Code Completion</em>):</strong> Sugerencia de métodos, clases y variables disponibles al escribir.</li>
+<li><strong>Formateo e Indentación Automática:</strong> Aplicación de reglas de estilo de código mediante atajos de teclado (ej. <code>Ctrl+Shift+F</code> en Eclipse, <code>Ctrl+Alt+L</code> en IntelliJ).</li>
+<li><strong>Importación y Exportación:</strong> Herramientas para importar proyectos existentes desde el disco o sistemas VCS, así como exportar proyectos a archivos comprimidos (<code>.zip</code>), archivos ejecutables (<code>.jar</code>) o plantillas.</li>
+</ul>
+<h3 id="compilacion-deteccion-de-errores-y-ejecucion">Compilación, Detección de Errores y Ejecución</h3>
+<ol>
+<li><strong>Compilación en Segundo Plano:</strong> Detección en tiempo real de errores sintácticos marcados con subrayados rojos antes de la compilación explícita.</li>
+<li><strong>Consola y Panel de Problemas:</strong> Lista ordenada de advertencias (<em>Warnings</em>) y errores de compilación (<em>Errors</em>).</li>
+<li><strong>Generación de Ejecutables y Ejecución:</strong> Invocación de la ejecución directa dentro del IDE mediante botones de reproducción (<em>Run</em>) o generación del binario final en el disco.</li>
+</ol>
+<hr />
+<h2 id="4-instalacion-y-gestion-de-modulos-plugins-y-extensiones">4. INSTALACIÓN Y GESTIÓN DE MÓDULOS, PLUGINS Y EXTENSIONES</h2>
+<p><em>(Atiende al Criterio de Evaluación b)</em></p>
+<p>Los entornos de desarrollo modernos cuentan con una arquitectura modular extensible basada en <strong>plugins</strong>, <strong>módulos</strong> o <strong>extensiones</strong> que permiten añadir soporte para nuevos lenguajes, frameworks o herramientas.</p>
+<div class="highlight"><pre><span></span><code>[ Núcleo del IDE (Core) ] ───┬───► [ Plugin: Soporte Git ]
+├───► [ Plugin: Analizador SonarLint ]
+└───► [ Plugin: Framework Spring Boot ]
+</code></pre></div>
+<h3 id="gestion-del-ciclo-de-vida-de-un-modulo-ce-b">Gestión del Ciclo de Vida de un Módulo (CE b)</h3>
+<ol>
+<li><strong>Acceso al Catálogo / Marketplace:</strong> Utilización del gestor interno del IDE (ej. <em>Eclipse Marketplace</em>, <em>IntelliJ Plugins Repository</em>, <em>VS Code Extensions</em>).</li>
+<li><strong>Añadir / Instalar Módulos:</strong> Búsqueda en el repositorio oficial o instalación manual desde archivos locales (ej. archivos <code>.vsix</code> en VS Code o <code>.jar</code>/<code>.zip</code> en Eclipse).</li>
+<li><strong>Configurar / Activar / Desactivar:</strong> Inhabilitar temporalmente plugins sin necesidad de desinstalarlos para optimizar el rendimiento del entorno.</li>
+<li><strong>Eliminar / Desinstalar Módulos:</strong> Borrado completo del módulo del sistema para liberar espacio o resolver conflictos entre extensiones.</li>
+</ol>
+<hr />
+<h2 id="5-personalizacion-automatizacion-y-configuracion-de-actualizaciones">5. PERSONALIZACIÓN, AUTOMATIZACIÓN Y CONFIGURACIÓN DE ACTUALIZACIONES</h2>
+<p><em>(Atiende a los Criterios de Evaluación c y d)</em></p>
+<h3 id="personalizacion-del-entorno-ce-c">Personalización del Entorno (CE c)</h3>
+<ul>
+<li><strong>Temas Visuales y Aspecto:</strong> Modificación de esquemas de color (temas claros/oscuros) y fuentes tipográficas con soporte de ligaduras (ej. <em>Fira Code</em>, <em>JetBrains Mono</em>).</li>
+<li><strong>Atajos de Teclado (<em>Keymaps</em>):</strong> Reasignación personalizada de combinaciones de teclas o emulación de esquemas de otros editores (ej. emulación de atajos de Vim en Eclipse).</li>
+<li><strong>Plantillas de Código (<em>Code Snippets / Live Templates</em>):</strong> Creación de abreviaturas que expanden bloques de código repetitivos automáticamente (ej. escribir <code>psvm</code> para generar <code>public static void main(String[] args)</code>).</li>
+</ul>
+<h3 id="automatizacion-de-tareas-ce-c">Automatización de Tareas (CE c)</h3>
+<ul>
+<li><strong>Acciones al Guardar (<em>Save Actions</em>):</strong> Configuración para que el IDE formatee el código, organice los <code>import</code> y elimine código muerto automáticamente cada vez que se guarda un archivo.</li>
+<li><strong>Integración con Herramientas de Construcción (<em>Build Tools</em>):</strong> Automatización de compilación, ejecución de pruebas unitarias y empaquetado mediante scripts de <strong>Maven</strong>, <strong>Gradle</strong>, <strong>Ant</strong> o <strong>Make</strong>.</li>
+<li><strong>Macros:</strong> Grabación e invocación de secuencias repetitivas de comandos de edición.</li>
+</ul>
+<h3 id="configuracion-del-sistema-de-actualizacion-ce-d">Configuración del Sistema de Actualización (CE d)</h3>
+<ul>
+<li><strong>Canales de Actualización:</strong></li>
+<li><em>Stable (Estable):</em> Versiones probadas y recomendadas para entornos de producción.</li>
+<li><em>EAP (Early Access Program) / Beta / Insiders:</em> Versiones preliminares con las últimas novedades pero posibles inestabilidades.</li>
+<li><strong>Modos de Actualización:</strong></li>
+<li><strong>Automática:</strong> Descarga e instalación transparente en segundo plano.</li>
+<li><strong>Notificación / Manual:</strong> El IDE comprueba periódicamente si existen nuevas versiones de la plataforma o de los plugins instalados y solicita confirmación al usuario.</li>
+<li><strong>Configuración de Proxy y Red:</strong> Parámetros de red necesarios para acceder a las actualizaciones en entornos corporativos o educativos restringidos.</li>
+</ul>
+<hr />
+<h2 id="6-generacion-multilenguaje-y-multi-ide">6. GENERACIÓN MULTILENGUAJE Y MULTI-IDE</h2>
+<p><em>(Atiende a los Criterios de Evaluación e y f)</em></p>
+<h3 id="generacion-de-ejecutables-multilenguaje-en-un-mismo-ide-ce-e">Generación de Ejecutables Multilenguaje en un Mismo IDE (CE e)</h3>
+<p>Un IDE políglota correctamente configurado mediante módulos y herramientas de compilación permite desarrollar y generar ejecutables para diferentes lenguajes de programación desde una única interfaz.</p>
+<div class="highlight"><pre><span></span><code>                    ┌───► [ Código C++ ] ───► Compilador GCC ───► Ejecutable (.exe/bin)
+[ Mismo IDE ] ──────┼───► [ Código Java ] ──► Compilador Javac ─► Ejecutable (.jar)
+(ej. VS Code)       └───► [ Código Python ] ─► PyInstaller ──────► Ejecutable (.exe)
+</code></pre></div>
+<ul>
+<li><strong>Ejemplo práctico:</strong> Configuración de VS Code o Eclipse para compilar un programa en <strong>C++</strong> (usando el compilador <code>g++</code>) y, simultáneamente, un proyecto en <strong>Java</strong> (usando el <code>JDK</code>) o un script compilado a ejecutable nativo en <strong>Python</strong> (usando <code>PyInstaller</code>).</li>
+</ul>
+<h3 id="generacion-de-ejecutables-multi-ide-a-partir-del-mismo-codigo-fuente-ce-f">Generación de Ejecutables Multi-IDE a partir del Mismo Código Fuente (CE f)</h3>
+<p>Dado un mismo conjunto de archivos de código fuente, es posible importar dicho proyecto en distintos entornos de desarrollo y obtener un ejecutable funcional en cada uno de ellos, demostrando la independencia del código respecto al entorno.</p>
+<div class="highlight"><pre><span></span><code>                            ┌───► [ IDE 1: Eclipse ] ────────┐
+[ Mismo Código Fuente ] ────┼───► [ IDE 2: IntelliJ IDEA ] ──┼───► [ Ejecutable Idéntico ]
+                            └───► [ IDE 3: NetBeans ] ───────┘
+</code></pre></div>
+<ul>
+<li><strong>Estándar de Proyecto Independiente:</strong> El uso de herramientas de construcción neutras como <strong>Maven</strong> o <strong>Gradle</strong> permite que un proyecto creado en un IDE (ej. NetBeans) pueda abrirse, compilarse y empaquetarse en otro IDE (ej. IntelliJ IDEA o Eclipse) sin incompatibilidades.</li>
+</ul>
+<hr />
+<h2 id="7-acceso-a-documentacion-y-ayuda-integrada">7. ACCESO A DOCUMENTACIÓN Y AYUDA INTEGRADA</h2>
+<p>Los entornos de desarrollo facilitan la consulta de documentación técnica sin necesidad de abandonar el entorno de trabajo:</p>
+<ol>
+<li><strong>Documentación Javadoc / Docstrings Integrada:</strong> Muestra de ventanas emergentes (<em>tooltips</em>) con la descripción, parámetros y retorno de clases y métodos al pasar el cursor sobre ellos.</li>
+<li><strong>Navegación al Código Fuente:</strong> Atajos para saltar directamente a la declaración o definición de una función o clase (ej. <code>F3</code> o <code>Ctrl + Clic</code>).</li>
+<li><strong>Ayudas de Contexto e Inspección (<em>Quick Fix / Intentions</em>):</strong> Propuesta de correcciones automáticas ante errores mediante combinaciones de teclas (ej. <code>Ctrl + 1</code> en Eclipse, <code>Alt + Enter</code> en IntelliJ).</li>
+<li><strong>Documentación Oficial del IDE:</strong> Acceso directo desde el menú de ayuda (<em>Help</em>) a manuales de usuario, guías de atajos de teclado y páginas de soporte técnico.</li>
+</ol>
+              
+            </div>
+          </div><footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="Navegación de pie de página">
+        <a href="../practicas/ut01/" class="btn btn-neutral float-left" title="EJ. DE CLASE"><span class="icon icon-circle-arrow-left"></span> Anterior</a>
+        <a href="../practicas/ut02/" class="btn btn-neutral float-right" title="EJ. DE CLASE">Siguiente <span class="icon icon-circle-arrow-right"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+  </div>
+
+  Construído con <a href="https://properdocs.org/">ProperDocs</a> usando un <a href="https://github.com/readthedocs/sphinx_rtd_theme">tema</a> provisto por <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+          
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="Versiones">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+    
+      <span><a href="../practicas/ut01/" style="color: #fcfcfc">&laquo; Anterior</a></span>
+    
+    
+      <span><a href="../practicas/ut02/" style="color: #fcfcfc">Siguiente &raquo;</a></span>
+    
+  </span>
+</div>
+    <script src="../js/jquery-3.6.0.min.js"></script>
+    <script>var base_url = "..";</script>
+    <script src="../js/theme_extra.js"></script>
+    <script src="../js/theme.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+      <script src="../js/copy-button.js"></script>
+      <script src="../search/main.js"></script>
+    <script>
+        jQuery(function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        });
+    </script>
+
+</body>
+</html>
