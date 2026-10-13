@@ -1,0 +1,41 @@
+site_name: Entornos de Desarrollo - IES Los Albares
+
+nav:
+  - HOME: https://joaquinalbares.github.io/
+  - GUÍA DEL MÓDULO: index.md
+  - UT01:
+    - CONTENIDOS: ut01.md
+    - EJ. DE CLASE: practicas/ut01.md
+  - UT02:
+    - CONTENIDOS: ut02.md
+    - EJ. DE CLASE: practicas/ut02.md
+
+theme:
+  name: readthedocs
+  locale: es
+  features:
+    - content.code.copy
+
+markdown_extensions:
+  - pymdownx.superfences
+  - pymdownx.betterem
+  - pymdownx.caret
+  - pymdownx.emoji
+  - pymdownx.mark
+  - pymdownx.superfences
+  - pymdownx.tasklist
+  - pymdownx.tilde
+  - pymdownx.arithmatex
+  - pymdownx.blocks.details
+  - pymdownx.blocks.admonition
+  - pymdownx.magiclink
+  - pymdownx.keys
+  - pymdownx.highlight
+  - markdown.extensions.tables
+
+extra_javascript:
+  - https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-MML-AM_CHTML
+  - js/copy-button.js
+
+extra_css:
+  - css/estilo.css
