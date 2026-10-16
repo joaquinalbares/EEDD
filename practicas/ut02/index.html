@@ -93,6 +93,26 @@
     </li>
         </ul>
     </li>
+    <li class="toctree-l3"><a class="reference internal" href="#4-instalacion-de-ruby-recomendada-para-desarrolladores-usando-rbenv">4. Instalación de Ruby recomendada para desarrolladores (usando rbenv)</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#paso-1-instalar-dependencias-del-sistema_1">Paso 1: Instalar dependencias del sistema</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#paso-2-descargar-e-instalar-rbenv-y-ruby-build">Paso 2: Descargar e instalar rbenv y ruby-build</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#paso-3-configurar-las-variables-de-entorno">Paso 3: Configurar las variables de entorno</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#paso-4-instalar-la-version-deseada-de-ruby">Paso 4: Instalar la versión deseada de Ruby</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#paso-5-establecer-la-version-por-defecto">Paso 5: Establecer la versión por defecto</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#paso-6-comprobar-la-instalacion">Paso 6: Comprobar la instalación</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#paso-7-instalar-bundler">Paso 7: Instalar Bundler</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#crear-un-hola-mundo">Crear un "Hola, Mundo"</a>
+    </li>
+        </ul>
+    </li>
         </ul>
     </li>
     <li class="toctree-l2"><a class="reference internal" href="#entregables-de-la-practica">📑 Entregables de la Práctica</a>
@@ -193,6 +213,70 @@ javac<span class="w"> </span>-version
 <div class="highlight"><span class="filename">Comandos de Verificación</span><pre><span></span><code>rustc<span class="w"> </span>--version
 cargo<span class="w"> </span>--version
 </code></pre></div>
+<h3 id="4-instalacion-de-ruby-recomendada-para-desarrolladores-usando-rbenv">4. Instalación de <strong>Ruby</strong> recomendada para desarrolladores (usando <code>rbenv</code>)</h3>
+<h4 id="paso-1-instalar-dependencias-del-sistema_1">Paso 1: Instalar dependencias del sistema</h4>
+<p>Para compilar versiones de Ruby desde el código fuente, necesitas instalar herramientas de compilación y librerías de desarrollo:</p>
+<div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>apt<span class="w"> </span>update
+sudo<span class="w"> </span>apt<span class="w"> </span>install<span class="w"> </span>-y<span class="w"> </span>git<span class="w"> </span>curl<span class="w"> </span>autoconf<span class="w"> </span>bison<span class="w"> </span>build-essential<span class="w"> </span>libssl-dev<span class="w"> </span>libreadline-dev<span class="w"> </span>zlib1g-dev<span class="w"> </span>libyaml-dev<span class="w"> </span>libffi-dev<span class="w"> </span>libgdbm-dev
+</code></pre></div>
+<h4 id="paso-2-descargar-e-instalar-rbenv-y-ruby-build">Paso 2: Descargar e instalar <code>rbenv</code> y <code>ruby-build</code></h4>
+<p>Ejecuta el script oficial que descarga e instala <code>rbenv</code> junto con su complemento de compilación:</p>
+<div class="highlight"><pre><span></span><code>curl<span class="w"> </span>-fsSL<span class="w"> </span>https://github.com/rbenv/rbenv-installer/raw/HEAD/bin/rbenv-installer<span class="w"> </span><span class="p">|</span><span class="w"> </span>bash
+</code></pre></div>
+<h4 id="paso-3-configurar-las-variables-de-entorno">Paso 3: Configurar las variables de entorno</h4>
+<p>Agrega <code>rbenv</code> a tu archivo de configuración de terminal (<code>~/.bashrc</code>) para que se cargue automáticamente cada vez que abras la consola:</p>
+<div class="highlight"><pre><span></span><code><span class="nb">echo</span><span class="w"> </span><span class="s1">'export PATH="$HOME/.rbenv/bin:$PATH"'</span><span class="w"> </span>&gt;&gt;<span class="w"> </span>~/.bashrc
+<span class="nb">echo</span><span class="w"> </span><span class="s1">'eval "$(rbenv init -)"'</span><span class="w"> </span>&gt;&gt;<span class="w"> </span>~/.bashrc
+</code></pre></div>
+<p>Aplica los cambios en la sesión actual:</p>
+<div class="highlight"><pre><span></span><code><span class="nb">source</span><span class="w"> </span>~/.bashrc
+</code></pre></div>
+<p>Verifica que <code>rbenv</code> se haya instalado correctamente:</p>
+<div class="highlight"><pre><span></span><code>rbenv<span class="w"> </span>doctor
+</code></pre></div>
+<h4 id="paso-4-instalar-la-version-deseada-de-ruby">Paso 4: Instalar la versión deseada de Ruby</h4>
+<p>Puedes ver la lista de versiones disponibles con:</p>
+<div class="highlight"><pre><span></span><code>rbenv<span class="w"> </span>install<span class="w"> </span>-l
+</code></pre></div>
+<p>Para instalar una versión estable (por ejemplo, Ruby 3.3.0):</p>
+<div class="highlight"><pre><span></span><code>rbenv<span class="w"> </span>install<span class="w"> </span><span class="m">3</span>.3.0
+</code></pre></div>
+<p><em>(Este proceso puede tardar un par de minutos mientras se compila).</em></p>
+<h4 id="paso-5-establecer-la-version-por-defecto">Paso 5: Establecer la versión por defecto</h4>
+<p>Configura la versión instalada como la versión global del sistema para tu usuario:</p>
+<div class="highlight"><pre><span></span><code>rbenv<span class="w"> </span>global<span class="w"> </span><span class="m">3</span>.3.0
+</code></pre></div>
+<h4 id="paso-6-comprobar-la-instalacion">Paso 6: Comprobar la instalación</h4>
+<p>Verifica la versión activa de Ruby:</p>
+<div class="highlight"><pre><span></span><code>ruby<span class="w"> </span>-v
+</code></pre></div>
+<h4 id="paso-7-instalar-bundler">Paso 7: Instalar Bundler</h4>
+<p>Si vas a trabajar en proyectos con dependencias o gemas, instala <strong>Bundler</strong>:</p>
+<div class="highlight"><pre><span></span><code>gem<span class="w"> </span>install<span class="w"> </span>bundler
+</code></pre></div>
+<hr />
+<h4 id="crear-un-hola-mundo">Crear un "Hola, Mundo"</h4>
+<p>Puedes crear un programa rápido de prueba para comprobar que el entorno funciona adecuadamente:</p>
+<ol>
+<li>
+<p>Crea un archivo llamado <code>hola.rb</code>:
+<div class="highlight"><pre><span></span><code>nano<span class="w"> </span>hola.rb
+</code></pre></div></p>
+</li>
+<li>
+<p>Escribe el siguiente código dentro del archivo:
+<div class="highlight"><pre><span></span><code><span class="nb">puts</span><span class="w"> </span><span class="s2">"¡Hola, Mundo!"</span>
+</code></pre></div></p>
+</li>
+<li>
+<p>Guarda (<code>Ctrl + O</code>, <code>Enter</code>) y sal (<code>Ctrl + X</code>).</p>
+</li>
+<li>
+<p>Ejecuta el archivo:
+<div class="highlight"><pre><span></span><code>ruby<span class="w"> </span>hola.rb
+</code></pre></div></p>
+</li>
+</ol>
 <hr />
 <h2 id="entregables-de-la-practica">📑 Entregables de la Práctica</h2>
 <div class="admonition check">
