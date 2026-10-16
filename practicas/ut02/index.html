@@ -61,25 +61,31 @@
                   </li>
                   <li class="toctree-l1 current"><a class="reference internal current" href="#">EJ. DE CLASE</a>
     <ul class="current">
-    <li class="toctree-l2"><a class="reference internal" href="#guia-de-instalacion-paso-a-paso">🛠️ Guía de Instalación Paso a Paso</a>
+    <li class="toctree-l2"><a class="reference internal" href="#1-java-jdk">1. Java (JDK)</a>
         <ul>
-    <li class="toctree-l3"><a class="reference internal" href="#1-java-jdk">1. Java (JDK)</a>
-        <ul>
-    <li class="toctree-l4"><a class="reference internal" href="#paso-1-instalar-openjdk">Paso 1: Instalar OpenJDK</a>
+    <li class="toctree-l3"><a class="reference internal" href="#paso-1-instalar-openjdk">Paso 1: Instalar OpenJDK</a>
     </li>
-    <li class="toctree-l4"><a class="reference internal" href="#paso-2-verificar-la-instalacion">Paso 2: Verificar la instalación</a>
+    <li class="toctree-l3"><a class="reference internal" href="#paso-2-verificar-la-instalacion">Paso 2: Verificar la instalación</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#paso-3-crear-el-archivo-fuente-de-java">Paso 3: Crear el archivo fuente de java</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#paso-4-compilar-el-codigo">Paso 4: Compilar el código</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#paso-5-ejecutar-el-programa">Paso 5: Ejecutar el programa</a>
     </li>
         </ul>
     </li>
-    <li class="toctree-l3"><a class="reference internal" href="#2-python-3-pip">2. Python 3 &amp; Pip</a>
+    <li class="toctree-l2"><a class="reference internal" href="#2-python-3-pip">2. Python 3 &amp; Pip</a>
         <ul>
-    <li class="toctree-l4"><a class="reference internal" href="#paso-1-verificar-la-version-de-python">Paso 1: Verificar la versión de Python</a>
+    <li class="toctree-l3"><a class="reference internal" href="#paso-1-verificar-la-version-de-python">Paso 1: Verificar la versión de Python</a>
     </li>
-    <li class="toctree-l4"><a class="reference internal" href="#paso-2-instalar-pip-y-entornos-virtuales">Paso 2: Instalar pip y entornos virtuales</a>
+    <li class="toctree-l3"><a class="reference internal" href="#paso-2-instalar-pip-y-entornos-virtuales">Paso 2: Instalar pip y entornos virtuales</a>
     </li>
-    <li class="toctree-l4"><a class="reference internal" href="#paso-3-verificar-la-instalacion-de-pip">Paso 3: Verificar la instalación de pip</a>
+    <li class="toctree-l3"><a class="reference internal" href="#paso-3-verificar-la-instalacion-de-pip">Paso 3: Verificar la instalación de pip</a>
     </li>
-        </ul>
+    <li class="toctree-l3"><a class="reference internal" href="#paso-4-crear-el-archivo-del-script">Paso 4: Crear el archivo del script</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#paso-5-ejecutar-el-script">Paso 5: Ejecutar el script</a>
     </li>
     <li class="toctree-l3"><a class="reference internal" href="#3-rust-rustup">3. Rust (rustup)</a>
         <ul>
@@ -90,6 +96,14 @@
     <li class="toctree-l4"><a class="reference internal" href="#paso-3-cargar-las-variables-de-entorno">Paso 3: Cargar las variables de entorno</a>
     </li>
     <li class="toctree-l4"><a class="reference internal" href="#paso-4-verificar-la-instalacion-de-rust-y-cargo">Paso 4: Verificar la instalación de Rust y Cargo</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#creacion-y-ejecucion-del-archivo-hola-mundo">Creación y ejecución del archivo "Hola, Mundo".</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#opcion-a-compilacion-directa-con-rustc">Opción A: Compilación directa con rustc</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#opcion-b-mediante-cargo-gestor-de-proyectos-estandar">Opción B: Mediante cargo (Gestor de proyectos estándar)</a>
     </li>
         </ul>
     </li>
@@ -109,7 +123,7 @@
     </li>
     <li class="toctree-l4"><a class="reference internal" href="#paso-7-instalar-bundler">Paso 7: Instalar Bundler</a>
     </li>
-    <li class="toctree-l4"><a class="reference internal" href="#crear-un-hola-mundo">Crear un "Hola, Mundo"</a>
+    <li class="toctree-l4"><a class="reference internal" href="#paso-8-crear-un-hola-mundo">Paso 8: Crear un "Hola, Mundo"</a>
     </li>
         </ul>
     </li>
@@ -147,9 +161,19 @@
                 <h1 id="practica-ut02-instalacion-de-entornos-de-ejecucion-en-xubuntu">Práctica UT02: Instalación de Entornos de Ejecución en Xubuntu</h1>
 <hr />
 <div class="admonition warning">
-<p class="admonition-title">Actualización Inicial de Repositorios</p>
+<p class="admonition-title">Actualización Inicial de Repositorios y creación de carpeta de prácticas</p>
 <p>Antes de comenzar cualquier instalación, ejecuta siempre en tu terminal el comando de actualización del sistema:</p>
-<div class="highlight"><span class="filename">Terminal</span><pre><span></span><code>sudo<span class="w"> </span>apt<span class="w"> </span>update<span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span>sudo<span class="w"> </span>apt<span class="w"> </span>upgrade<span class="w"> </span>-y
+<p><div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>apt<span class="w"> </span>update<span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span>sudo<span class="w"> </span>apt<span class="w"> </span>upgrade<span class="w"> </span>-y
+</code></pre></div>
+Y debemos crear la estructura de carpetas siguiente:</p>
+<div class="highlight"><pre><span></span><code>mkdir<span class="w"> </span>-p<span class="w"> </span>~/ut02p01<span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="nb">cd</span><span class="w"> </span>~/ut02p01
+mkdir<span class="w"> </span>-p<span class="w"> </span>~/java<span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="nb">cd</span><span class="w"> </span>~/java
+<span class="nb">cd</span><span class="w"> </span>..
+mkdir<span class="w"> </span>-p<span class="w"> </span>~/rust<span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="nb">cd</span><span class="w"> </span>~/rust
+<span class="nb">cd</span><span class="w"> </span>..
+mkdir<span class="w"> </span>-p<span class="w"> </span>~/ruby<span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="nb">cd</span><span class="w"> </span>~/ruby
+<span class="nb">cd</span><span class="w"> </span>..
+mkdir<span class="w"> </span>-p<span class="w"> </span>~/python<span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="nb">cd</span><span class="w"> </span>~/python
 </code></pre></div>
 </div>
 <div class="admonition hint">
@@ -158,9 +182,8 @@
 <p><a href="https://es.wikipedia.org/wiki/Hola_mundo">https://es.wikipedia.org/wiki/Hola_mundo</a></p>
 </div>
 <hr />
-<h2 id="guia-de-instalacion-paso-a-paso">🛠️ Guía de Instalación Paso a Paso</h2>
-<h3 id="1-java-jdk">1. Java (JDK)</h3>
-<h4 id="paso-1-instalar-openjdk">Paso 1: Instalar OpenJDK</h4>
+<h2 id="1-java-jdk">1. Java (JDK)</h2>
+<h3 id="paso-1-instalar-openjdk">Paso 1: Instalar OpenJDK</h3>
 <p>Instala la versión por defecto del Kit de Desarrollo de Java desde los repositorios oficiales de Ubuntu:</p>
 <div class="highlight"><span class="filename">Terminal - Instalación de Java</span><pre><span></span><code>sudo<span class="w"> </span>apt<span class="w"> </span>install<span class="w"> </span>default-jdk<span class="w"> </span>-y
 </code></pre></div>
@@ -170,25 +193,59 @@
 <div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>apt<span class="w"> </span>install<span class="w"> </span>openjdk-21-jdk<span class="w"> </span>-y
 </code></pre></div></p>
 </div>
-<h4 id="paso-2-verificar-la-instalacion">Paso 2: Verificar la instalación</h4>
+<h3 id="paso-2-verificar-la-instalacion">Paso 2: Verificar la instalación</h3>
 <p>Comprueba que tanto el entorno de ejecución (<code>java</code>) como el compilador (<code>javac</code>) están correctamente instalados:</p>
 <div class="highlight"><span class="filename">Comandos de Verificación</span><pre><span></span><code>java<span class="w"> </span>-version
 javac<span class="w"> </span>-version
 </code></pre></div>
-<h3 id="2-python-3-pip">2. Python 3 &amp; Pip</h3>
+<h3 id="paso-3-crear-el-archivo-fuente-de-java">Paso 3: Crear el archivo fuente de java</h3>
+<p>Crea un archivo llamado <code>HolaMundo.java</code>. Puedes usar <code>nano</code> o tu editor de texto preferido:</p>
+<div class="highlight"><pre><span></span><code>nano<span class="w"> </span>HolaMundo.java
+</code></pre></div>
+<p>Escribe el siguiente código (el nombre de la clase debe coincidir exactamente con el del archivo):</p>
+<div class="highlight"><pre><span></span><code><span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">HolaMundo</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span><span class="w"> </span><span class="n">args</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"¡Hola, mundo desde Java!"</span><span class="p">);</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+<p>Guarda los cambios (<strong><code>Ctrl</code> + <code>O**</code>, <strong><code>Enter</code></strong>) y sal del editor (</strong><code>Ctrl</code> + <code>X**</code>).</p>
+<h3 id="paso-4-compilar-el-codigo">Paso 4: Compilar el código</h3>
+<p>Ejecuta el compilador de Java. Esto generará un archivo <code>HolaMundo.class</code> con el <em>bytecode</em>:</p>
+<div class="highlight"><pre><span></span><code>javac<span class="w"> </span>HolaMundo.java
+</code></pre></div>
+<h3 id="paso-5-ejecutar-el-programa">Paso 5: Ejecutar el programa</h3>
+<p>Llama a la Máquina Virtual de Java pasando el nombre de la clase (sin extensión <code>.class</code>):</p>
+<div class="highlight"><pre><span></span><code>java<span class="w"> </span>HolaMundo
+</code></pre></div>
+<hr />
+<h2 id="2-python-3-pip">2. Python 3 &amp; Pip</h2>
 <p>Xubuntu incluye Python 3 preinstalado, pero es necesario instalar las herramientas de desarrollo y gestión de paquetes.</p>
-<h4 id="paso-1-verificar-la-version-de-python">Paso 1: Verificar la versión de Python</h4>
+<h3 id="paso-1-verificar-la-version-de-python">Paso 1: Verificar la versión de Python</h3>
 <p>Comprueba qué versión de Python 3 está activa en el sistema:</p>
 <div class="highlight"><span class="filename">Terminal</span><pre><span></span><code>python3<span class="w"> </span>--version
 </code></pre></div>
-<h4 id="paso-2-instalar-pip-y-entornos-virtuales">Paso 2: Instalar <code>pip</code> y entornos virtuales</h4>
+<h3 id="paso-2-instalar-pip-y-entornos-virtuales">Paso 2: Instalar <code>pip</code> y entornos virtuales</h3>
 <p>Instala el gestor de paquetes <code>pip</code> y el módulo para entornos virtuales <code>venv</code>:</p>
 <div class="highlight"><span class="filename">Terminal - Instalación de herramientas Python</span><pre><span></span><code>sudo<span class="w"> </span>apt<span class="w"> </span>install<span class="w"> </span>python3-pip<span class="w"> </span>python3-venv<span class="w"> </span>-y
 </code></pre></div>
-<h4 id="paso-3-verificar-la-instalacion-de-pip">Paso 3: Verificar la instalación de <code>pip</code></h4>
+<h3 id="paso-3-verificar-la-instalacion-de-pip">Paso 3: Verificar la instalación de <code>pip</code></h3>
 <p>Asegúrate de que <code>pip3</code> está listo para su uso:</p>
 <div class="highlight"><span class="filename">Comando de Verificación</span><pre><span></span><code>pip3<span class="w"> </span>--version
 </code></pre></div>
+<h3 id="paso-4-crear-el-archivo-del-script">Paso 4: Crear el archivo del script</h3>
+<p>Crea un archivo llamado <code>hola.py</code>:</p>
+<div class="highlight"><pre><span></span><code>nano<span class="w"> </span>hola.py
+</code></pre></div>
+<p>Escribe el código:</p>
+<div class="highlight"><pre><span></span><code><span class="nb">print</span><span class="p">(</span><span class="s2">"¡Hola, mundo desde Python!"</span><span class="p">)</span>
+</code></pre></div>
+<p>Guarda y sal del editor.</p>
+<h3 id="paso-5-ejecutar-el-script">Paso 5: Ejecutar el script</h3>
+<p>Ejecuta el programa directamente con el intérprete:</p>
+<div class="highlight"><pre><span></span><code>python3<span class="w"> </span>hola.py
+</code></pre></div>
+<hr />
 <h3 id="3-rust-rustup">3. Rust (<code>rustup</code>)</h3>
 <p>La vía oficial y recomendada para instalar Rust en entornos Unix es mediante <strong><code>rustup</code></strong>.</p>
 <h4 id="paso-1-instalar-dependencias-del-sistema">Paso 1: Instalar dependencias del sistema</h4>
@@ -213,6 +270,47 @@ javac<span class="w"> </span>-version
 <div class="highlight"><span class="filename">Comandos de Verificación</span><pre><span></span><code>rustc<span class="w"> </span>--version
 cargo<span class="w"> </span>--version
 </code></pre></div>
+<h3 id="creacion-y-ejecucion-del-archivo-hola-mundo">Creación y ejecución del archivo "Hola, Mundo".</h3>
+<p>En Rust tenemos dos opciones para crear nuestro hola mundo particular. haremos las dos.</p>
+<h4 id="opcion-a-compilacion-directa-con-rustc">Opción A: Compilación directa con <code>rustc</code></h4>
+<ol>
+<li>
+<p><strong>Crear el archivo fuente:</strong>
+<div class="highlight"><pre><span></span><code>nano<span class="w"> </span>hola.rs
+</code></pre></div></p>
+</li>
+<li>
+<p><strong>Escribir el código:</strong>
+<div class="highlight"><pre><span></span><code><span class="k">fn</span><span class="w"> </span><span class="nf">main</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="fm">println!</span><span class="p">(</span><span class="s">"¡Hola, mundo desde Rust!"</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div></p>
+</li>
+<li>
+<p><strong>Compilar:</strong>
+<div class="highlight"><pre><span></span><code>rustc<span class="w"> </span>hola.rs
+</code></pre></div></p>
+</li>
+</ol>
+<p>Esto generará un archivo binario ejecutable llamado <code>hola</code>.
+4. <strong>Ejecutar:</strong>
+<div class="highlight"><pre><span></span><code>./hola
+</code></pre></div></p>
+<h4 id="opcion-b-mediante-cargo-gestor-de-proyectos-estandar">Opción B: Mediante <code>cargo</code> (Gestor de proyectos estándar)</h4>
+<ol>
+<li>
+<p><strong>Crear un nuevo proyecto:</strong>
+<div class="highlight"><pre><span></span><code>cargo<span class="w"> </span>new<span class="w"> </span>hola_cargo
+<span class="nb">cd</span><span class="w"> </span>hola_cargo
+</code></pre></div></p>
+</li>
+<li>
+<p><strong>Compilar y ejecutar en un solo paso:</strong>
+<div class="highlight"><pre><span></span><code>cargo<span class="w"> </span>run
+</code></pre></div></p>
+</li>
+</ol>
+<hr />
 <h3 id="4-instalacion-de-ruby-recomendada-para-desarrolladores-usando-rbenv">4. Instalación de <strong>Ruby</strong> recomendada para desarrolladores (usando <code>rbenv</code>)</h3>
 <h4 id="paso-1-instalar-dependencias-del-sistema_1">Paso 1: Instalar dependencias del sistema</h4>
 <p>Para compilar versiones de Ruby desde el código fuente, necesitas instalar herramientas de compilación y librerías de desarrollo:</p>
@@ -255,7 +353,7 @@ sudo<span class="w"> </span>apt<span class="w"> </span>install<span class="w"> <
 <div class="highlight"><pre><span></span><code>gem<span class="w"> </span>install<span class="w"> </span>bundler
 </code></pre></div>
 <hr />
-<h4 id="crear-un-hola-mundo">Crear un "Hola, Mundo"</h4>
+<h4 id="paso-8-crear-un-hola-mundo">Paso 8: Crear un "Hola, Mundo"</h4>
 <p>Puedes crear un programa rápido de prueba para comprobar que el entorno funciona adecuadamente:</p>
 <ol>
 <li>
