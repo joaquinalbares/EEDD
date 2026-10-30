@@ -9,6 +9,8 @@ nav:
   - UT02:
     - CONTENIDOS: ut02.md
     - EJ. DE CLASE: practicas/ut02.md
+  - UT03:
+    - EJ. DE CLASE: practicas/ut03.md
 
 theme:
   name: readthedocs
