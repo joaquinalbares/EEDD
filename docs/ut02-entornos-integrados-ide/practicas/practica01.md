@@ -9,17 +9,11 @@ Antes de comenzar cualquier instalación, ejecuta siempre en tu terminal el coma
 ```bash
 sudo apt update && sudo apt upgrade -y
 ```
-Y debemos crear la estructura de carpetas siguiente:
+Y debemos crear la estructura de carpetas siguiente (una carpeta por lenguaje dentro de `ut02p01`):
 
-```bash 
-mkdir -p ~/ut02p01 && cd ~/ut02p01
-mkdir -p ~/java && cd ~/java
-cd ..
-mkdir -p ~/rust && cd ~/rust
-cd ..
-mkdir -p ~/ruby && cd ~/ruby
-cd ..
-mkdir -p ~/python && cd ~/python
+```bash
+mkdir -p ~/ut02p01/{python,rust,ruby}
+cd ~/ut02p01
 ```
 ///
 
@@ -34,74 +28,7 @@ Los ejemplos de código de esta página se pueden obtener de
 
 ---
 
-## 1. Java (JDK)
-
-### Paso 1: Instalar OpenJDK
-Instala la versión por defecto del Kit de Desarrollo de Java desde los repositorios oficiales de Ubuntu:
-
-```bash title="Terminal - Instalación de Java"
-sudo apt install default-jdk -y
-```
-
-/// admonition | "Instalación de una versión específica (Opcional)"
-    
-Si necesitas una versión concreta como **OpenJDK 21**, puedes ejecutar:
-```bash
-sudo apt install openjdk-21-jdk -y
-```
-///
-
-### Paso 2: Verificar la instalación
-Comprueba que tanto el entorno de ejecución (`java`) como el compilador (`javac`) están correctamente instalados:
-
-```bash title="Comandos de Verificación"
-java -version
-javac -version
-```
-
-### Paso 3: Crear el archivo fuente de java
-
-Crea un archivo llamado `HolaMundo.java`. Puedes usar `nano` o tu editor de texto preferido:
-
-```bash
-nano HolaMundo.java
-
-```
-
-Escribe el siguiente código (el nombre de la clase debe coincidir exactamente con el del archivo):
-
-```java
-public class HolaMundo {
-    public static void main(String[] args) {
-        System.out.println("¡Hola, mundo desde Java!");
-    }
-}
-
-```
-
-Guarda los cambios (**`Ctrl` + `O**`, **`Enter`**) y sal del editor (**`Ctrl` + `X**`).
-
-### Paso 4: Compilar el código
-
-Ejecuta el compilador de Java. Esto generará un archivo `HolaMundo.class` con el *bytecode*:
-
-```bash
-javac HolaMundo.java
-
-```
-
-### Paso 5: Ejecutar el programa
-
-Llama a la Máquina Virtual de Java pasando el nombre de la clase (sin extensión `.class`):
-
-```bash
-java HolaMundo
-
-```
-
----
-
-## 2. Python 3 & Pip
+## 1. Python 3 & Pip
 
 Xubuntu incluye Python 3 preinstalado, pero es necesario instalar las herramientas de desarrollo y gestión de paquetes.
 
@@ -155,7 +82,7 @@ python3 hola.py
 
 ---
 
-## 3. Rust (`rustup`)
+## 2. Rust (`rustup`)
 
 La vía oficial y recomendada para instalar Rust en entornos Unix es mediante **`rustup`**.
 
@@ -241,7 +168,7 @@ cargo run
 
 ---
 
-## 4. Ruby para desarrolladores (usando `rbenv`)
+## 3. Ruby para desarrolladores (usando `rbenv`)
 
 ### Paso 1: Instalar dependencias del sistema
 
@@ -366,10 +293,9 @@ CARPETA **'ut02p01'** comprimida con los siguientes contenidos:
 - Archivos fuentes en cada carpeta.
 
 - Capturas de pantalla de la terminal mostrando la salida de los siguientes comandos en cada una de las carpetas de los lenguajes:
-    - **Captura 1 (Java):** Salida gráfica de los comandos `java -version` y `javac -version`.
-    - **Captura 2 (Python):** Salida gráfica de los comandos `python3 --version` y `pip3 --version`.
-    - **Captura 3 (Rust):** Salida gráfica de los comandos `rustc --version` y `cargo --version`.
-    - **Captura 4 (Ruby):** Salida gráfica de los comandos `ruby -v` y `rbenv version`.
+    - **Captura 1 (Python):** Salida gráfica de los comandos `python3 --version` y `pip3 --version`.
+    - **Captura 2 (Rust):** Salida gráfica de los comandos `rustc --version` y `cargo --version`.
+    - **Captura 3 (Ruby):** Salida gráfica de los comandos `ruby -v` y `rbenv version`.
 
 
 
