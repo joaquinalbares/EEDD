@@ -4,13 +4,13 @@ nav:
   - HOME: https://joaquinalbares.github.io/
   - GUÍA DEL MÓDULO: index.md
   - UT01:
-    - CONTENIDOS: ut01.md
-    - EJ. DE CLASE: practicas/ut01.md
+    - CONTENIDOS: ut01-teoria-del-software/teoria/ut01.md
+    - PRÁCTICA 01: ut01-teoria-del-software/practicas/practica01.md
   - UT02:
-    - CONTENIDOS: ut02.md
-    - EJ. DE CLASE: practicas/ut02.md
+    - CONTENIDOS: ut02-entornos-integrados-ide/teoria/ut02.md
+    - PRÁCTICA 01: ut02-entornos-integrados-ide/practicas/practica01.md
   - UT03:
-    - EJ. DE CLASE: practicas/ut03.md
+    - PRÁCTICA 01: ut03-pruebas/practicas/practica01.md
 
 theme:
   name: readthedocs
