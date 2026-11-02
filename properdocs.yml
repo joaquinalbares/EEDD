@@ -3,6 +3,10 @@ site_name: Entornos de Desarrollo - IES Los Albares
 nav:
   - HOME: https://joaquinalbares.github.io/
   - GUÍA DEL MÓDULO: index.md
+  - UT00:
+    - PRÁCTICA 01: ut00-destrezas-basicas/practicas/practica01.md
+    - PRÁCTICA 02: ut00-destrezas-basicas/practicas/practica02.md
+    - PRÁCTICA 03: ut00-destrezas-basicas/practicas/practica03.md
   - UT01:
     - CONTENIDOS: ut01-teoria-del-software/teoria/ut01.md
     - PRÁCTICA 01: ut01-teoria-del-software/practicas/practica01.md
