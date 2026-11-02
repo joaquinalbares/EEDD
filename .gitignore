@@ -1,8 +1,12 @@
-_site
-.sass-cache
-.jekyll-cache
-.jekyll-metadata
-vendor
-Gemfile.lock
+# Web generada por properdocs (se publica con gh-deploy en la rama gh-pages)
+site/
+
+# Entornos de Python
+.venv/
+venv/
+__pycache__/
+
+# Sistema y editores
 .DS_Store
-/site
+.idea/
+.vscode/
