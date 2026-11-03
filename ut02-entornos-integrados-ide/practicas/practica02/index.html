@@ -1,0 +1,589 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="es" >
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <link rel="shortcut icon" href="../../../img/favicon.ico" />
+    <title>PRÁCTICA 02 - Entornos de Desarrollo - IES Los Albares</title>
+    <link rel="stylesheet" href="../../../css/theme.css" />
+    <link rel="stylesheet" href="../../../css/theme_extra.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" />
+        <link href="../../../css/estilo.css" rel="stylesheet" />
+    
+      <script>
+        // Current page data
+        var properdocs_page_name = "PR\u00c1CTICA 02";
+        var properdocs_page_input_path = "ut02-entornos-integrados-ide/practicas/practica02.md";
+        var properdocs_page_url = null;
+      </script>
+    
+    <!--[if lt IE 9]>
+      <script src="../../../js/html5shiv.min.js"></script>
+    <![endif]-->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+      <script>hljs.highlightAll();</script> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+          <a href="../../.." class="icon icon-home"> Entornos de Desarrollo - IES Los Albares
+        </a><div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+      <input type="text" name="q" placeholder="Buscar documentos" aria-label="Buscar documentos" title="Escriba el término de búsqueda aquí" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Menu de navegación">
+              <ul>
+                <li class="toctree-l1"><a class="" href="https://joaquinalbares.github.io/">HOME</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../../..">GUÍA DEL MÓDULO</a>
+                </li>
+              </ul>
+              <p class="caption"><span class="caption-text">UT00</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../../ut00-destrezas-basicas/practicas/practica01/">PRÁCTICA 01</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../../ut00-destrezas-basicas/practicas/practica02/">PRÁCTICA 02</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../../ut00-destrezas-basicas/practicas/practica03/">PRÁCTICA 03</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">UT01</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../../ut01-teoria-del-software/teoria/ut01/">CONTENIDOS</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../../ut01-teoria-del-software/practicas/practica01/">PRÁCTICA 01</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">UT02</span></p>
+              <ul class="current">
+                  <li class="toctree-l1"><a class="reference internal" href="../../teoria/ut02/">CONTENIDOS</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../practica01/">PRÁCTICA 01</a>
+                  </li>
+                  <li class="toctree-l1 current"><a class="reference internal current" href="#">PRÁCTICA 02</a>
+    <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#objetivos">🎯 Objetivos</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#requisitos">🧰 Requisitos</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#1-conceptos-previos-path-y-java_home">1. Conceptos previos: PATH y JAVA_HOME</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#2-instalacion-en-xubuntu-2404">2. Instalación en Xubuntu 24.04</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#paso-1-actualizar-el-sistema-e-instalar-las-herramientas-necesarias">Paso 1: Actualizar el sistema e instalar las herramientas necesarias</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#paso-2-anadir-la-clave-del-repositorio-de-adoptium">Paso 2: Añadir la clave del repositorio de Adoptium</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#paso-3-anadir-el-repositorio-de-temurin">Paso 3: Añadir el repositorio de Temurin</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#paso-4-instalar-el-jdk">Paso 4: Instalar el JDK</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#paso-5-comprobar-la-instalacion">Paso 5: Comprobar la instalación</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#3-configuracion-de-path-y-java_home-en-xubuntu">3. Configuración de PATH y JAVA_HOME en Xubuntu</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#paso-1-localizar-la-carpeta-del-jdk">Paso 1: Localizar la carpeta del JDK</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#paso-2-ver-el-path-actual">Paso 2: Ver el PATH actual</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#paso-3-anadir-las-variables-a-bashrc">Paso 3: Añadir las variables a ~/.bashrc</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#paso-4-cargar-los-cambios-y-comprobar">Paso 4: Cargar los cambios y comprobar</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#4-instalacion-en-windows-11">4. Instalación en Windows 11</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#paso-1-descargar-el-instalador">Paso 1: Descargar el instalador</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#paso-2-ejecutar-el-instalador-y-elegir-las-opciones">Paso 2: Ejecutar el instalador y elegir las opciones</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#paso-3-comprobar-la-instalacion">Paso 3: Comprobar la instalación</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#5-configuracion-de-path-y-java_home-en-windows-11">5. Configuración de PATH y JAVA_HOME en Windows 11</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#paso-1-abrir-el-editor-de-variables-de-entorno">Paso 1: Abrir el editor de variables de entorno</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#paso-2-revisar-o-crear-java_home">Paso 2: Revisar o crear JAVA_HOME</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#paso-3-revisar-o-anadir-la-entrada-en-path">Paso 3: Revisar o añadir la entrada en Path</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#paso-4-comprobar-la-configuracion">Paso 4: Comprobar la configuración</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#6-prueba-final-compilar-y-ejecutar-en-los-dos-sistemas">6. Prueba final: compilar y ejecutar en los dos sistemas</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#entregables">📑 Entregables</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#criterios-de-correccion">✅ Criterios de corrección</a>
+    </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../practica03/">PRÁCTICA 03</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../practica04/">PRÁCTICA 04</a>
+                  </li>
+              </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+      <nav class="wy-nav-top" role="navigation" aria-label="Menú de navegación en móvil">
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../..">Entornos de Desarrollo - IES Los Albares</a>
+        
+      </nav>
+      <div class="wy-nav-content">
+        <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../../.." class="icon icon-home" aria-label="Documentos"></a></li>
+          <li class="breadcrumb-item">UT02</li>
+      <li class="breadcrumb-item active">PRÁCTICA 02</li>
+    <li class="wy-breadcrumbs-aside">
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+            <div class="section" itemprop="articleBody">
+              
+                <h1 id="practica-ut02p02-instalacion-de-java-eclipse-temurin-y-configuracion-del-path">Práctica UT02P02: Instalación de Java (Eclipse Temurin) y configuración del PATH</h1>
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Resultados de aprendizaje y criterios de evaluación</strong></td>
+<td>RA1 – CE c), RA1 – CE d), RA2 – CE a), RA2 – CE c)</td>
+</tr>
+<tr>
+<td><strong>Duración estimada</strong></td>
+<td>3 sesiones (3 h)</td>
+</tr>
+<tr>
+<td><strong>Modalidad</strong></td>
+<td>Individual</td>
+</tr>
+<tr>
+<td><strong>Sistemas operativos</strong></td>
+<td>Xubuntu 24.04 y Windows 11</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="objetivos">🎯 Objetivos</h2>
+<ul>
+<li>Instalar el kit de desarrollo de Java (<strong>JDK</strong>) de <strong>Eclipse Temurin</strong> en Xubuntu y en Windows 11.</li>
+<li>Entender qué son las variables de entorno <strong><code>PATH</code></strong> y <strong><code>JAVA_HOME</code></strong> y para qué sirven.</li>
+<li>Configurar <code>PATH</code> y <code>JAVA_HOME</code> en los dos sistemas operativos.</li>
+<li>Compilar y ejecutar un programa Java desde la terminal, diferenciando código fuente, <em>bytecode</em> y máquina virtual.</li>
+</ul>
+<h2 id="requisitos">🧰 Requisitos</h2>
+<ul>
+<li>Una máquina (física o virtual) con <strong>Xubuntu 24.04</strong> y otra con <strong>Windows 11</strong>.</li>
+<li>Usuario con permisos de administrador (<code>sudo</code> en Xubuntu; cuenta de administrador en Windows).</li>
+<li>Conexión a Internet.</li>
+</ul>
+<div class="admonition note">
+<p class="admonition-title">¿Por qué Temurin?</p>
+<p>Para programar en Java necesitas el <strong>JDK</strong> (<em>Java Development Kit</em>), que incluye el compilador <code>javac</code>, la máquina virtual <code>java</code> y el resto de herramientas de desarrollo.</p>
+<p>Puedes usar el JDK oficial de Oracle, pero nosotros usaremos <strong><a href="https://adoptium.net/es/temurin/releases/">Eclipse Temurin</a></strong>, una distribución <strong>libre y gratuita</strong> de OpenJDK mantenida por la fundación Eclipse (proyecto Adoptium), con actualizaciones periódicas.</p>
+<p>Instalaremos siempre una versión <strong>LTS</strong> (<em>Long Term Support</em>, soporte a largo plazo), porque garantiza estabilidad y actualizaciones de seguridad durante años. En esta práctica usamos <strong>Java 21 LTS</strong>.</p>
+</div>
+<hr />
+<h2 id="1-conceptos-previos-path-y-java_home">1. Conceptos previos: <code>PATH</code> y <code>JAVA_HOME</code></h2>
+<p>Cuando escribes un comando en la terminal (por ejemplo, <code>javac</code>), el sistema operativo no busca el programa en todo el disco: lo busca <strong>solo en las carpetas que aparecen en la variable de entorno <code>PATH</code></strong>, en orden, y ejecuta el primero que encuentra. Si la carpeta donde está <code>javac</code> no aparece en el <code>PATH</code>, verás un error como este:</p>
+<div class="highlight"><pre><span></span><code>javac: orden no encontrada                       (Xubuntu)
+"javac" no se reconoce como un comando interno… (Windows)
+</code></pre></div>
+<p>La variable <strong><code>JAVA_HOME</code></strong> guarda la carpeta raíz donde está instalado el JDK. No la usa el sistema operativo, sino otras herramientas de desarrollo (<strong>Maven</strong>, <strong>Gradle</strong>, algunos IDE…) para saber qué Java deben utilizar. Por eso la configuraremos también.</p>
+<table>
+<thead>
+<tr>
+<th>Variable</th>
+<th>Qué contiene</th>
+<th>Ejemplo en Xubuntu</th>
+<th>Ejemplo en Windows</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>JAVA_HOME</code></td>
+<td>Carpeta raíz del JDK</td>
+<td><code>/usr/lib/jvm/temurin-21-jdk-amd64</code></td>
+<td><code>C:\Program Files\Eclipse Adoptium\jdk-21.0.x.y-hotspot</code></td>
+</tr>
+<tr>
+<td><code>PATH</code></td>
+<td>Lista de carpetas donde buscar comandos</td>
+<td><code>…:/usr/lib/jvm/temurin-21-jdk-amd64/bin</code></td>
+<td><code>…;%JAVA_HOME%\bin</code></td>
+</tr>
+</tbody>
+</table>
+<div class="admonition tip">
+<p class="admonition-title">Trabajo en el cuaderno</p>
+<p>Antes de empezar, responde en tu <strong>cuaderno</strong> (a mano):</p>
+<ol>
+<li>¿Qué diferencia hay entre el <strong>JDK</strong> y el <strong>JRE</strong>?</li>
+<li>Dibuja un esquema del proceso <code>HolaMundo.java</code> → <code>javac</code> → <code>HolaMundo.class</code> → <code>java</code> (JVM) → salida por pantalla, e indica en cada paso si se trata de <strong>código fuente</strong>, <em><strong>bytecode</strong></em> (código intermedio) o <strong>ejecución</strong>.</li>
+<li>Explica con tus palabras qué ocurre cuando escribes <code>javac</code> en la terminal y la carpeta del JDK <strong>no</strong> está en el <code>PATH</code>.</li>
+</ol>
+</div>
+<hr />
+<h2 id="2-instalacion-en-xubuntu-2404">2. Instalación en Xubuntu 24.04</h2>
+<p>Crea primero la carpeta de la práctica:</p>
+<div class="highlight"><pre><span></span><code>mkdir<span class="w"> </span>-p<span class="w"> </span>~/ut02p02<span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="nb">cd</span><span class="w"> </span>~/ut02p02
+</code></pre></div>
+<h3 id="paso-1-actualizar-el-sistema-e-instalar-las-herramientas-necesarias">Paso 1: Actualizar el sistema e instalar las herramientas necesarias</h3>
+<div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>apt<span class="w"> </span>update<span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span>sudo<span class="w"> </span>apt<span class="w"> </span>upgrade<span class="w"> </span>-y
+sudo<span class="w"> </span>apt<span class="w"> </span>install<span class="w"> </span>-y<span class="w"> </span>wget<span class="w"> </span>apt-transport-https<span class="w"> </span>gpg
+</code></pre></div>
+<h3 id="paso-2-anadir-la-clave-del-repositorio-de-adoptium">Paso 2: Añadir la clave del repositorio de Adoptium</h3>
+<p>La clave GPG permite comprobar que los paquetes que descargas proceden realmente de Adoptium y no han sido modificados:</p>
+<div class="highlight"><pre><span></span><code>wget<span class="w"> </span>-qO<span class="w"> </span>-<span class="w"> </span>https://packages.adoptium.net/artifactory/api/gpg/key/public<span class="w"> </span><span class="p">|</span><span class="w"> </span>gpg<span class="w"> </span>--dearmor<span class="w"> </span><span class="p">|</span><span class="w"> </span>sudo<span class="w"> </span>tee<span class="w"> </span>/etc/apt/trusted.gpg.d/adoptium.gpg<span class="w"> </span>&gt;<span class="w"> </span>/dev/null
+</code></pre></div>
+<h3 id="paso-3-anadir-el-repositorio-de-temurin">Paso 3: Añadir el repositorio de Temurin</h3>
+<div class="highlight"><pre><span></span><code><span class="nb">echo</span><span class="w"> </span><span class="s2">"deb https://packages.adoptium.net/artifactory/deb </span><span class="k">$(</span>awk<span class="w"> </span>-F<span class="o">=</span><span class="w"> </span><span class="s1">'/^VERSION_CODENAME/{print$2}'</span><span class="w"> </span>/etc/os-release<span class="k">)</span><span class="s2"> main"</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>sudo<span class="w"> </span>tee<span class="w"> </span>/etc/apt/sources.list.d/adoptium.list
+</code></pre></div>
+<details>
+<summary>¿Qué hace <code>$(awk …)</code>?</summary>
+<p>Lee el nombre en clave de tu versión de Ubuntu del fichero <code>/etc/os-release</code> (en Xubuntu 24.04 es <code>noble</code>) y lo inserta en la línea del repositorio. Así se descarga el paquete compilado para tu versión.</p>
+<p>En distribuciones derivadas que <strong>no</strong> son sabores oficiales de Ubuntu (por ejemplo, Linux Mint), hay que cambiar <code>VERSION_CODENAME</code> por <code>UBUNTU_CODENAME</code>. Xubuntu es un sabor oficial, así que no hace falta.</p>
+</details>
+<h3 id="paso-4-instalar-el-jdk">Paso 4: Instalar el JDK</h3>
+<div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>apt<span class="w"> </span>update
+sudo<span class="w"> </span>apt<span class="w"> </span>install<span class="w"> </span>-y<span class="w"> </span>temurin-21-jdk
+</code></pre></div>
+<h3 id="paso-5-comprobar-la-instalacion">Paso 5: Comprobar la instalación</h3>
+<div class="highlight"><pre><span></span><code>java<span class="w"> </span>-version
+javac<span class="w"> </span>-version
+</code></pre></div>
+<p>Ambos comandos deben mostrar la versión <strong>21</strong> y el texto <strong>Temurin</strong>.</p>
+<div class="admonition warning">
+<p class="admonition-title">¿Y si tengo varias versiones de Java instaladas?</p>
+<p>Si ya tenías otro JDK (por ejemplo, <code>openjdk</code> de los repositorios de Ubuntu), puede que <code>java -version</code> muestre otra versión. Elige Temurin 21 como versión por defecto con:</p>
+<div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>update-alternatives<span class="w"> </span>--config<span class="w"> </span>java
+sudo<span class="w"> </span>update-alternatives<span class="w"> </span>--config<span class="w"> </span>javac
+</code></pre></div>
+<p>Escribe el número de la opción que contiene <code>temurin-21</code> y pulsa <span class="keys"><kbd class="key-enter">Enter</kbd></span>.</p>
+</div>
+<hr />
+<h2 id="3-configuracion-de-path-y-java_home-en-xubuntu">3. Configuración de <code>PATH</code> y <code>JAVA_HOME</code> en Xubuntu</h2>
+<p>Al instalar con <code>apt</code>, el sistema crea enlaces en <code>/usr/bin</code>, que ya está en el <code>PATH</code>; por eso <code>java</code> funciona sin hacer nada más. Aun así, vamos a configurar las variables <strong>a mano</strong>, porque es lo que necesitarás con herramientas como Maven o si algún día instalas un JDK descargado en un <code>.tar.gz</code>.</p>
+<h3 id="paso-1-localizar-la-carpeta-del-jdk">Paso 1: Localizar la carpeta del JDK</h3>
+<div class="highlight"><pre><span></span><code>readlink<span class="w"> </span>-f<span class="w"> </span><span class="s2">"</span><span class="k">$(</span>which<span class="w"> </span>javac<span class="k">)</span><span class="s2">"</span>
+</code></pre></div>
+<p>La salida será parecida a <code>/usr/lib/jvm/temurin-21-jdk-amd64/bin/javac</code>. La carpeta raíz del JDK (tu <code>JAVA_HOME</code>) es la parte <strong>anterior</strong> a <code>/bin/javac</code>.</p>
+<h3 id="paso-2-ver-el-path-actual">Paso 2: Ver el <code>PATH</code> actual</h3>
+<div class="highlight"><pre><span></span><code><span class="nb">echo</span><span class="w"> </span><span class="nv">$PATH</span>
+</code></pre></div>
+<p>Las carpetas aparecen separadas por <strong>dos puntos</strong> (<code>:</code>).</p>
+<h3 id="paso-3-anadir-las-variables-a-bashrc">Paso 3: Añadir las variables a <code>~/.bashrc</code></h3>
+<p>El fichero <code>~/.bashrc</code> se ejecuta cada vez que abres una terminal. Añade al final las dos variables:</p>
+<div class="highlight"><pre><span></span><code><span class="nb">echo</span><span class="w"> </span><span class="s1">'export JAVA_HOME=/usr/lib/jvm/temurin-21-jdk-amd64'</span><span class="w"> </span>&gt;&gt;<span class="w"> </span>~/.bashrc
+<span class="nb">echo</span><span class="w"> </span><span class="s1">'export PATH="$JAVA_HOME/bin:$PATH"'</span><span class="w"> </span>&gt;&gt;<span class="w"> </span>~/.bashrc
+</code></pre></div>
+<div class="admonition danger">
+<p class="admonition-title">Cuidado con <code>&gt;&gt;</code></p>
+<p>Usa siempre <strong>dos</strong> símbolos <code>&gt;&gt;</code> (añadir al final). Con uno solo (<code>&gt;</code>) <strong>borrarías todo el contenido</strong> de tu <code>~/.bashrc</code>.</p>
+</div>
+<h3 id="paso-4-cargar-los-cambios-y-comprobar">Paso 4: Cargar los cambios y comprobar</h3>
+<div class="highlight"><pre><span></span><code><span class="nb">source</span><span class="w"> </span>~/.bashrc
+<span class="nb">echo</span><span class="w"> </span><span class="nv">$JAVA_HOME</span>
+<span class="nb">echo</span><span class="w"> </span><span class="nv">$PATH</span>
+which<span class="w"> </span>java
+java<span class="w"> </span>-version
+</code></pre></div>
+<p><code>echo $PATH</code> debe mostrar ahora la carpeta <code>…/temurin-21-jdk-amd64/bin</code> <strong>al principio</strong> de la lista.</p>
+<hr />
+<h2 id="4-instalacion-en-windows-11">4. Instalación en Windows 11</h2>
+<h3 id="paso-1-descargar-el-instalador">Paso 1: Descargar el instalador</h3>
+<ol>
+<li>Entra en <a href="https://adoptium.net/es/temurin/releases/">https://adoptium.net/es/temurin/releases/</a>.</li>
+<li>Selecciona: <strong>Sistema operativo</strong> <code>Windows</code>, <strong>Arquitectura</strong> <code>x64</code>, <strong>Tipo de paquete</strong> <code>JDK</code>, <strong>Versión</strong> <code>21 - LTS</code>.</li>
+<li>Descarga el fichero <strong><code>.msi</code></strong>.</li>
+</ol>
+<h3 id="paso-2-ejecutar-el-instalador-y-elegir-las-opciones">Paso 2: Ejecutar el instalador y elegir las opciones</h3>
+<p>Ejecuta el <code>.msi</code> y avanza hasta la pantalla <strong>Configuración personalizada</strong> (<em>Custom Setup</em>). Comprueba que están marcadas estas opciones (haz clic en el icono de cada una y elige <em>Se instalará en la unidad de disco duro local</em>):</p>
+<table>
+<thead>
+<tr>
+<th>Opción del instalador</th>
+<th>¿Marcar?</th>
+<th>Para qué sirve</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Add to PATH</strong></td>
+<td>✅ Sí (viene marcada)</td>
+<td>Añade la carpeta <code>bin</code> del JDK al <code>PATH</code></td>
+</tr>
+<tr>
+<td><strong>Associate .jar</strong></td>
+<td>✅ Sí (viene marcada)</td>
+<td>Abre los <code>.jar</code> con Java al hacer doble clic</td>
+</tr>
+<tr>
+<td><strong>Set JAVA_HOME variable</strong></td>
+<td>✅ <strong>Sí (viene desmarcada: márcala)</strong></td>
+<td>Crea la variable <code>JAVA_HOME</code></td>
+</tr>
+<tr>
+<td><strong>JavaSoft (Oracle) registry keys</strong></td>
+<td>❌ No</td>
+<td>Solo necesaria para programas antiguos que buscan Java de Oracle</td>
+</tr>
+</tbody>
+</table>
+<p>Termina la instalación.</p>
+<details>
+<summary>Alternativa: instalar desde la terminal con <code>winget</code></summary>
+<p>Si prefieres la línea de comandos, abre <strong>PowerShell</strong> y ejecuta:</p>
+<div class="highlight"><pre><span></span><code><span class="n">winget</span> <span class="n">install</span> <span class="n">EclipseAdoptium</span><span class="p">.</span><span class="n">Temurin</span><span class="p">.</span><span class="n">21</span><span class="p">.</span><span class="n">JDK</span>
+</code></pre></div>
+<p>En este caso <strong>no</strong> se crea <code>JAVA_HOME</code>, así que tendrás que configurarla a mano como se explica en el apartado 5.</p>
+</details>
+<h3 id="paso-3-comprobar-la-instalacion">Paso 3: Comprobar la instalación</h3>
+<p>Cierra todas las terminales abiertas y abre una <strong>nueva</strong> (las variables de entorno solo se leen al abrir la terminal). En <strong>PowerShell</strong>:</p>
+<div class="highlight"><pre><span></span><code><span class="n">java</span> <span class="n">-version</span>
+<span class="n">javac</span> <span class="n">-version</span>
+</code></pre></div>
+<hr />
+<h2 id="5-configuracion-de-path-y-java_home-en-windows-11">5. Configuración de <code>PATH</code> y <code>JAVA_HOME</code> en Windows 11</h2>
+<p>Aunque el instalador ya haya creado las variables, debes saber <strong>revisarlas y crearlas a mano</strong>: es una tarea habitual cuando una herramienta no encuentra Java.</p>
+<h3 id="paso-1-abrir-el-editor-de-variables-de-entorno">Paso 1: Abrir el editor de variables de entorno</h3>
+<ol>
+<li>Pulsa <span class="keys"><kbd class="key-windows">Win</kbd></span> y escribe <strong>«variables de entorno»</strong>.</li>
+<li>Abre <strong>Editar las variables de entorno del sistema</strong>.</li>
+<li>Pulsa el botón <strong>Variables de entorno…</strong></li>
+</ol>
+<h3 id="paso-2-revisar-o-crear-java_home">Paso 2: Revisar o crear <code>JAVA_HOME</code></h3>
+<p>En <strong>Variables del sistema</strong>:</p>
+<ul>
+<li>Si ya existe <code>JAVA_HOME</code>, selecciónala y pulsa <strong>Editar</strong> para comprobar su valor.</li>
+<li>Si no existe, pulsa <strong>Nueva…</strong> y escribe:<ul>
+<li><strong>Nombre de la variable:</strong> <code>JAVA_HOME</code></li>
+<li><strong>Valor de la variable:</strong> la carpeta del JDK, por ejemplo <code>C:\Program Files\Eclipse Adoptium\jdk-21.0.x.y-hotspot</code> (usa <strong>Examinar directorio…</strong> para no equivocarte con el número de versión).</li>
+</ul>
+</li>
+</ul>
+<div class="admonition warning">
+<p class="admonition-title">Sin <code>\bin</code></p>
+<p><code>JAVA_HOME</code> apunta a la carpeta <strong>raíz</strong> del JDK, <strong>sin</strong> <code>\bin</code> al final.</p>
+</div>
+<h3 id="paso-3-revisar-o-anadir-la-entrada-en-path">Paso 3: Revisar o añadir la entrada en <code>Path</code></h3>
+<ol>
+<li>En <strong>Variables del sistema</strong>, selecciona <strong>Path</strong> y pulsa <strong>Editar</strong>.</li>
+<li>
+<p>Comprueba si existe una línea con la carpeta <code>bin</code> del JDK. Si no existe, pulsa <strong>Nuevo</strong> y escribe:</p>
+<div class="highlight"><pre><span></span><code>%JAVA_HOME%\bin
+</code></pre></div>
+</li>
+<li>
+<p>Usa <strong>Subir</strong> para colocarla <strong>por encima</strong> de cualquier otra entrada de Java (por ejemplo, <code>C:\Program Files\Common Files\Oracle\Java\javapath</code>), porque Windows usa la primera que encuentra.</p>
+</li>
+<li>Acepta todas las ventanas.</li>
+</ol>
+<h3 id="paso-4-comprobar-la-configuracion">Paso 4: Comprobar la configuración</h3>
+<p>Abre una <strong>nueva</strong> ventana de PowerShell:</p>
+<div class="highlight"><pre><span></span><code><span class="nb">echo </span><span class="nv">$env:JAVA_HOME</span>
+<span class="nv">$env:Path</span> <span class="n">-split</span> <span class="s1">';'</span>
+<span class="n">where</span><span class="p">.</span><span class="n">exe</span> <span class="n">java</span>
+<span class="n">java</span> <span class="n">-version</span>
+<span class="n">javac</span> <span class="n">-version</span>
+</code></pre></div>
+<details>
+<summary>Si usas el Símbolo del sistema (<code>cmd</code>) en lugar de PowerShell</summary>
+<div class="highlight"><pre><span></span><code><span class="k">echo</span> <span class="nv">%JAVA_HOME%</span>
+<span class="k">echo</span> <span class="nv">%PATH%</span>
+where java
+</code></pre></div>
+</details>
+<hr />
+<h2 id="6-prueba-final-compilar-y-ejecutar-en-los-dos-sistemas">6. Prueba final: compilar y ejecutar en los dos sistemas</h2>
+<p>Realiza estos pasos <strong>en Xubuntu (carpeta <code>~/ut02p02</code>) y en Windows</strong> (crea una carpeta <code>ut02p02</code> en tus Documentos).</p>
+<ol>
+<li>
+<p>Crea el fichero <code>HolaMundo.java</code> con este contenido:</p>
+<div class="highlight"><pre><span></span><code><span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">HolaMundo</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span><span class="w"> </span><span class="n">args</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="c1">// Mostramos el sistema operativo y la versión de Java que está ejecutando el programa</span>
+<span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"¡Hola, mundo desde Java!"</span><span class="p">);</span>
+<span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"Sistema operativo: "</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">System</span><span class="p">.</span><span class="na">getProperty</span><span class="p">(</span><span class="s">"os.name"</span><span class="p">));</span>
+<span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"Versión de Java: "</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">System</span><span class="p">.</span><span class="na">getProperty</span><span class="p">(</span><span class="s">"java.version"</span><span class="p">));</span>
+<span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"JAVA_HOME: "</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">System</span><span class="p">.</span><span class="na">getenv</span><span class="p">(</span><span class="s">"JAVA_HOME"</span><span class="p">));</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+</li>
+<li>
+<p>Compílalo (genera el <em>bytecode</em> <code>HolaMundo.class</code>):</p>
+<div class="highlight"><pre><span></span><code>javac<span class="w"> </span>HolaMundo.java
+</code></pre></div>
+</li>
+<li>
+<p>Ejecútalo con la máquina virtual (sin la extensión <code>.class</code>):</p>
+<div class="highlight"><pre><span></span><code>java<span class="w"> </span>HolaMundo
+</code></pre></div>
+</li>
+<li>
+<p>Copia el fichero <code>HolaMundo.class</code> generado en Xubuntu a Windows (o al revés) y ejecútalo <strong>sin volver a compilar</strong>. Anota en tu cuaderno qué ocurre y <strong>por qué</strong>.</p>
+</li>
+</ol>
+<hr />
+<h2 id="entregables">📑 Entregables</h2>
+<p>Carpeta <strong><code>ut02p02</code></strong> comprimida en un fichero llamado <strong><code>ut02p02_apellido_nombre.zip</code></strong> con:</p>
+<ul>
+<li><code>HolaMundo.java</code>.</li>
+<li>Un documento <strong><code>ut02p02.md</code></strong> con las siguientes capturas, cada una con una breve explicación:<ul>
+<li><strong>Captura 1 (Xubuntu):</strong> salida de <code>java -version</code> y <code>javac -version</code>.</li>
+<li><strong>Captura 2 (Xubuntu):</strong> salida de <code>echo $JAVA_HOME</code>, <code>echo $PATH</code> y <code>which java</code>.</li>
+<li><strong>Captura 3 (Xubuntu):</strong> últimas líneas de <code>~/.bashrc</code> (<code>tail -n 5 ~/.bashrc</code>).</li>
+<li><strong>Captura 4 (Windows):</strong> ventana de <strong>Variables de entorno</strong> mostrando <code>JAVA_HOME</code> y la entrada del <code>Path</code>.</li>
+<li><strong>Captura 5 (Windows):</strong> salida de <code>echo $env:JAVA_HOME</code>, <code>where.exe java</code> y <code>java -version</code>.</li>
+<li><strong>Captura 6 (ambos):</strong> ejecución de <code>java HolaMundo</code> en Xubuntu y en Windows.</li>
+<li><strong>Captura 7:</strong> ejecución en un sistema del <code>.class</code> compilado en el otro.</li>
+</ul>
+</li>
+<li>Foto de las páginas del <strong>cuaderno</strong> con las respuestas del apartado 1 y la reflexión del apartado 6.</li>
+</ul>
+<div class="admonition info">
+<p class="admonition-title">Entrega en Moodle</p>
+<p>Sube el <code>.zip</code> a la tarea <strong>«UT02 – Práctica 02: Java y PATH»</strong> del aula virtual (<a href="https://aulavirtual.murciaeduca.es">aulavirtual.murciaeduca.es</a>) antes de la fecha indicada en la tarea.</p>
+</div>
+<hr />
+<h2 id="criterios-de-correccion">✅ Criterios de corrección</h2>
+<table>
+<thead>
+<tr>
+<th>Criterio</th>
+<th>RA – CE</th>
+<th>Excelente (100 %)</th>
+<th>Adecuado (50 %)</th>
+<th>Insuficiente (0 %)</th>
+<th>Peso</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Instalación de Temurin 21 en Xubuntu</td>
+<td>RA2 – CE a)</td>
+<td>Instalado desde el repositorio de Adoptium; <code>java</code> y <code>javac</code> muestran Temurin 21</td>
+<td>Java instalado pero no es Temurin 21 o falta una comprobación</td>
+<td>No instalado o sin evidencias</td>
+<td>20 %</td>
+</tr>
+<tr>
+<td>Instalación de Temurin 21 en Windows</td>
+<td>RA2 – CE a)</td>
+<td>Instalado con las opciones correctas; <code>java</code> y <code>javac</code> muestran Temurin 21</td>
+<td>Instalado pero falta alguna comprobación</td>
+<td>No instalado o sin evidencias</td>
+<td>20 %</td>
+</tr>
+<tr>
+<td>Configuración de <code>PATH</code> y <code>JAVA_HOME</code> en Xubuntu</td>
+<td>RA2 – CE c)</td>
+<td>Variables en <code>~/.bashrc</code>, cargadas y comprobadas</td>
+<td>Variables configuradas con algún error menor</td>
+<td>No configuradas</td>
+<td>15 %</td>
+</tr>
+<tr>
+<td>Configuración de <code>PATH</code> y <code>JAVA_HOME</code> en Windows</td>
+<td>RA2 – CE c)</td>
+<td>Variables correctas (<code>JAVA_HOME</code> sin <code>\bin</code>, <code>%JAVA_HOME%\bin</code> en <code>Path</code>) y comprobadas</td>
+<td>Variables configuradas con algún error menor</td>
+<td>No configuradas</td>
+<td>15 %</td>
+</tr>
+<tr>
+<td>Compilación y ejecución en ambos sistemas</td>
+<td>RA1 – CE c)</td>
+<td><code>HolaMundo</code> compilado y ejecutado en los dos sistemas</td>
+<td>Solo en uno de los sistemas</td>
+<td>No se ejecuta</td>
+<td>15 %</td>
+</tr>
+<tr>
+<td>Cuaderno: conceptos y portabilidad del <em>bytecode</em></td>
+<td>RA1 – CE c), RA1 – CE d)</td>
+<td>Esquema correcto y explicación clara de por qué el <code>.class</code> funciona en ambos sistemas</td>
+<td>Respuestas incompletas</td>
+<td>No presentado</td>
+<td>15 %</td>
+</tr>
+</tbody>
+</table>
+              
+            </div>
+          </div><footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="Navegación de pie de página">
+        <a href="../practica01/" class="btn btn-neutral float-left" title="PRÁCTICA 01"><span class="icon icon-circle-arrow-left"></span> Anterior</a>
+        <a href="../practica03/" class="btn btn-neutral float-right" title="PRÁCTICA 03">Siguiente <span class="icon icon-circle-arrow-right"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+  </div>
+
+  Construído con <a href="https://properdocs.org/">ProperDocs</a> usando un <a href="https://github.com/readthedocs/sphinx_rtd_theme">tema</a> provisto por <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+          
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="Versiones">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+    
+      <span><a href="../practica01/" style="color: #fcfcfc">&laquo; Anterior</a></span>
+    
+    
+      <span><a href="../practica03/" style="color: #fcfcfc">Siguiente &raquo;</a></span>
+    
+  </span>
+</div>
+    <script src="../../../js/jquery-3.6.0.min.js"></script>
+    <script>var base_url = "../../..";</script>
+    <script src="../../../js/theme_extra.js"></script>
+    <script src="../../../js/theme.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+      <script src="../../../js/copy-button.js"></script>
+      <script src="../../../search/main.js"></script>
+    <script>
+        jQuery(function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        });
+    </script>
+
+</body>
+</html>

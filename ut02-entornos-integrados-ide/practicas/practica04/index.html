@@ -1,0 +1,676 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="es" >
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <link rel="shortcut icon" href="../../../img/favicon.ico" />
+    <title>PRÁCTICA 04 - Entornos de Desarrollo - IES Los Albares</title>
+    <link rel="stylesheet" href="../../../css/theme.css" />
+    <link rel="stylesheet" href="../../../css/theme_extra.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" />
+        <link href="../../../css/estilo.css" rel="stylesheet" />
+    
+      <script>
+        // Current page data
+        var properdocs_page_name = "PR\u00c1CTICA 04";
+        var properdocs_page_input_path = "ut02-entornos-integrados-ide/practicas/practica04.md";
+        var properdocs_page_url = null;
+      </script>
+    
+    <!--[if lt IE 9]>
+      <script src="../../../js/html5shiv.min.js"></script>
+    <![endif]-->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+      <script>hljs.highlightAll();</script> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+          <a href="../../.." class="icon icon-home"> Entornos de Desarrollo - IES Los Albares
+        </a><div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+      <input type="text" name="q" placeholder="Buscar documentos" aria-label="Buscar documentos" title="Escriba el término de búsqueda aquí" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Menu de navegación">
+              <ul>
+                <li class="toctree-l1"><a class="" href="https://joaquinalbares.github.io/">HOME</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../../..">GUÍA DEL MÓDULO</a>
+                </li>
+              </ul>
+              <p class="caption"><span class="caption-text">UT00</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../../ut00-destrezas-basicas/practicas/practica01/">PRÁCTICA 01</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../../ut00-destrezas-basicas/practicas/practica02/">PRÁCTICA 02</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../../ut00-destrezas-basicas/practicas/practica03/">PRÁCTICA 03</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">UT01</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../../ut01-teoria-del-software/teoria/ut01/">CONTENIDOS</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../../ut01-teoria-del-software/practicas/practica01/">PRÁCTICA 01</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">UT02</span></p>
+              <ul class="current">
+                  <li class="toctree-l1"><a class="reference internal" href="../../teoria/ut02/">CONTENIDOS</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../practica01/">PRÁCTICA 01</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../practica02/">PRÁCTICA 02</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../practica03/">PRÁCTICA 03</a>
+                  </li>
+                  <li class="toctree-l1 current"><a class="reference internal current" href="#">PRÁCTICA 04</a>
+    <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#objetivos">🎯 Objetivos</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#requisitos">🧰 Requisitos</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#1-instalacion-en-xubuntu-2404">1. Instalación en Xubuntu 24.04</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#paso-1-comprobar-que-snap-esta-disponible">Paso 1: Comprobar que Snap está disponible</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#paso-2-instalar-intellij-idea">Paso 2: Instalar IntelliJ IDEA</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#paso-3-comprobar-la-instalacion">Paso 3: Comprobar la instalación</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#2-instalacion-en-windows-11">2. Instalación en Windows 11</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#paso-1-descargar-el-instalador">Paso 1: Descargar el instalador</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#paso-2-ejecutar-el-instalador">Paso 2: Ejecutar el instalador</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#paso-3-comprobar-el-path">Paso 3: Comprobar el PATH</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#3-primer-arranque">3. Primer arranque</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#paso-1-pantalla-de-bienvenida">Paso 1: Pantalla de bienvenida</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#paso-2-tema-e-idioma">Paso 2: Tema e idioma</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#4-plugins-anadir-y-eliminar-modulos">4. Plugins: añadir y eliminar módulos</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#paso-1-ver-los-plugins-instalados">Paso 1: Ver los plugins instalados</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#paso-2-instalar-un-plugin">Paso 2: Instalar un plugin</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#paso-3-desinstalar-un-plugin">Paso 3: Desinstalar un plugin</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#5-configurar-el-jdk">5. Configurar el JDK</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#paso-1-anadir-el-jdk">Paso 1: Añadir el JDK</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#6-crear-ejecutar-y-depurar-un-proyecto-java">6. Crear, ejecutar y depurar un proyecto Java</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#paso-1-crear-el-proyecto">Paso 1: Crear el proyecto</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#paso-2-escribir-el-programa">Paso 2: Escribir el programa</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#paso-3-ejecutar">Paso 3: Ejecutar</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#paso-4-depurar">Paso 4: Depurar</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#7-personalizar-y-automatizar-el-entorno">7. Personalizar y automatizar el entorno</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#paso-1-tamano-de-letra">Paso 1: Tamaño de letra</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#paso-2-acciones-al-guardar">Paso 2: Acciones al guardar</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#paso-3-plantillas-de-codigo-live-templates">Paso 3: Plantillas de código (live templates)</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#8-configurar-las-actualizaciones">8. Configurar las actualizaciones</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#9-el-mismo-codigo-en-dos-entornos">9. El mismo código en dos entornos</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#entregables">📑 Entregables</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#criterios-de-correccion">✅ Criterios de corrección</a>
+    </li>
+    </ul>
+                  </li>
+              </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+      <nav class="wy-nav-top" role="navigation" aria-label="Menú de navegación en móvil">
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../..">Entornos de Desarrollo - IES Los Albares</a>
+        
+      </nav>
+      <div class="wy-nav-content">
+        <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../../.." class="icon icon-home" aria-label="Documentos"></a></li>
+          <li class="breadcrumb-item">UT02</li>
+      <li class="breadcrumb-item active">PRÁCTICA 04</li>
+    <li class="wy-breadcrumbs-aside">
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+            <div class="section" itemprop="articleBody">
+              
+                <h1 id="practica-ut02p04-instalacion-y-configuracion-de-intellij-idea-para-java">Práctica UT02P04: Instalación y configuración de IntelliJ IDEA para Java</h1>
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Resultados de aprendizaje y criterios de evaluación</strong></td>
+<td>RA2 – CE a), RA2 – CE b), RA2 – CE c), RA2 – CE d), RA2 – CE f), RA2 – CE g)</td>
+</tr>
+<tr>
+<td><strong>Duración estimada</strong></td>
+<td>3 sesiones (3 h)</td>
+</tr>
+<tr>
+<td><strong>Modalidad</strong></td>
+<td>Individual</td>
+</tr>
+<tr>
+<td><strong>Sistemas operativos</strong></td>
+<td>Xubuntu 24.04 y Windows 11</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="objetivos">🎯 Objetivos</h2>
+<ul>
+<li>Instalar <strong>IntelliJ IDEA</strong> en Xubuntu y en Windows 11.</li>
+<li>Añadir y eliminar <em>plugins</em>.</li>
+<li>Configurar el JDK <strong>Temurin 21</strong> de la práctica 02 como SDK del proyecto.</li>
+<li>Crear, ejecutar y depurar un proyecto Java.</li>
+<li>Personalizar el entorno y automatizar tareas (acciones al guardar y plantillas de código).</li>
+<li>Configurar las actualizaciones.</li>
+<li>Comparar IntelliJ IDEA con VS Code generando el ejecutable del mismo código en los dos entornos.</li>
+</ul>
+<h2 id="requisitos">🧰 Requisitos</h2>
+<ul>
+<li>Haber terminado la <strong>Práctica 02</strong> (Temurin 21 con <code>JAVA_HOME</code> y <code>PATH</code>) y la <strong>Práctica 03</strong> (VS Code con el proyecto <code>hola-vscode</code>).</li>
+<li>Al menos <strong>8 GB de RAM</strong> (IntelliJ consume bastante más memoria que VS Code).</li>
+<li>Usuario con permisos de administrador y conexión a Internet.</li>
+</ul>
+<div class="admonition note">
+<p class="admonition-title">¿Y la «Community Edition»?</p>
+<p>Hasta 2025, JetBrains publicaba dos productos: <strong>IntelliJ IDEA Community Edition</strong> (libre y gratuita) e <strong>IntelliJ IDEA Ultimate</strong> (de pago). Desde la versión <strong>2025.3</strong> se han unido en un único producto, <strong>IntelliJ IDEA</strong>:</p>
+<ul>
+<li>Todas las funciones de la antigua Community (Java, Kotlin, Maven, Gradle, Git, depurador, pruebas JUnit…) siguen siendo <strong>gratuitas</strong>, también para uso comercial, y <strong>no necesitas crear una cuenta ni activar nada</strong>.</li>
+<li>Las funciones avanzadas (antiguas de Ultimate) requieren suscripción. Al instalar, puede que te ofrezca una <strong>prueba gratuita de 30 días</strong>: <strong>no la necesitas</strong> para este módulo.</li>
+</ul>
+<p>Si en algún tutorial lees «descarga IntelliJ Community», hoy significa descargar <strong>IntelliJ IDEA</strong> y usarlo en su modalidad gratuita.</p>
+</div>
+<div class="admonition tip">
+<p class="admonition-title">Trabajo en el cuaderno</p>
+<p>Durante la práctica, completa en tu <strong>cuaderno</strong> una tabla comparativa entre <strong>VS Code</strong> e <strong>IntelliJ IDEA</strong> con estas filas: tipo de herramienta (editor o IDE), licencia, forma de instalación en cada sistema, memoria que consume, cómo se añaden módulos, cómo se configura el JDK, cómo se ejecuta y depura, y cómo se actualiza. La usarás en el último apartado.</p>
+</div>
+<hr />
+<h2 id="1-instalacion-en-xubuntu-2404">1. Instalación en Xubuntu 24.04</h2>
+<p>En Linux, la forma más sencilla y oficial de instalar IntelliJ IDEA es mediante <strong>Snap</strong>, el sistema de paquetes de Canonical. Los paquetes Snap se actualizan solos en segundo plano.</p>
+<h3 id="paso-1-comprobar-que-snap-esta-disponible">Paso 1: Comprobar que Snap está disponible</h3>
+<p>Xubuntu 24.04 trae Snap instalado. Compruébalo:</p>
+<div class="highlight"><pre><span></span><code>snap<span class="w"> </span>version
+</code></pre></div>
+<p>Si no aparece, instálalo:</p>
+<div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>apt<span class="w"> </span>update<span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span>sudo<span class="w"> </span>apt<span class="w"> </span>install<span class="w"> </span>-y<span class="w"> </span>snapd
+</code></pre></div>
+<h3 id="paso-2-instalar-intellij-idea">Paso 2: Instalar IntelliJ IDEA</h3>
+<div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>snap<span class="w"> </span>install<span class="w"> </span>intellij-idea<span class="w"> </span>--classic
+</code></pre></div>
+<details>
+<summary>¿Qué significa <code>--classic</code>?</summary>
+<p>Los paquetes Snap se ejecutan normalmente <strong>aislados</strong> del resto del sistema. Un IDE necesita acceder a tus carpetas, al JDK, a Git…, así que se instala en modo <strong>clásico</strong>, sin ese aislamiento. Por eso Snap te pide confirmarlo con <code>--classic</code>.</p>
+</details>
+<h3 id="paso-3-comprobar-la-instalacion">Paso 3: Comprobar la instalación</h3>
+<div class="highlight"><pre><span></span><code>snap<span class="w"> </span>list<span class="w"> </span>intellij-idea
+snap<span class="w"> </span>info<span class="w"> </span>intellij-idea
+</code></pre></div>
+<p>En la salida de <code>snap info</code>, el apartado <strong>commands</strong> indica el nombre del comando que lanza IntelliJ desde la terminal. Pruébalo: debe abrirse el IDE. También encontrarás IntelliJ IDEA en el menú de aplicaciones de Xubuntu, dentro de <strong>Desarrollo</strong>.</p>
+<details>
+<summary>Alternativa: instalar desde el archivo <code>.tar.gz</code></summary>
+<p>Si no quieres usar Snap, descarga el <code>.tar.gz</code> para Linux desde <a href="https://www.jetbrains.com/idea/download/">jetbrains.com/idea/download</a> y ejecuta:</p>
+<div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>tar<span class="w"> </span>-xzf<span class="w"> </span>ideaIU-*.tar.gz<span class="w"> </span>-C<span class="w"> </span>/opt
+/opt/idea-*/bin/idea.sh
+</code></pre></div>
+<p>En este caso tendrás que actualizarlo a mano y, si quieres el comando en la terminal, añadir la carpeta <code>bin</code> al <code>PATH</code> como en la práctica 02. También puedes usar <strong>JetBrains Toolbox</strong>, una aplicación que instala y actualiza todos los IDE de JetBrains.</p>
+</details>
+<hr />
+<h2 id="2-instalacion-en-windows-11">2. Instalación en Windows 11</h2>
+<h3 id="paso-1-descargar-el-instalador">Paso 1: Descargar el instalador</h3>
+<p>Entra en <a href="https://www.jetbrains.com/idea/download/">jetbrains.com/idea/download</a>, selecciona <strong>Windows</strong> y descarga el instalador <strong><code>.exe</code></strong>.</p>
+<h3 id="paso-2-ejecutar-el-instalador">Paso 2: Ejecutar el instalador</h3>
+<p>En la pantalla <strong>Installation Options</strong>, marca estas opciones:</p>
+<table>
+<thead>
+<tr>
+<th>Opción</th>
+<th>¿Marcar?</th>
+<th>Para qué sirve</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Create Desktop Shortcut</strong></td>
+<td>Opcional</td>
+<td>Acceso directo en el escritorio</td>
+</tr>
+<tr>
+<td><strong>Update PATH Variable: Add "bin" folder to the PATH</strong></td>
+<td>✅ <strong>Sí</strong></td>
+<td>Poder lanzar IntelliJ desde la terminal</td>
+</tr>
+<tr>
+<td><strong>Update Context Menu: Add "Open Folder as Project"</strong></td>
+<td>✅ Sí</td>
+<td>Abrir una carpeta como proyecto con el botón derecho</td>
+</tr>
+<tr>
+<td><strong>Create Associations: .java</strong></td>
+<td>Opcional</td>
+<td>Abrir los <code>.java</code> con doble clic</td>
+</tr>
+</tbody>
+</table>
+<p>Termina la instalación y <strong>reinicia</strong> el equipo si te lo pide: es necesario para que se aplique el cambio en el <code>PATH</code>.</p>
+<h3 id="paso-3-comprobar-el-path">Paso 3: Comprobar el <code>PATH</code></h3>
+<p>En una <strong>nueva</strong> ventana de PowerShell:</p>
+<div class="highlight"><pre><span></span><code><span class="nv">$env:Path</span> <span class="n">-split</span> <span class="s1">';'</span> <span class="p">|</span> <span class="nb">Select-String</span> <span class="s2">"JetBrains"</span>
+</code></pre></div>
+<p>Debe aparecer la carpeta <code>bin</code> de IntelliJ IDEA. Lanza el IDE desde la terminal con:</p>
+<div class="highlight"><pre><span></span><code><span class="n">idea64</span>
+</code></pre></div>
+<hr />
+<h2 id="3-primer-arranque">3. Primer arranque</h2>
+<h3 id="paso-1-pantalla-de-bienvenida">Paso 1: Pantalla de bienvenida</h3>
+<p>Al abrirlo por primera vez:</p>
+<ol>
+<li>Acepta el <strong>acuerdo de usuario</strong>.</li>
+<li>Decide si compartes estadísticas de uso anónimas (puedes rechazarlo).</li>
+<li>Si te ofrece la prueba de las funciones avanzadas, <strong>no la actives</strong>: la versión gratuita es suficiente.</li>
+</ol>
+<p>Llegarás a la pantalla <strong>Welcome to IntelliJ IDEA</strong>.</p>
+<h3 id="paso-2-tema-e-idioma">Paso 2: Tema e idioma</h3>
+<ol>
+<li>En la pantalla de bienvenida, abre <strong>Customize</strong>.</li>
+<li>En <strong>Color theme</strong>, elige el tema que prefieras.</li>
+<li>En <strong>Language</strong>, verás que IntelliJ solo ofrece paquetes oficiales de idioma para algunas lenguas, entre las que <strong>no está el castellano</strong>. Mantén el <strong>inglés</strong>: es el idioma en que encontrarás la documentación y la mayoría de tutoriales.</li>
+</ol>
+<div class="admonition note">
+<p class="admonition-title">Nombres de los menús</p>
+<p>Como el IDE está en inglés, en esta práctica los menús aparecen con su nombre original. En Windows y Linux, la configuración se abre en <strong>File → Settings</strong> (<span class="keys"><kbd class="key-control">Ctrl</kbd><span>+</span><kbd class="key-alt">Alt</kbd><span>+</span><kbd class="key-s">S</kbd></span>).</p>
+</div>
+<hr />
+<h2 id="4-plugins-anadir-y-eliminar-modulos">4. <em>Plugins</em>: añadir y eliminar módulos</h2>
+<p>En IntelliJ, los módulos adicionales se llaman <em><strong>plugins</strong></em>. A diferencia de VS Code, el soporte para Java ya viene <strong>incluido de serie</strong>.</p>
+<h3 id="paso-1-ver-los-plugins-instalados">Paso 1: Ver los <em>plugins</em> instalados</h3>
+<p>Abre <strong>File → Settings → Plugins</strong> y entra en la pestaña <strong>Installed</strong>. Localiza los <em>plugins</em> de Java, Maven, Git y JUnit que vienen de serie.</p>
+<h3 id="paso-2-instalar-un-plugin">Paso 2: Instalar un <em>plugin</em></h3>
+<ol>
+<li>Entra en la pestaña <strong>Marketplace</strong>.</li>
+<li>Busca <strong>Key Promoter X</strong>. Este <em>plugin</em> te enseña los atajos de teclado: cada vez que usas el ratón para algo que tiene atajo, te lo muestra.</li>
+<li>Pulsa <strong>Install</strong> y reinicia el IDE cuando te lo pida.</li>
+</ol>
+<h3 id="paso-3-desinstalar-un-plugin">Paso 3: Desinstalar un <em>plugin</em></h3>
+<p>Instala también el <em>plugin</em> <strong>VSCode Keymap</strong>, que permite usar en IntelliJ los mismos atajos de teclado que en VS Code. Después, en la pestaña <strong>Installed</strong>, búscalo, despliega la flecha junto a <strong>Disable</strong> y elige <strong>Uninstall</strong>. Reinicia el IDE.</p>
+<details>
+<summary>Desactivar no es lo mismo que desinstalar</summary>
+<ul>
+<li><strong>Disable</strong> deja el <em>plugin</em> instalado pero sin cargarse; puedes reactivarlo cuando quieras.</li>
+<li><strong>Uninstall</strong> lo elimina por completo.</li>
+</ul>
+<p>Desactivar <em>plugins</em> que no usas hace que el IDE arranque más rápido y consuma menos memoria.</p>
+</details>
+<hr />
+<h2 id="5-configurar-el-jdk">5. Configurar el JDK</h2>
+<p>IntelliJ llama <strong>SDK</strong> al kit de desarrollo con el que compila un proyecto. Vamos a registrar el <strong>Temurin 21</strong> de la práctica 02.</p>
+<h3 id="paso-1-anadir-el-jdk">Paso 1: Añadir el JDK</h3>
+<ol>
+<li>Abre <strong>File → Project Structure</strong> (<span class="keys"><kbd class="key-control">Ctrl</kbd><span>+</span><kbd class="key-alt">Alt</kbd><span>+</span><kbd class="key-shift">Shift</kbd><span>+</span><kbd class="key-s">S</kbd></span>). Si estás en la pantalla de bienvenida, crea antes el proyecto del apartado 6.</li>
+<li>En <strong>Platform Settings → SDKs</strong>, pulsa <strong>+</strong> y elige <strong>Add JDK from disk…</strong></li>
+<li>Selecciona la carpeta del JDK:<ul>
+<li>En <strong>Xubuntu</strong>: <code>/usr/lib/jvm/temurin-21-jdk-amd64</code></li>
+<li>En <strong>Windows</strong>: <code>C:\Program Files\Eclipse Adoptium\jdk-21.0.x.y-hotspot</code></li>
+</ul>
+</li>
+</ol>
+<div class="admonition info">
+<p class="admonition-title">Es la misma carpeta que <code>JAVA_HOME</code></p>
+<p>IntelliJ suele <strong>detectar solo</strong> el JDK a partir de <code>JAVA_HOME</code>. Si en la lista ya aparece <code>temurin-21</code>, no hace falta añadirlo de nuevo.</p>
+</div>
+<div class="admonition warning">
+<p class="admonition-title">No descargues otro JDK</p>
+<p>En el desplegable del SDK, IntelliJ ofrece la opción <strong>Download JDK…</strong>. <strong>No la uses</strong> en esta práctica: trabajamos con el Temurin 21 que instalaste y configuraste tú.</p>
+</div>
+<hr />
+<h2 id="6-crear-ejecutar-y-depurar-un-proyecto-java">6. Crear, ejecutar y depurar un proyecto Java</h2>
+<h3 id="paso-1-crear-el-proyecto">Paso 1: Crear el proyecto</h3>
+<ol>
+<li>Elige <strong>New Project</strong> en la pantalla de bienvenida (o <strong>File → New → Project</strong>).</li>
+<li>Rellena el asistente:</li>
+</ol>
+<table>
+<thead>
+<tr>
+<th>Campo</th>
+<th>Valor</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Name</strong></td>
+<td><code>hola-intellij</code></td>
+</tr>
+<tr>
+<td><strong>Location</strong></td>
+<td>tu carpeta <code>ut02p04</code> (créala si no existe)</td>
+</tr>
+<tr>
+<td><strong>Language</strong></td>
+<td>Java</td>
+</tr>
+<tr>
+<td><strong>Build system</strong></td>
+<td>IntelliJ (Maven y Gradle los veremos en la UT03)</td>
+</tr>
+<tr>
+<td><strong>JDK</strong></td>
+<td><code>temurin-21</code></td>
+</tr>
+<tr>
+<td><strong>Add sample code</strong></td>
+<td>Marcado</td>
+</tr>
+</tbody>
+</table>
+<p>IntelliJ crea esta estructura:</p>
+<div class="highlight"><pre><span></span><code>hola-intellij/
+├── .idea/              ← configuración del proyecto para IntelliJ
+├── src/Main.java       ← código fuente
+└── hola-intellij.iml   ← descripción del módulo
+</code></pre></div>
+<p>Al compilar aparecerá también la carpeta <code>out/</code>, con los ficheros <code>.class</code>.</p>
+<h3 id="paso-2-escribir-el-programa">Paso 2: Escribir el programa</h3>
+<p>Sustituye el contenido de <code>src/Main.java</code> por el mismo programa de la práctica 03, cambiando solo el nombre de la clase y el mensaje:</p>
+<div class="highlight"><pre><span></span><code><span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">Main</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span><span class="w"> </span><span class="n">args</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="n">String</span><span class="w"> </span><span class="n">nombre</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">"tu nombre"</span><span class="p">;</span><span class="w">   </span><span class="c1">// Cambia por tu nombre</span>
+<span class="w">        </span><span class="kt">int</span><span class="w"> </span><span class="n">suma</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+
+<span class="w">        </span><span class="c1">// Sumamos los números del 1 al 5 para poder seguir el bucle con el depurador</span>
+<span class="w">        </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&lt;=</span><span class="w"> </span><span class="mi">5</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="o">++</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="n">suma</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">suma</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">i</span><span class="p">;</span>
+<span class="w">        </span><span class="p">}</span>
+
+<span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"Hola, "</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">nombre</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s">", desde IntelliJ IDEA"</span><span class="p">);</span>
+<span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"La suma del 1 al 5 es "</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">suma</span><span class="p">);</span>
+<span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"Versión de Java: "</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">System</span><span class="p">.</span><span class="na">getProperty</span><span class="p">(</span><span class="s">"java.version"</span><span class="p">));</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+<h3 id="paso-3-ejecutar">Paso 3: Ejecutar</h3>
+<p>Pulsa el triángulo verde ▶ junto al método <code>main</code> y elige <strong>Run 'Main.main()'</strong> (o <span class="keys"><kbd class="key-shift">Shift</kbd><span>+</span><kbd class="key-f10">F10</kbd></span>). La salida aparece en la ventana <strong>Run</strong>, en la parte inferior.</p>
+<h3 id="paso-4-depurar">Paso 4: Depurar</h3>
+<ol>
+<li>Haz clic en el margen izquierdo de la línea <code>suma = suma + i;</code> para poner un <strong>punto de ruptura</strong>.</li>
+<li>Pulsa el triángulo verde y elige <strong>Debug 'Main.main()'</strong> (o <span class="keys"><kbd class="key-shift">Shift</kbd><span>+</span><kbd class="key-f9">F9</kbd></span>).</li>
+<li>En la ventana <strong>Debug</strong>, observa los valores de <code>i</code> y <code>suma</code> en el panel <strong>Variables</strong>.</li>
+<li>Avanza con <strong>Step Over</strong> (<span class="keys"><kbd class="key-f8">F8</kbd></span>) hasta terminar el bucle.</li>
+</ol>
+<div class="admonition tip">
+<p class="admonition-title">Cuaderno</p>
+<p>Compara la depuración con la de VS Code en la práctica 03: ¿qué ventanas y atajos cambian? ¿Cuál te resulta más cómoda? Anótalo en tu tabla comparativa.</p>
+</div>
+<hr />
+<h2 id="7-personalizar-y-automatizar-el-entorno">7. Personalizar y automatizar el entorno</h2>
+<h3 id="paso-1-tamano-de-letra">Paso 1: Tamaño de letra</h3>
+<p>En <strong>File → Settings → Editor → Font</strong>, cambia <strong>Size</strong> a 16.</p>
+<h3 id="paso-2-acciones-al-guardar">Paso 2: Acciones al guardar</h3>
+<p>En <strong>File → Settings → Tools → Actions on Save</strong>, marca:</p>
+<ul>
+<li><strong>Reformat code</strong>: da formato al código automáticamente.</li>
+<li><strong>Optimize imports</strong>: elimina los <code>import</code> que no se usan.</li>
+</ul>
+<p>IntelliJ guarda los cambios automáticamente, así que estas acciones se aplican también cuando cambias de ventana. Pruébalo: desordena la sangría de <code>Main.java</code>, pulsa <span class="keys"><kbd class="key-control">Ctrl</kbd><span>+</span><kbd class="key-s">S</kbd></span> y observa cómo se corrige.</p>
+<h3 id="paso-3-plantillas-de-codigo-live-templates">Paso 3: Plantillas de código (<em>live templates</em>)</h3>
+<p>Las plantillas escriben fragmentos de código por ti. En una línea vacía dentro de una clase o un método, escribe la abreviatura y pulsa <span class="keys"><kbd class="key-tab">Tab</kbd></span>:</p>
+<table>
+<thead>
+<tr>
+<th>Abreviatura</th>
+<th>Genera</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>psvm</code> o <code>main</code></td>
+<td>El método <code>public static void main(String[] args)</code></td>
+</tr>
+<tr>
+<td><code>sout</code></td>
+<td><code>System.out.println();</code></td>
+</tr>
+<tr>
+<td><code>fori</code></td>
+<td>Un bucle <code>for</code> con índice</td>
+</tr>
+</tbody>
+</table>
+<p>Puedes ver y modificar todas las plantillas en <strong>File → Settings → Editor → Live Templates</strong>.</p>
+<hr />
+<h2 id="8-configurar-las-actualizaciones">8. Configurar las actualizaciones</h2>
+<p>Abre <strong>File → Settings → Appearance &amp; Behavior → System Settings → Updates</strong>:</p>
+<table>
+<thead>
+<tr>
+<th>Opción</th>
+<th>Qué controla</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Check IDE updates for</strong></td>
+<td>Si IntelliJ busca nuevas versiones del IDE (y de qué canal: versiones estables o de prueba)</td>
+</tr>
+<tr>
+<td><strong>Check for plugin updates</strong></td>
+<td>Si busca actualizaciones de los <em>plugins</em></td>
+</tr>
+</tbody>
+</table>
+<p>Deja ambas activadas, con el canal <strong>Stable Releases</strong>.</p>
+<div class="admonition note">
+<p class="admonition-title">Las actualizaciones no funcionan igual en los dos sistemas</p>
+<ul>
+<li>En <strong>Windows</strong>, IntelliJ descarga e instala sus propias actualizaciones y te avisa con una notificación.</li>
+<li>En <strong>Xubuntu</strong>, lo instalaste con <strong>Snap</strong>, así que se actualiza <strong>solo</strong> en segundo plano. Puedes forzar la actualización con <code>sudo snap refresh intellij-idea</code>.</li>
+</ul>
+</div>
+<hr />
+<h2 id="9-el-mismo-codigo-en-dos-entornos">9. El mismo código en dos entornos</h2>
+<p>Abre en IntelliJ el proyecto <strong><code>hola-vscode</code></strong> que creaste en la práctica 03 (<strong>File → Open</strong> y selecciona la carpeta). Ejecútalo y comprueba que funciona igual que en VS Code.</p>
+<p>Observa qué carpetas y ficheros nuevos ha creado IntelliJ dentro del proyecto (por ejemplo, <code>.idea/</code>) y cuáles había creado VS Code (<code>.vscode/</code>). Cada entorno guarda su propia configuración, pero el <strong>código fuente</strong> de <code>src/</code> es el mismo.</p>
+<hr />
+<h2 id="entregables">📑 Entregables</h2>
+<p>Carpeta <strong><code>ut02p04</code></strong> comprimida en un fichero llamado <strong><code>ut02p04_apellido_nombre.zip</code></strong> con:</p>
+<ul>
+<li>El proyecto <strong><code>hola-intellij</code></strong> completo (sin la carpeta <code>out/</code>).</li>
+<li>Un documento <strong><code>ut02p04.md</code></strong> con las siguientes capturas y una breve explicación de cada una:<ul>
+<li><strong>Captura 1 (Xubuntu):</strong> salida de <code>snap list intellij-idea</code>.</li>
+<li><strong>Captura 2 (Windows):</strong> salida de <code>$env:Path -split ';' | Select-String "JetBrains"</code>.</li>
+<li><strong>Captura 3:</strong> pestaña <strong>Installed</strong> con <strong>Key Promoter X</strong> instalado.</li>
+<li><strong>Captura 4:</strong> <strong>Project Structure → SDKs</strong> mostrando Temurin 21.</li>
+<li><strong>Captura 5:</strong> ejecución de <code>Main</code> en la ventana <strong>Run</strong> (en los dos sistemas).</li>
+<li><strong>Captura 6:</strong> depurador detenido en el punto de ruptura, con el panel <strong>Variables</strong> visible.</li>
+<li><strong>Captura 7:</strong> <strong>Actions on Save</strong> configurado.</li>
+<li><strong>Captura 8:</strong> pantalla <strong>Updates</strong> en cada sistema.</li>
+<li><strong>Captura 9:</strong> proyecto <code>hola-vscode</code> ejecutándose en IntelliJ.</li>
+</ul>
+</li>
+<li>Un último apartado en <code>ut02p04.md</code>: <strong>«VS Code frente a IntelliJ IDEA»</strong>, con la tabla comparativa del cuaderno pasada a limpio y tu conclusión: ¿cuál usarías para un proyecto Java grande y por qué?</li>
+<li>Foto de la tabla comparativa del <strong>cuaderno</strong>.</li>
+</ul>
+<div class="admonition info">
+<p class="admonition-title">Entrega en Moodle</p>
+<p>Sube el <code>.zip</code> a la tarea <strong>«UT02 – Práctica 04: IntelliJ IDEA para Java»</strong> del aula virtual (<a href="https://aulavirtual.murciaeduca.es">aulavirtual.murciaeduca.es</a>) antes de la fecha indicada en la tarea.</p>
+</div>
+<hr />
+<h2 id="criterios-de-correccion">✅ Criterios de corrección</h2>
+<table>
+<thead>
+<tr>
+<th>Criterio</th>
+<th>RA – CE</th>
+<th>Excelente (100 %)</th>
+<th>Adecuado (50 %)</th>
+<th>Insuficiente (0 %)</th>
+<th>Peso</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Instalación de IntelliJ IDEA en los dos sistemas</td>
+<td>RA2 – CE a)</td>
+<td>Instalado en ambos desde fuentes oficiales; lanzador en el <code>PATH</code> en Windows</td>
+<td>Instalado en ambos con alguna evidencia incompleta</td>
+<td>Instalado solo en uno o sin evidencias</td>
+<td>15 %</td>
+</tr>
+<tr>
+<td>Añadir y eliminar <em>plugins</em></td>
+<td>RA2 – CE b)</td>
+<td>Instala Key Promoter X y desinstala VSCode Keymap con evidencias</td>
+<td>Solo instala, o faltan evidencias</td>
+<td>No realizado</td>
+<td>10 %</td>
+</tr>
+<tr>
+<td>JDK configurado como SDK</td>
+<td>RA2 – CE a)</td>
+<td>Temurin 21 registrado y usado por el proyecto</td>
+<td>Usa otro JDK o falta la evidencia</td>
+<td>El proyecto no tiene SDK válido</td>
+<td>15 %</td>
+</tr>
+<tr>
+<td>Proyecto Java creado, ejecutado y depurado</td>
+<td>RA2 – CE a)</td>
+<td>Proyecto completo; ejecución y depuración con punto de ruptura y variables visibles</td>
+<td>Se ejecuta, pero no se depura</td>
+<td>No se ejecuta</td>
+<td>15 %</td>
+</tr>
+<tr>
+<td>Personalización y automatización</td>
+<td>RA2 – CE c)</td>
+<td>Fuente, acciones al guardar y plantillas usadas y comprobadas</td>
+<td>Configuración parcial</td>
+<td>Sin personalizar</td>
+<td>10 %</td>
+</tr>
+<tr>
+<td>Configuración de actualizaciones</td>
+<td>RA2 – CE d)</td>
+<td>Opciones revisadas en ambos sistemas y diferencias explicadas</td>
+<td>Opciones revisadas sin explicación</td>
+<td>No realizado</td>
+<td>10 %</td>
+</tr>
+<tr>
+<td>Mismo código en los dos entornos</td>
+<td>RA2 – CE f)</td>
+<td><code>hola-vscode</code> ejecutado en IntelliJ y diferencias de configuración explicadas</td>
+<td>Ejecutado sin explicación</td>
+<td>No realizado</td>
+<td>10 %</td>
+</tr>
+<tr>
+<td>Comparación VS Code / IntelliJ y cuaderno</td>
+<td>RA2 – CE g)</td>
+<td>Tabla completa y conclusión razonada</td>
+<td>Tabla incompleta o sin conclusión</td>
+<td>No presentado</td>
+<td>15 %</td>
+</tr>
+</tbody>
+</table>
+              
+            </div>
+          </div><footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="Navegación de pie de página">
+        <a href="../practica03/" class="btn btn-neutral float-left" title="PRÁCTICA 03"><span class="icon icon-circle-arrow-left"></span> Anterior</a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+  </div>
+
+  Construído con <a href="https://properdocs.org/">ProperDocs</a> usando un <a href="https://github.com/readthedocs/sphinx_rtd_theme">tema</a> provisto por <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+          
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="Versiones">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+    
+      <span><a href="../practica03/" style="color: #fcfcfc">&laquo; Anterior</a></span>
+    
+    
+  </span>
+</div>
+    <script src="../../../js/jquery-3.6.0.min.js"></script>
+    <script>var base_url = "../../..";</script>
+    <script src="../../../js/theme_extra.js"></script>
+    <script src="../../../js/theme.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+      <script src="../../../js/copy-button.js"></script>
+      <script src="../../../search/main.js"></script>
+    <script>
+        jQuery(function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        });
+    </script>
+
+</body>
+</html>

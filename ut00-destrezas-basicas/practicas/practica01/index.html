@@ -1,0 +1,532 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="es" >
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <link rel="shortcut icon" href="../../../img/favicon.ico" />
+    <title>PRÁCTICA 01 - Entornos de Desarrollo - IES Los Albares</title>
+    <link rel="stylesheet" href="../../../css/theme.css" />
+    <link rel="stylesheet" href="../../../css/theme_extra.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" />
+        <link href="../../../css/estilo.css" rel="stylesheet" />
+    
+      <script>
+        // Current page data
+        var properdocs_page_name = "PR\u00c1CTICA 01";
+        var properdocs_page_input_path = "ut00-destrezas-basicas/practicas/practica01.md";
+        var properdocs_page_url = null;
+      </script>
+    
+    <!--[if lt IE 9]>
+      <script src="../../../js/html5shiv.min.js"></script>
+    <![endif]-->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+      <script>hljs.highlightAll();</script> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+          <a href="../../.." class="icon icon-home"> Entornos de Desarrollo - IES Los Albares
+        </a><div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+      <input type="text" name="q" placeholder="Buscar documentos" aria-label="Buscar documentos" title="Escriba el término de búsqueda aquí" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Menu de navegación">
+              <ul>
+                <li class="toctree-l1"><a class="" href="https://joaquinalbares.github.io/">HOME</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../../..">GUÍA DEL MÓDULO</a>
+                </li>
+              </ul>
+              <p class="caption"><span class="caption-text">UT00</span></p>
+              <ul class="current">
+                  <li class="toctree-l1 current"><a class="reference internal current" href="#">PRÁCTICA 01</a>
+    <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#objetivos">🎯 Objetivos</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#requisitos">🧰 Requisitos</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#parte-a-la-terminal-de-xubuntu-bash">Parte A: la terminal de Xubuntu (Bash)</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#ejercicio-1-donde-estoy">Ejercicio 1: ¿Dónde estoy?</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#ejercicio-2-listar-el-contenido">Ejercicio 2: Listar el contenido</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#ejercicio-3-archivos-ocultos">Ejercicio 3: Archivos ocultos</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#ejercicio-4-crear-la-carpeta-del-curso-en-el-escritorio">Ejercicio 4: Crear la carpeta del curso en el escritorio</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#ejercicio-5-entrar-en-la-carpeta">Ejercicio 5: Entrar en la carpeta</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#ejercicio-6-crear-una-carpeta-dentro">Ejercicio 6: Crear una carpeta dentro</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#ejercicio-7-subir-y-bajar-de-nivel">Ejercicio 7: Subir y bajar de nivel</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#ejercicio-8-estructura-de-carpetas-del-curso">Ejercicio 8: Estructura de carpetas del curso</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#ejercicio-9-crear-un-archivo">Ejercicio 9: Crear un archivo</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#ejercicio-10-copiar-un-archivo">Ejercicio 10: Copiar un archivo</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#ejercicio-11-renombrar-mover-un-archivo">Ejercicio 11: Renombrar (mover) un archivo</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#ejercicio-12-borrar-un-archivo">Ejercicio 12: Borrar un archivo</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#parte-b-powershell-en-windows-11">Parte B: PowerShell en Windows 11</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#tabla-de-equivalencias">Tabla de equivalencias</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#ejercicio-13-donde-estoy">Ejercicio 13: ¿Dónde estoy?</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#ejercicio-14-listar-tambien-los-ocultos">Ejercicio 14: Listar, también los ocultos</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#ejercicio-15-ir-al-escritorio">Ejercicio 15: Ir al escritorio</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#ejercicio-16-crear-la-carpeta-del-curso-y-la-estructura-de-unidades">Ejercicio 16: Crear la carpeta del curso y la estructura de unidades</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#ejercicio-17-subir-de-nivel-y-volver">Ejercicio 17: Subir de nivel y volver</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#ejercicio-18-crear-copiar-renombrar-y-borrar-archivos">Ejercicio 18: Crear, copiar, renombrar y borrar archivos</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#ejercicio-19-descubrir-comandos">Ejercicio 19: Descubrir comandos</a>
+    </li>
+        </ul>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#entregables">📑 Entregables</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#criterios-de-correccion">✅ Criterios de corrección</a>
+    </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../practica02/">PRÁCTICA 02</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../practica03/">PRÁCTICA 03</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">UT01</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../../ut01-teoria-del-software/teoria/ut01/">CONTENIDOS</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../../ut01-teoria-del-software/practicas/practica01/">PRÁCTICA 01</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">UT02</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../../ut02-entornos-integrados-ide/teoria/ut02/">CONTENIDOS</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../../ut02-entornos-integrados-ide/practicas/practica01/">PRÁCTICA 01</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../../ut02-entornos-integrados-ide/practicas/practica02/">PRÁCTICA 02</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../../ut02-entornos-integrados-ide/practicas/practica03/">PRÁCTICA 03</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../../ut02-entornos-integrados-ide/practicas/practica04/">PRÁCTICA 04</a>
+                  </li>
+              </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+      <nav class="wy-nav-top" role="navigation" aria-label="Menú de navegación en móvil">
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../..">Entornos de Desarrollo - IES Los Albares</a>
+        
+      </nav>
+      <div class="wy-nav-content">
+        <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../../.." class="icon icon-home" aria-label="Documentos"></a></li>
+          <li class="breadcrumb-item">UT00</li>
+      <li class="breadcrumb-item active">PRÁCTICA 01</li>
+    <li class="wy-breadcrumbs-aside">
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+            <div class="section" itemprop="articleBody">
+              
+                <h1 id="practica-ut00p01-uso-de-la-terminal-en-xubuntu-y-en-windows-powershell">Práctica UT00P01: Uso de la terminal en Xubuntu y en Windows (PowerShell)</h1>
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Resultados de aprendizaje y criterios de evaluación</strong></td>
+<td>Actividad de inicio de curso. Prepara las destrezas necesarias para RA2 – CE a) y RA2 – CE c)</td>
+</tr>
+<tr>
+<td><strong>Duración estimada</strong></td>
+<td>2 sesiones (2 h): 1 h para Xubuntu y 1 h para PowerShell</td>
+</tr>
+<tr>
+<td><strong>Modalidad</strong></td>
+<td>Individual</td>
+</tr>
+<tr>
+<td><strong>Sistemas operativos</strong></td>
+<td>Xubuntu 24.04 y Windows 11</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="objetivos">🎯 Objetivos</h2>
+<ul>
+<li>Abrir la terminal en Xubuntu y en Windows.</li>
+<li>Moverte por las carpetas y crear, copiar, renombrar y borrar archivos y carpetas <strong>sin usar el ratón</strong>.</li>
+<li>Conocer los comandos equivalentes en <strong>Bash</strong> (Linux) y <strong>PowerShell</strong> (Windows).</li>
+<li>Crear la estructura de carpetas que usarás durante todo el curso.</li>
+</ul>
+<h2 id="requisitos">🧰 Requisitos</h2>
+<ul>
+<li>Una máquina con Xubuntu 24.04 y otra con Windows 11.</li>
+</ul>
+<div class="admonition note">
+<p class="admonition-title">¿Por qué la terminal?</p>
+<p>Como programador o programadora usarás la terminal a diario: para instalar herramientas, compilar, ejecutar pruebas, trabajar con Git o conectarte a servidores. Muchas de estas tareas <strong>solo</strong> se pueden hacer desde la terminal, y todas son más rápidas desde ella cuando la dominas.</p>
+</div>
+<hr />
+<h2 id="parte-a-la-terminal-de-xubuntu-bash">Parte A: la terminal de Xubuntu (Bash)</h2>
+<p>Abre la terminal con <span class="keys"><kbd class="key-control">Ctrl</kbd><span>+</span><kbd class="key-alt">Alt</kbd><span>+</span><kbd class="key-t">T</kbd></span> (o desde el menú de aplicaciones: <strong>Sistema → Terminal</strong>).</p>
+<h4 id="ejercicio-1-donde-estoy">Ejercicio 1: ¿Dónde estoy?</h4>
+<p>Averigua en qué directorio (carpeta) estás en este momento:</p>
+<div class="highlight"><pre><span></span><code><span class="nb">pwd</span>
+</code></pre></div>
+<p>Al abrir la terminal siempre empiezas en tu <strong>carpeta personal</strong> (<code>/home/tu_usuario</code>), que también se representa con el símbolo <code>~</code>.</p>
+<h4 id="ejercicio-2-listar-el-contenido">Ejercicio 2: Listar el contenido</h4>
+<p>Lista los archivos y carpetas del directorio actual:</p>
+<div class="highlight"><pre><span></span><code>ls
+</code></pre></div>
+<h4 id="ejercicio-3-archivos-ocultos">Ejercicio 3: Archivos ocultos</h4>
+<p>Lista también los archivos <strong>ocultos</strong>, que en Linux son los que empiezan por un punto:</p>
+<div class="highlight"><pre><span></span><code>ls<span class="w"> </span>-a
+</code></pre></div>
+<p>Prueba también <code>ls -la</code>: ¿qué información nueva aparece?</p>
+<h4 id="ejercicio-4-crear-la-carpeta-del-curso-en-el-escritorio">Ejercicio 4: Crear la carpeta del curso en el escritorio</h4>
+<p>Entra en el escritorio y crea la carpeta del módulo:</p>
+<div class="highlight"><pre><span></span><code><span class="nb">cd</span><span class="w"> </span>~/Escritorio
+mkdir<span class="w"> </span>EDD_2026_2027
+</code></pre></div>
+<div class="admonition warning">
+<p class="admonition-title">¿Escritorio o Desktop?</p>
+<p>Si tu Xubuntu está instalado en inglés, la carpeta se llama <code>~/Desktop</code>. Compruébalo con <code>ls ~</code>.</p>
+</div>
+<h4 id="ejercicio-5-entrar-en-la-carpeta">Ejercicio 5: Entrar en la carpeta</h4>
+<div class="highlight"><pre><span></span><code><span class="nb">cd</span><span class="w"> </span>EDD_2026_2027
+<span class="nb">pwd</span>
+</code></pre></div>
+<h4 id="ejercicio-6-crear-una-carpeta-dentro">Ejercicio 6: Crear una carpeta dentro</h4>
+<div class="highlight"><pre><span></span><code>mkdir<span class="w"> </span>UT01_Introduccion
+ls
+</code></pre></div>
+<h4 id="ejercicio-7-subir-y-bajar-de-nivel">Ejercicio 7: Subir y bajar de nivel</h4>
+<p>Vuelve al directorio anterior (el escritorio) y comprueba dónde estás:</p>
+<div class="highlight"><pre><span></span><code><span class="nb">cd</span><span class="w"> </span>..
+<span class="nb">pwd</span>
+</code></pre></div>
+<p>Vuelve a entrar en la carpeta del curso:</p>
+<div class="highlight"><pre><span></span><code><span class="nb">cd</span><span class="w"> </span>EDD_2026_2027
+</code></pre></div>
+<h4 id="ejercicio-8-estructura-de-carpetas-del-curso">Ejercicio 8: Estructura de carpetas del curso</h4>
+<p>Dentro de <code>EDD_2026_2027</code>, crea una carpeta por unidad y, dentro de cada una, una carpeta <strong><code>P01</code></strong>. La opción <code>-p</code> crea a la vez las carpetas intermedias que no existan:</p>
+<div class="highlight"><pre><span></span><code>mkdir<span class="w"> </span>-p<span class="w"> </span>UT01_Introduccion/P01
+mkdir<span class="w"> </span>-p<span class="w"> </span>UT02_IDE/P01
+mkdir<span class="w"> </span>-p<span class="w"> </span>UT03_Pruebas/P01
+mkdir<span class="w"> </span>-p<span class="w"> </span>UT04_Git_Refactor/P01
+mkdir<span class="w"> </span>-p<span class="w"> </span>UT05_UML_Clases/P01
+mkdir<span class="w"> </span>-p<span class="w"> </span>UT06_UML_Comportamiento/P01
+</code></pre></div>
+<p>Comprueba el resultado:</p>
+<div class="highlight"><pre><span></span><code>ls<span class="w"> </span>-R
+</code></pre></div>
+<details>
+<summary>Para ir más rápido: autocompletar con el tabulador</summary>
+<p>Escribe <code>cd UT0</code> y pulsa <span class="keys"><kbd class="key-tab">Tab</kbd></span> dos veces: la terminal te muestra todas las opciones que empiezan así. Escribe una letra más y vuelve a pulsar <span class="keys"><kbd class="key-tab">Tab</kbd></span> para que complete el nombre. Usar el tabulador <strong>evita errores</strong> al escribir nombres largos.</p>
+<p>Con <span class="keys"><kbd class="key-arrow-up">Up</kbd></span> recuperas los comandos que escribiste antes.</p>
+</details>
+<h4 id="ejercicio-9-crear-un-archivo">Ejercicio 9: Crear un archivo</h4>
+<p>Entra en <code>UT01_Introduccion/P01</code> y crea un archivo vacío:</p>
+<div class="highlight"><pre><span></span><code><span class="nb">cd</span><span class="w"> </span>UT01_Introduccion/P01
+touch<span class="w"> </span>notas.txt
+ls
+</code></pre></div>
+<h4 id="ejercicio-10-copiar-un-archivo">Ejercicio 10: Copiar un archivo</h4>
+<div class="highlight"><pre><span></span><code>cp<span class="w"> </span>notas.txt<span class="w"> </span>notas_copia.txt
+ls
+</code></pre></div>
+<h4 id="ejercicio-11-renombrar-mover-un-archivo">Ejercicio 11: Renombrar (mover) un archivo</h4>
+<p>En Linux, renombrar es <strong>mover</strong> un archivo a otro nombre:</p>
+<div class="highlight"><pre><span></span><code>mv<span class="w"> </span>notas.txt<span class="w"> </span>final.txt
+ls
+</code></pre></div>
+<h4 id="ejercicio-12-borrar-un-archivo">Ejercicio 12: Borrar un archivo</h4>
+<div class="highlight"><pre><span></span><code>rm<span class="w"> </span>final.txt
+ls
+</code></pre></div>
+<div class="admonition danger">
+<p class="admonition-title"><code>rm</code> no tiene papelera</p>
+<p>Lo que borras con <code>rm</code> <strong>no va a la papelera</strong>: desaparece. Revisa siempre el comando antes de pulsar <span class="keys"><kbd class="key-enter">Enter</kbd></span>.</p>
+</div>
+<hr />
+<h2 id="parte-b-powershell-en-windows-11">Parte B: PowerShell en Windows 11</h2>
+<p>En Windows usaremos <strong>PowerShell</strong> dentro de la aplicación <strong>Terminal</strong>. Ábrela con <span class="keys"><kbd class="key-windows">Win</kbd><span>+</span><kbd class="key-x">X</kbd></span> y elige <strong>Terminal</strong>, o pulsa <span class="keys"><kbd class="key-windows">Win</kbd></span>, escribe <code>terminal</code> y pulsa <span class="keys"><kbd class="key-enter">Enter</kbd></span>. Comprueba que la pestaña indica <strong>PowerShell</strong>.</p>
+<div class="admonition note">
+<p class="admonition-title">Comandos de PowerShell y alias</p>
+<p>Los comandos de PowerShell (<em>cmdlets</em>) tienen la forma <strong>Verbo-Sustantivo</strong>: <code>Get-Location</code>, <code>New-Item</code>, <code>Copy-Item</code>… Para facilitar el cambio desde Linux, PowerShell incluye <strong>alias</strong> con los nombres de Bash: <code>pwd</code>, <code>ls</code>, <code>cd</code>, <code>cp</code>, <code>mv</code>, <code>rm</code> y <code>mkdir</code> también funcionan.</p>
+<p>En esta parte usarás el <strong>nombre completo</strong> de cada <em>cmdlet</em>, para que aprendas cómo se llaman en realidad.</p>
+</div>
+<h3 id="tabla-de-equivalencias">Tabla de equivalencias</h3>
+<table>
+<thead>
+<tr>
+<th>Acción</th>
+<th>Bash (Linux)</th>
+<th>PowerShell (Windows)</th>
+<th>Alias en PowerShell</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Ver dónde estoy</td>
+<td><code>pwd</code></td>
+<td><code>Get-Location</code></td>
+<td><code>pwd</code></td>
+</tr>
+<tr>
+<td>Listar</td>
+<td><code>ls</code></td>
+<td><code>Get-ChildItem</code></td>
+<td><code>ls</code>, <code>dir</code></td>
+</tr>
+<tr>
+<td>Listar ocultos</td>
+<td><code>ls -a</code></td>
+<td><code>Get-ChildItem -Force</code></td>
+<td><code>ls -Force</code></td>
+</tr>
+<tr>
+<td>Cambiar de carpeta</td>
+<td><code>cd carpeta</code></td>
+<td><code>Set-Location carpeta</code></td>
+<td><code>cd</code></td>
+</tr>
+<tr>
+<td>Crear carpeta</td>
+<td><code>mkdir -p a/b</code></td>
+<td><code>New-Item -ItemType Directory -Path a\b</code></td>
+<td><code>mkdir a\b</code></td>
+</tr>
+<tr>
+<td>Crear archivo vacío</td>
+<td><code>touch f.txt</code></td>
+<td><code>New-Item -ItemType File -Name f.txt</code></td>
+<td><code>ni f.txt</code></td>
+</tr>
+<tr>
+<td>Copiar</td>
+<td><code>cp a b</code></td>
+<td><code>Copy-Item a b</code></td>
+<td><code>cp</code>, <code>copy</code></td>
+</tr>
+<tr>
+<td>Mover o renombrar</td>
+<td><code>mv a b</code></td>
+<td><code>Move-Item a b</code> o <code>Rename-Item a b</code></td>
+<td><code>mv</code>, <code>move</code>, <code>ren</code></td>
+</tr>
+<tr>
+<td>Borrar</td>
+<td><code>rm f</code></td>
+<td><code>Remove-Item f</code></td>
+<td><code>rm</code>, <code>del</code></td>
+</tr>
+<tr>
+<td>Ver el árbol de carpetas</td>
+<td><code>ls -R</code></td>
+<td><code>Get-ChildItem -Recurse</code></td>
+<td><code>tree</code> (comando de Windows)</td>
+</tr>
+<tr>
+<td>Ayuda de un comando</td>
+<td><code>man ls</code></td>
+<td><code>Get-Help Get-ChildItem</code></td>
+<td><code>help</code></td>
+</tr>
+</tbody>
+</table>
+<h4 id="ejercicio-13-donde-estoy">Ejercicio 13: ¿Dónde estoy?</h4>
+<div class="highlight"><pre><span></span><code><span class="nb">Get-Location</span>
+</code></pre></div>
+<p>En Windows empiezas en tu carpeta de usuario (<code>C:\Users\tu_usuario</code>). Fíjate en que las rutas usan la barra invertida <code>\</code>.</p>
+<h4 id="ejercicio-14-listar-tambien-los-ocultos">Ejercicio 14: Listar, también los ocultos</h4>
+<div class="highlight"><pre><span></span><code><span class="nb">Get-ChildItem</span>
+<span class="nb">Get-ChildItem</span> <span class="n">-Force</span>
+</code></pre></div>
+<p>¿Qué columna nueva aparece en la segunda orden y qué significan sus letras (<code>d</code>, <code>a</code>, <code>h</code>…)?</p>
+<h4 id="ejercicio-15-ir-al-escritorio">Ejercicio 15: Ir al escritorio</h4>
+<div class="highlight"><pre><span></span><code><span class="nb">Set-Location</span> <span class="p">(</span><span class="no">[Environment]</span><span class="p">::</span><span class="n">GetFolderPath</span><span class="p">(</span><span class="s2">"Desktop"</span><span class="p">))</span>
+<span class="nb">Get-Location</span>
+</code></pre></div>
+<details>
+<summary>¿Por qué no basta con <code>cd Desktop</code>?</summary>
+<p>En muchos equipos con Windows 11, el escritorio está <strong>sincronizado con OneDrive</strong> y su ruta real es <code>C:\Users\tu_usuario\OneDrive\Escritorio</code> (o <code>\Desktop</code>). La expresión <code>[Environment]::GetFolderPath("Desktop")</code> pregunta a Windows dónde está el escritorio, sea cual sea su ruta.</p>
+</details>
+<h4 id="ejercicio-16-crear-la-carpeta-del-curso-y-la-estructura-de-unidades">Ejercicio 16: Crear la carpeta del curso y la estructura de unidades</h4>
+<div class="highlight"><pre><span></span><code><span class="nb">New-Item</span> <span class="n">-ItemType</span> <span class="n">Directory</span> <span class="n">-Name</span> <span class="n">EDD_2026_2027</span>
+<span class="nb">Set-Location</span> <span class="n">EDD_2026_2027</span>
+<span class="nb">New-Item</span> <span class="n">-ItemType</span> <span class="n">Directory</span> <span class="n">-Path</span> <span class="n">UT01_Introduccion</span><span class="p">\</span><span class="n">P01</span>
+<span class="nb">New-Item</span> <span class="n">-ItemType</span> <span class="n">Directory</span> <span class="n">-Path</span> <span class="n">UT02_IDE</span><span class="p">\</span><span class="n">P01</span>
+<span class="nb">New-Item</span> <span class="n">-ItemType</span> <span class="n">Directory</span> <span class="n">-Path</span> <span class="n">UT03_Pruebas</span><span class="p">\</span><span class="n">P01</span>
+<span class="nb">New-Item</span> <span class="n">-ItemType</span> <span class="n">Directory</span> <span class="n">-Path</span> <span class="n">UT04_Git_Refactor</span><span class="p">\</span><span class="n">P01</span>
+<span class="nb">New-Item</span> <span class="n">-ItemType</span> <span class="n">Directory</span> <span class="n">-Path</span> <span class="n">UT05_UML_Clases</span><span class="p">\</span><span class="n">P01</span>
+<span class="nb">New-Item</span> <span class="n">-ItemType</span> <span class="n">Directory</span> <span class="n">-Path</span> <span class="n">UT06_UML_Comportamiento</span><span class="p">\</span><span class="n">P01</span>
+<span class="n">tree</span>
+</code></pre></div>
+<h4 id="ejercicio-17-subir-de-nivel-y-volver">Ejercicio 17: Subir de nivel y volver</h4>
+<div class="highlight"><pre><span></span><code><span class="nb">Set-Location</span> <span class="p">..</span>
+<span class="nb">Get-Location</span>
+<span class="nb">Set-Location</span> <span class="n">EDD_2026_2027</span><span class="p">\</span><span class="n">UT01_Introduccion</span><span class="p">\</span><span class="n">P01</span>
+</code></pre></div>
+<p>El tabulador también autocompleta en PowerShell: escribe <code>Set-Location EDD</code> y pulsa <span class="keys"><kbd class="key-tab">Tab</kbd></span>.</p>
+<h4 id="ejercicio-18-crear-copiar-renombrar-y-borrar-archivos">Ejercicio 18: Crear, copiar, renombrar y borrar archivos</h4>
+<div class="highlight"><pre><span></span><code><span class="nb">New-Item</span> <span class="n">-ItemType</span> <span class="n">File</span> <span class="n">-Name</span> <span class="n">notas</span><span class="p">.</span><span class="n">txt</span>
+<span class="nb">Copy-Item</span> <span class="n">notas</span><span class="p">.</span><span class="n">txt</span> <span class="n">notas_copia</span><span class="p">.</span><span class="n">txt</span>
+<span class="nb">Rename-Item</span> <span class="n">notas</span><span class="p">.</span><span class="n">txt</span> <span class="n">final</span><span class="p">.</span><span class="n">txt</span>
+<span class="nb">Get-ChildItem</span>
+<span class="nb">Remove-Item</span> <span class="n">final</span><span class="p">.</span><span class="n">txt</span>
+<span class="nb">Get-ChildItem</span>
+</code></pre></div>
+<h4 id="ejercicio-19-descubrir-comandos">Ejercicio 19: Descubrir comandos</h4>
+<p>PowerShell te ayuda a encontrar los comandos que no conoces:</p>
+<div class="highlight"><pre><span></span><code><span class="nb">Get-Command</span> <span class="n">-Noun</span> <span class="n">Item</span>
+<span class="nb">Get-Help</span> <span class="nb">Copy-Item</span> <span class="n">-Examples</span>
+<span class="nb">Get-Alias</span> <span class="nb">ls</span>
+</code></pre></div>
+<p>¿Qué muestra cada uno?</p>
+<hr />
+<div class="admonition tip">
+<p class="admonition-title">Trabajo en el cuaderno</p>
+<p>Responde en tu <strong>cuaderno</strong>:</p>
+<ol>
+<li>Copia la <strong>tabla de equivalencias</strong> Bash–PowerShell con los comandos que has usado.</li>
+<li>En Xubuntu, crea <code>Prueba.txt</code> y <code>prueba.txt</code> en la misma carpeta. Haz lo mismo en Windows. ¿Qué ocurre en cada sistema? ¿Por qué? (Pista: <strong>mayúsculas y minúsculas</strong>.)</li>
+<li>¿Qué diferencias hay entre las rutas de Linux y de Windows? Piensa en la barra separadora, la raíz (<code>/</code> frente a <code>C:\</code>) y la carpeta personal.</li>
+</ol>
+</div>
+<hr />
+<h2 id="entregables">📑 Entregables</h2>
+<p>Un documento <strong><code>ut00p01.md</code></strong> (o PDF) con:</p>
+<ul>
+<li><strong>Captura 1 (Xubuntu):</strong> salida de <code>ls -R</code> dentro de <code>EDD_2026_2027</code>.</li>
+<li><strong>Captura 2 (Xubuntu):</strong> ejercicios 9 a 12, con los <code>ls</code> que muestran cada cambio.</li>
+<li><strong>Captura 3 (Windows):</strong> salida de <code>tree</code> dentro de <code>EDD_2026_2027</code>.</li>
+<li><strong>Captura 4 (Windows):</strong> ejercicio 18 completo.</li>
+<li><strong>Captura 5 (Windows):</strong> salida de los tres comandos del ejercicio 19.</li>
+<li>Foto de las páginas del <strong>cuaderno</strong>.</li>
+</ul>
+<p>La entrega se hace en la práctica 03, junto con el resto de la unidad.</p>
+<hr />
+<h2 id="criterios-de-correccion">✅ Criterios de corrección</h2>
+<table>
+<thead>
+<tr>
+<th>Criterio</th>
+<th>Excelente (100 %)</th>
+<th>Adecuado (50 %)</th>
+<th>Insuficiente (0 %)</th>
+<th>Peso</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Comandos de Bash (ejercicios 1-12)</td>
+<td>Todos realizados y la estructura de carpetas es correcta</td>
+<td>Faltan ejercicios o hay errores en la estructura</td>
+<td>No realizado</td>
+<td>35 %</td>
+</tr>
+<tr>
+<td>Comandos de PowerShell (ejercicios 13-19)</td>
+<td>Todos realizados con los <em>cmdlets</em> completos</td>
+<td>Faltan ejercicios o se usan solo los alias</td>
+<td>No realizado</td>
+<td>35 %</td>
+</tr>
+<tr>
+<td>Cuaderno</td>
+<td>Tabla completa y respuestas razonadas</td>
+<td>Respuestas incompletas</td>
+<td>No presentado</td>
+<td>30 %</td>
+</tr>
+</tbody>
+</table>
+              
+            </div>
+          </div><footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="Navegación de pie de página">
+        <a href="../../.." class="btn btn-neutral float-left" title="GUÍA DEL MÓDULO"><span class="icon icon-circle-arrow-left"></span> Anterior</a>
+        <a href="../practica02/" class="btn btn-neutral float-right" title="PRÁCTICA 02">Siguiente <span class="icon icon-circle-arrow-right"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+  </div>
+
+  Construído con <a href="https://properdocs.org/">ProperDocs</a> usando un <a href="https://github.com/readthedocs/sphinx_rtd_theme">tema</a> provisto por <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+          
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="Versiones">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+    
+      <span><a href="../../.." style="color: #fcfcfc">&laquo; Anterior</a></span>
+    
+    
+      <span><a href="../practica02/" style="color: #fcfcfc">Siguiente &raquo;</a></span>
+    
+  </span>
+</div>
+    <script src="../../../js/jquery-3.6.0.min.js"></script>
+    <script>var base_url = "../../..";</script>
+    <script src="../../../js/theme_extra.js"></script>
+    <script src="../../../js/theme.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+      <script src="../../../js/copy-button.js"></script>
+      <script src="../../../search/main.js"></script>
+    <script>
+        jQuery(function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        });
+    </script>
+
+</body>
+</html>

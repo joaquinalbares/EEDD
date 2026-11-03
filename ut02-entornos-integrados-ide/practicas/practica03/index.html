@@ -1,0 +1,730 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="es" >
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <link rel="shortcut icon" href="../../../img/favicon.ico" />
+    <title>PRÁCTICA 03 - Entornos de Desarrollo - IES Los Albares</title>
+    <link rel="stylesheet" href="../../../css/theme.css" />
+    <link rel="stylesheet" href="../../../css/theme_extra.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" />
+        <link href="../../../css/estilo.css" rel="stylesheet" />
+    
+      <script>
+        // Current page data
+        var properdocs_page_name = "PR\u00c1CTICA 03";
+        var properdocs_page_input_path = "ut02-entornos-integrados-ide/practicas/practica03.md";
+        var properdocs_page_url = null;
+      </script>
+    
+    <!--[if lt IE 9]>
+      <script src="../../../js/html5shiv.min.js"></script>
+    <![endif]-->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+      <script>hljs.highlightAll();</script> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+          <a href="../../.." class="icon icon-home"> Entornos de Desarrollo - IES Los Albares
+        </a><div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+      <input type="text" name="q" placeholder="Buscar documentos" aria-label="Buscar documentos" title="Escriba el término de búsqueda aquí" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Menu de navegación">
+              <ul>
+                <li class="toctree-l1"><a class="" href="https://joaquinalbares.github.io/">HOME</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../../..">GUÍA DEL MÓDULO</a>
+                </li>
+              </ul>
+              <p class="caption"><span class="caption-text">UT00</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../../ut00-destrezas-basicas/practicas/practica01/">PRÁCTICA 01</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../../ut00-destrezas-basicas/practicas/practica02/">PRÁCTICA 02</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../../ut00-destrezas-basicas/practicas/practica03/">PRÁCTICA 03</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">UT01</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../../ut01-teoria-del-software/teoria/ut01/">CONTENIDOS</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../../ut01-teoria-del-software/practicas/practica01/">PRÁCTICA 01</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">UT02</span></p>
+              <ul class="current">
+                  <li class="toctree-l1"><a class="reference internal" href="../../teoria/ut02/">CONTENIDOS</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../practica01/">PRÁCTICA 01</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../practica02/">PRÁCTICA 02</a>
+                  </li>
+                  <li class="toctree-l1 current"><a class="reference internal current" href="#">PRÁCTICA 03</a>
+    <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#objetivos">🎯 Objetivos</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#requisitos">🧰 Requisitos</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#1-instalacion-en-xubuntu-2404">1. Instalación en Xubuntu 24.04</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#paso-1-actualizar-el-sistema-e-instalar-las-herramientas-necesarias">Paso 1: Actualizar el sistema e instalar las herramientas necesarias</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#paso-2-anadir-la-clave-de-microsoft">Paso 2: Añadir la clave de Microsoft</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#paso-3-anadir-el-repositorio-de-vs-code">Paso 3: Añadir el repositorio de VS Code</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#paso-4-instalar-vs-code">Paso 4: Instalar VS Code</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#paso-5-comprobar-la-instalacion-y-el-comando-code">Paso 5: Comprobar la instalación y el comando code</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#2-instalacion-en-windows-11">2. Instalación en Windows 11</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#paso-1-descargar-el-instalador">Paso 1: Descargar el instalador</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#paso-2-ejecutar-el-instalador">Paso 2: Ejecutar el instalador</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#paso-3-comprobar-la-instalacion-y-el-comando-code">Paso 3: Comprobar la instalación y el comando code</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#3-primer-arranque-y-uso-del-comando-code">3. Primer arranque y uso del comando code</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#paso-1-abrir-vs-code-desde-la-terminal">Paso 1: Abrir VS Code desde la terminal</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#paso-2-poner-vs-code-en-castellano">Paso 2: Poner VS Code en castellano</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#paso-3-elegir-un-tema">Paso 3: Elegir un tema</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#4-extensiones-anadir-y-eliminar-modulos">4. Extensiones: añadir y eliminar módulos</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#paso-1-instalar-el-extension-pack-for-java">Paso 1: Instalar el Extension Pack for Java</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#paso-2-instalar-y-desinstalar-una-extension-desde-la-terminal">Paso 2: Instalar y desinstalar una extensión desde la terminal</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#5-indicar-a-vs-code-que-jdk-debe-usar">5. Indicar a VS Code qué JDK debe usar</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#paso-1-comprobar-el-jdk-detectado">Paso 1: Comprobar el JDK detectado</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#paso-2-fijar-el-jdk-en-la-configuracion-de-usuario">Paso 2: Fijar el JDK en la configuración de usuario</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#6-crear-ejecutar-y-depurar-un-proyecto-java">6. Crear, ejecutar y depurar un proyecto Java</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#paso-1-crear-el-proyecto">Paso 1: Crear el proyecto</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#paso-2-escribir-el-programa">Paso 2: Escribir el programa</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#paso-3-ejecutar">Paso 3: Ejecutar</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#paso-4-depurar">Paso 4: Depurar</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#7-personalizar-y-automatizar-el-editor">7. Personalizar y automatizar el editor</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#8-configurar-las-actualizaciones">8. Configurar las actualizaciones</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#entregables">📑 Entregables</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#criterios-de-correccion">✅ Criterios de corrección</a>
+    </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../practica04/">PRÁCTICA 04</a>
+                  </li>
+              </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+      <nav class="wy-nav-top" role="navigation" aria-label="Menú de navegación en móvil">
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../..">Entornos de Desarrollo - IES Los Albares</a>
+        
+      </nav>
+      <div class="wy-nav-content">
+        <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../../.." class="icon icon-home" aria-label="Documentos"></a></li>
+          <li class="breadcrumb-item">UT02</li>
+      <li class="breadcrumb-item active">PRÁCTICA 03</li>
+    <li class="wy-breadcrumbs-aside">
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+            <div class="section" itemprop="articleBody">
+              
+                <h1 id="practica-ut02p03-instalacion-y-configuracion-de-visual-studio-code-para-java">Práctica UT02P03: Instalación y configuración de Visual Studio Code para Java</h1>
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Resultados de aprendizaje y criterios de evaluación</strong></td>
+<td>RA2 – CE a), RA2 – CE b), RA2 – CE c), RA2 – CE d), RA2 – CE g)</td>
+</tr>
+<tr>
+<td><strong>Duración estimada</strong></td>
+<td>3 sesiones (3 h)</td>
+</tr>
+<tr>
+<td><strong>Modalidad</strong></td>
+<td>Individual</td>
+</tr>
+<tr>
+<td><strong>Sistemas operativos</strong></td>
+<td>Xubuntu 24.04 y Windows 11</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="objetivos">🎯 Objetivos</h2>
+<ul>
+<li>Instalar <strong>Visual Studio Code</strong> en Xubuntu y en Windows 11.</li>
+<li>Usar el comando <strong><code>code</code></strong> desde la terminal y comprobar que está en el <code>PATH</code>.</li>
+<li>Añadir y eliminar extensiones, en particular el <strong>Extension Pack for Java</strong>.</li>
+<li>Indicar a VS Code qué JDK debe usar (el <strong>Temurin 21</strong> de la práctica 02).</li>
+<li>Crear, ejecutar y depurar un proyecto Java.</li>
+<li>Personalizar el editor y configurar sus actualizaciones.</li>
+</ul>
+<h2 id="requisitos">🧰 Requisitos</h2>
+<ul>
+<li>Haber terminado la <strong>Práctica 02</strong>: Temurin 21 instalado y <code>JAVA_HOME</code> y <code>PATH</code> configurados en los dos sistemas.</li>
+<li>Usuario con permisos de administrador.</li>
+<li>Conexión a Internet.</li>
+</ul>
+<div class="admonition note">
+<p class="admonition-title">¿Editor o IDE?</p>
+<p>Visual Studio Code es, de serie, un <strong>editor de código</strong>: ligero, gratuito y multiplataforma. Se convierte en un <strong>entorno de desarrollo</strong> completo cuando le añades <strong>extensiones</strong> (<em>plugins</em>) para un lenguaje: resaltado y autocompletado, compilación, ejecución, depuración, pruebas…</p>
+<p>En esta práctica lo convertiremos en un entorno de desarrollo para <strong>Java</strong>.</p>
+</div>
+<div class="admonition tip">
+<p class="admonition-title">Trabajo en el cuaderno</p>
+<p>Durante la práctica, dibuja en tu <strong>cuaderno</strong> un esquema de la ventana de VS Code y señala sus partes: <strong>barra de actividad</strong>, <strong>barra lateral</strong>, <strong>editor</strong>, <strong>panel</strong> (terminal, problemas, consola de depuración) y <strong>barra de estado</strong>. Indica para qué sirve cada una.</p>
+</div>
+<hr />
+<h2 id="1-instalacion-en-xubuntu-2404">1. Instalación en Xubuntu 24.04</h2>
+<p>Instalaremos VS Code desde el <strong>repositorio oficial de Microsoft</strong>. Así se actualizará junto con el resto del sistema cada vez que hagas <code>sudo apt upgrade</code>.</p>
+<p>Crea primero la carpeta de la práctica:</p>
+<div class="highlight"><pre><span></span><code>mkdir<span class="w"> </span>-p<span class="w"> </span>~/ut02p03<span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="nb">cd</span><span class="w"> </span>~/ut02p03
+</code></pre></div>
+<h3 id="paso-1-actualizar-el-sistema-e-instalar-las-herramientas-necesarias">Paso 1: Actualizar el sistema e instalar las herramientas necesarias</h3>
+<div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>apt<span class="w"> </span>update<span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span>sudo<span class="w"> </span>apt<span class="w"> </span>upgrade<span class="w"> </span>-y
+sudo<span class="w"> </span>apt<span class="w"> </span>install<span class="w"> </span>-y<span class="w"> </span>wget<span class="w"> </span>gpg<span class="w"> </span>apt-transport-https
+</code></pre></div>
+<h3 id="paso-2-anadir-la-clave-de-microsoft">Paso 2: Añadir la clave de Microsoft</h3>
+<div class="highlight"><pre><span></span><code>wget<span class="w"> </span>-qO-<span class="w"> </span>https://packages.microsoft.com/keys/microsoft.asc<span class="w"> </span><span class="p">|</span><span class="w"> </span>sudo<span class="w"> </span>gpg<span class="w"> </span>--dearmor<span class="w"> </span>-o<span class="w"> </span>/usr/share/keyrings/microsoft.gpg
+</code></pre></div>
+<h3 id="paso-3-anadir-el-repositorio-de-vs-code">Paso 3: Añadir el repositorio de VS Code</h3>
+<p>Crea el fichero <code>/etc/apt/sources.list.d/vscode.sources</code> con este contenido:</p>
+<div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>tee<span class="w"> </span>/etc/apt/sources.list.d/vscode.sources<span class="w"> </span>&gt;<span class="w"> </span>/dev/null<span class="w"> </span><span class="s">&lt;&lt;'EOF'</span>
+<span class="s">Types: deb</span>
+<span class="s">URIs: https://packages.microsoft.com/repos/code</span>
+<span class="s">Suites: stable</span>
+<span class="s">Components: main</span>
+<span class="s">Architectures: amd64,arm64,armhf</span>
+<span class="s">Signed-By: /usr/share/keyrings/microsoft.gpg</span>
+<span class="s">EOF</span>
+</code></pre></div>
+<details>
+<summary>¿Por qué este formato y no una línea <code>deb …</code> como en cursos anteriores?</summary>
+<p>Las versiones recientes de Ubuntu usan el formato <strong>deb822</strong> (ficheros <code>.sources</code>, con un campo por línea), más fácil de leer que la antigua línea única de los ficheros <code>.list</code>. Las dos formas funcionan, pero no debes tener <strong>las dos a la vez</strong> para el mismo repositorio, porque <code>apt</code> mostraría avisos de repositorio duplicado.</p>
+</details>
+<h3 id="paso-4-instalar-vs-code">Paso 4: Instalar VS Code</h3>
+<div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>apt<span class="w"> </span>update
+sudo<span class="w"> </span>apt<span class="w"> </span>install<span class="w"> </span>-y<span class="w"> </span>code
+</code></pre></div>
+<h3 id="paso-5-comprobar-la-instalacion-y-el-comando-code">Paso 5: Comprobar la instalación y el comando <code>code</code></h3>
+<div class="highlight"><pre><span></span><code>code<span class="w"> </span>--version
+which<span class="w"> </span>code
+</code></pre></div>
+<p>Al instalar con <code>apt</code>, el ejecutable queda enlazado en <code>/usr/bin/code</code>, una carpeta que ya está en el <code>PATH</code>, así que el comando <code>code</code> funciona sin hacer nada más.</p>
+<details>
+<summary>Alternativa: instalar el paquete <code>.deb</code></summary>
+<p>También puedes descargar el <code>.deb</code> desde <a href="https://code.visualstudio.com/download">code.visualstudio.com/download</a> e instalarlo con:</p>
+<div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>apt<span class="w"> </span>install<span class="w"> </span>./code_*.deb
+</code></pre></div>
+<p>Durante la instalación te preguntará si quieres añadir el repositorio de Microsoft para recibir actualizaciones: responde que <strong>sí</strong>.</p>
+</details>
+<hr />
+<h2 id="2-instalacion-en-windows-11">2. Instalación en Windows 11</h2>
+<h3 id="paso-1-descargar-el-instalador">Paso 1: Descargar el instalador</h3>
+<p>Entra en <a href="https://code.visualstudio.com/download">code.visualstudio.com/download</a> y descarga el <strong>User Installer</strong> de Windows x64. Se instala solo para tu usuario y no necesita permisos de administrador.</p>
+<h3 id="paso-2-ejecutar-el-instalador">Paso 2: Ejecutar el instalador</h3>
+<p>En la pantalla <strong>Seleccione las tareas adicionales</strong>, marca estas opciones:</p>
+<table>
+<thead>
+<tr>
+<th>Opción</th>
+<th>¿Marcar?</th>
+<th>Para qué sirve</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Agregar la acción «Abrir con Code» al menú contextual de <strong>archivo</strong> del Explorador</td>
+<td>✅ Sí</td>
+<td>Abrir un fichero en VS Code con el botón derecho</td>
+</tr>
+<tr>
+<td>Agregar la acción «Abrir con Code» al menú contextual de <strong>directorio</strong> del Explorador</td>
+<td>✅ Sí</td>
+<td>Abrir una carpeta completa como proyecto</td>
+</tr>
+<tr>
+<td>Registrar Code como editor para tipos de archivo admitidos</td>
+<td>Opcional</td>
+<td>Abrir con doble clic los <code>.java</code>, <code>.md</code>…</td>
+</tr>
+<tr>
+<td><strong>Agregar a PATH</strong></td>
+<td>✅ <strong>Sí</strong></td>
+<td>Poder usar el comando <code>code</code> desde la terminal</td>
+</tr>
+</tbody>
+</table>
+<details>
+<summary>Alternativa: instalar con <code>winget</code></summary>
+<p>Desde <strong>PowerShell</strong>:</p>
+<div class="highlight"><pre><span></span><code><span class="n">winget</span> <span class="n">install</span> <span class="n">Microsoft</span><span class="p">.</span><span class="n">VisualStudioCode</span>
+</code></pre></div>
+</details>
+<h3 id="paso-3-comprobar-la-instalacion-y-el-comando-code">Paso 3: Comprobar la instalación y el comando <code>code</code></h3>
+<p>Abre una <strong>nueva</strong> ventana de PowerShell (las variables de entorno se leen al abrir la terminal):</p>
+<div class="highlight"><pre><span></span><code><span class="n">code</span> <span class="p">-</span><span class="n">-version</span>
+<span class="n">where</span><span class="p">.</span><span class="n">exe</span> <span class="n">code</span>
+</code></pre></div>
+<div class="admonition warning">
+<p class="admonition-title">Si <code>code</code> no se reconoce en Windows</p>
+<p>Significa que el instalador no añadió VS Code al <code>PATH</code>. Tienes dos opciones:</p>
+<ul>
+<li>Volver a ejecutar el instalador y marcar <strong>Agregar a PATH</strong>.</li>
+<li>Añadirlo a mano como en la práctica 02: en <strong>Editar las variables de entorno del sistema → Variables de entorno</strong>, edita el <code>Path</code> <strong>de tu usuario</strong> y añade <code>%LOCALAPPDATA%\Programs\Microsoft VS Code\bin</code>.</li>
+</ul>
+<p>El comando de la paleta <strong>«Shell Command: Install 'code' command in PATH»</strong> que verás en algunos tutoriales <strong>solo existe en macOS</strong>.</p>
+</div>
+<hr />
+<h2 id="3-primer-arranque-y-uso-del-comando-code">3. Primer arranque y uso del comando <code>code</code></h2>
+<h3 id="paso-1-abrir-vs-code-desde-la-terminal">Paso 1: Abrir VS Code desde la terminal</h3>
+<p>El comando <code>code</code> abre VS Code directamente en una carpeta o fichero. En los dos sistemas, desde la carpeta de la práctica:</p>
+<table>
+<thead>
+<tr>
+<th>Comando</th>
+<th>Qué hace</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>code .</code></td>
+<td>Abre la carpeta actual</td>
+</tr>
+<tr>
+<td><code>code fichero.txt</code></td>
+<td>Abre un fichero concreto</td>
+</tr>
+<tr>
+<td><code>code -n</code></td>
+<td>Abre una ventana nueva y vacía</td>
+</tr>
+<tr>
+<td><code>code --list-extensions</code></td>
+<td>Muestra las extensiones instaladas</td>
+</tr>
+<tr>
+<td><code>code --install-extension &lt;id&gt;</code></td>
+<td>Instala una extensión</td>
+</tr>
+<tr>
+<td><code>code --uninstall-extension &lt;id&gt;</code></td>
+<td>Desinstala una extensión</td>
+</tr>
+</tbody>
+</table>
+<p>Ejecuta <code>code .</code> dentro de <code>ut02p03</code>. La primera vez, VS Code te preguntará si <strong>confías en los autores</strong> de la carpeta: responde que sí, porque es tu propia carpeta.</p>
+<h3 id="paso-2-poner-vs-code-en-castellano">Paso 2: Poner VS Code en castellano</h3>
+<ol>
+<li>Pulsa <span class="keys"><kbd class="key-control">Ctrl</kbd><span>+</span><kbd class="key-shift">Shift</kbd><span>+</span><kbd class="key-p">P</kbd></span> para abrir la <strong>paleta de comandos</strong>.</li>
+<li>Escribe <code>Configure Display Language</code> y selecciona <strong>Español</strong>.</li>
+<li>Si no aparece, VS Code te ofrecerá instalar el paquete de idioma <strong>Spanish Language Pack for Visual Studio Code</strong>. Instálalo y reinicia cuando te lo pida.</li>
+</ol>
+<h3 id="paso-3-elegir-un-tema">Paso 3: Elegir un tema</h3>
+<p>Abre la paleta de comandos y busca <strong>Preferencias: Tema de color</strong>. Elige el que prefieras; puedes cambiarlo cuando quieras.</p>
+<hr />
+<h2 id="4-extensiones-anadir-y-eliminar-modulos">4. Extensiones: añadir y eliminar módulos</h2>
+<h3 id="paso-1-instalar-el-extension-pack-for-java">Paso 1: Instalar el Extension Pack for Java</h3>
+<ol>
+<li>Pulsa el icono <strong>Extensiones</strong> de la barra de actividad (o <span class="keys"><kbd class="key-control">Ctrl</kbd><span>+</span><kbd class="key-shift">Shift</kbd><span>+</span><kbd class="key-x">X</kbd></span>).</li>
+<li>Busca <strong>Extension Pack for Java</strong> (publicado por Microsoft, identificador <code>vscjava.vscode-java-pack</code>).</li>
+<li>Pulsa <strong>Instalar</strong>.</li>
+</ol>
+<p>Este paquete instala de una vez varias extensiones:</p>
+<table>
+<thead>
+<tr>
+<th>Extensión</th>
+<th>Para qué sirve</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Language Support for Java™ by Red Hat</td>
+<td>Autocompletado, errores en tiempo real, refactorización</td>
+</tr>
+<tr>
+<td>Debugger for Java</td>
+<td>Depurar con puntos de ruptura</td>
+</tr>
+<tr>
+<td>Test Runner for Java</td>
+<td>Ejecutar pruebas JUnit (lo usaremos en la UT03)</td>
+</tr>
+<tr>
+<td>Maven for Java</td>
+<td>Gestionar proyectos Maven (UT03)</td>
+</tr>
+<tr>
+<td>Project Manager for Java</td>
+<td>Vista <strong>Java Projects</strong></td>
+</tr>
+<tr>
+<td>IntelliCode</td>
+<td>Sugerencias de código asistidas</td>
+</tr>
+</tbody>
+</table>
+<p>Comprueba desde la terminal qué extensiones tienes instaladas:</p>
+<div class="highlight"><pre><span></span><code>code<span class="w"> </span>--list-extensions
+</code></pre></div>
+<h3 id="paso-2-instalar-y-desinstalar-una-extension-desde-la-terminal">Paso 2: Instalar y desinstalar una extensión desde la terminal</h3>
+<p>Instala la extensión <strong>Markdown All in One</strong>, que te será útil para escribir la documentación de las prácticas:</p>
+<div class="highlight"><pre><span></span><code>code<span class="w"> </span>--install-extension<span class="w"> </span>yzhang.markdown-all-in-one
+code<span class="w"> </span>--list-extensions
+</code></pre></div>
+<p>Ahora <strong>desinstálala</strong> y vuelve a comprobarlo:</p>
+<div class="highlight"><pre><span></span><code>code<span class="w"> </span>--uninstall-extension<span class="w"> </span>yzhang.markdown-all-in-one
+code<span class="w"> </span>--list-extensions
+</code></pre></div>
+<p>Vuelve a instalarla (desde la terminal o desde la vista Extensiones); la usarás en el entregable.</p>
+<hr />
+<h2 id="5-indicar-a-vs-code-que-jdk-debe-usar">5. Indicar a VS Code qué JDK debe usar</h2>
+<p>La extensión de Java busca el JDK en <code>JAVA_HOME</code> y en el <code>PATH</code>. Si hiciste bien la práctica 02, ya encontrará <strong>Temurin 21</strong>. Aun así, vamos a comprobarlo y a fijarlo en la configuración.</p>
+<h3 id="paso-1-comprobar-el-jdk-detectado">Paso 1: Comprobar el JDK detectado</h3>
+<p>Abre la paleta de comandos y ejecuta <strong>Java: Configure Java Runtime</strong>. En la pestaña <strong>Project JDKs</strong> debe aparecer el JDK 21 de Temurin.</p>
+<h3 id="paso-2-fijar-el-jdk-en-la-configuracion-de-usuario">Paso 2: Fijar el JDK en la configuración de usuario</h3>
+<p>Abre la paleta de comandos y ejecuta <strong>Preferencias: Abrir configuración de usuario (JSON)</strong>. Añade la configuración de tu sistema dentro de las llaves <code>{ }</code> (si ya hay otras líneas, separa cada entrada con una coma).</p>
+<p>En <strong>Xubuntu</strong>:</p>
+<div class="highlight"><pre><span></span><code><span class="nt">"java.configuration.runtimes"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="nt">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"JavaSE-21"</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">"path"</span><span class="p">:</span><span class="w"> </span><span class="s2">"/usr/lib/jvm/temurin-21-jdk-amd64"</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">"default"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">]</span>
+</code></pre></div>
+<p>En <strong>Windows</strong> (las barras <code>\</code> se escriben dobles en JSON):</p>
+<div class="highlight"><pre><span></span><code><span class="nt">"java.configuration.runtimes"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="nt">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"JavaSE-21"</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">"path"</span><span class="p">:</span><span class="w"> </span><span class="s2">"C:\\Program Files\\Eclipse Adoptium\\jdk-21.0.x.y-hotspot"</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">"default"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">]</span>
+</code></pre></div>
+<div class="admonition warning">
+<p class="admonition-title">Usa tu ruta real</p>
+<p>Sustituye <code>jdk-21.0.x.y-hotspot</code> por el nombre real de la carpeta que tengas en <code>C:\Program Files\Eclipse Adoptium</code>. Es el mismo valor que pusiste en <code>JAVA_HOME</code> en la práctica 02.</p>
+</div>
+<hr />
+<h2 id="6-crear-ejecutar-y-depurar-un-proyecto-java">6. Crear, ejecutar y depurar un proyecto Java</h2>
+<h3 id="paso-1-crear-el-proyecto">Paso 1: Crear el proyecto</h3>
+<ol>
+<li>Abre la paleta de comandos y ejecuta <strong>Java: Create Java Project…</strong></li>
+<li>Elige <strong>No build tools</strong> (sin Maven ni Gradle; los veremos en la UT03).</li>
+<li>Selecciona como ubicación la carpeta <code>ut02p03</code> y llama al proyecto <strong><code>hola-vscode</code></strong>.</li>
+</ol>
+<p>VS Code crea esta estructura:</p>
+<div class="highlight"><pre><span></span><code>hola-vscode/
+├── .vscode/settings.json   ← configuración del proyecto
+├── bin/                    ← ficheros .class compilados
+├── lib/                    ← librerías .jar externas
+├── src/App.java            ← código fuente
+└── README.md
+</code></pre></div>
+<h3 id="paso-2-escribir-el-programa">Paso 2: Escribir el programa</h3>
+<p>Sustituye el contenido de <code>src/App.java</code> por este:</p>
+<div class="highlight"><pre><span></span><code><span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">App</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span><span class="w"> </span><span class="n">args</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="n">String</span><span class="w"> </span><span class="n">nombre</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">"tu nombre"</span><span class="p">;</span><span class="w">   </span><span class="c1">// Cambia por tu nombre</span>
+<span class="w">        </span><span class="kt">int</span><span class="w"> </span><span class="n">suma</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+
+<span class="w">        </span><span class="c1">// Sumamos los números del 1 al 5 para poder seguir el bucle con el depurador</span>
+<span class="w">        </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&lt;=</span><span class="w"> </span><span class="mi">5</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="o">++</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="n">suma</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">suma</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">i</span><span class="p">;</span>
+<span class="w">        </span><span class="p">}</span>
+
+<span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"Hola, "</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">nombre</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s">", desde VS Code"</span><span class="p">);</span>
+<span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"La suma del 1 al 5 es "</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">suma</span><span class="p">);</span>
+<span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"Versión de Java: "</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">System</span><span class="p">.</span><span class="na">getProperty</span><span class="p">(</span><span class="s">"java.version"</span><span class="p">));</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+<h3 id="paso-3-ejecutar">Paso 3: Ejecutar</h3>
+<p>Pulsa <strong>Run</strong> (encima del método <code>main</code>) o el botón ▷ de la esquina superior derecha. La salida aparece en el <strong>terminal</strong> integrado.</p>
+<h3 id="paso-4-depurar">Paso 4: Depurar</h3>
+<ol>
+<li>Haz clic a la izquierda del número de la línea <code>suma = suma + i;</code> para poner un <strong>punto de ruptura</strong> (aparece un círculo rojo).</li>
+<li>Pulsa <strong>Debug</strong> encima del método <code>main</code> (o <span class="keys"><kbd class="key-f5">F5</kbd></span>).</li>
+<li>El programa se detiene en el punto de ruptura. En la vista <strong>Variables</strong> observa los valores de <code>i</code> y <code>suma</code>.</li>
+<li>Avanza con <strong>Paso a paso por procedimiento</strong> (<span class="keys"><kbd class="key-f10">F10</kbd></span>) hasta terminar el bucle.</li>
+</ol>
+<div class="admonition tip">
+<p class="admonition-title">Cuaderno</p>
+<p>Antes de depurar, haz en tu <strong>cuaderno</strong> la <strong>traza</strong> del bucle: una tabla con los valores de <code>i</code> y <code>suma</code> en cada vuelta. Después, compruébala con el depurador.</p>
+</div>
+<hr />
+<h2 id="7-personalizar-y-automatizar-el-editor">7. Personalizar y automatizar el editor</h2>
+<p>Abre la configuración de usuario en JSON (como en el apartado 5) y añade estas opciones:</p>
+<div class="highlight"><pre><span></span><code><span class="nt">"editor.fontSize"</span><span class="p">:</span><span class="w"> </span><span class="mi">16</span><span class="p">,</span>
+<span class="nt">"editor.formatOnSave"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span>
+<span class="nt">"files.autoSave"</span><span class="p">:</span><span class="w"> </span><span class="s2">"afterDelay"</span><span class="p">,</span>
+<span class="nt">"editor.minimap.enabled"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span>
+</code></pre></div>
+<table>
+<thead>
+<tr>
+<th>Opción</th>
+<th>Qué hace</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>editor.fontSize</code></td>
+<td>Tamaño de letra del editor</td>
+</tr>
+<tr>
+<td><code>editor.formatOnSave</code></td>
+<td>Da formato al código automáticamente al guardar</td>
+</tr>
+<tr>
+<td><code>files.autoSave</code></td>
+<td>Guarda automáticamente los cambios tras una pausa</td>
+</tr>
+<tr>
+<td><code>editor.minimap.enabled</code></td>
+<td>Oculta el minimapa de la derecha</td>
+</tr>
+</tbody>
+</table>
+<p>Comprueba que funciona: desordena la sangría de <code>App.java</code>, guarda con <span class="keys"><kbd class="key-control">Ctrl</kbd><span>+</span><kbd class="key-s">S</kbd></span> y observa cómo se corrige sola.</p>
+<details>
+<summary>Configuración de usuario frente a configuración del proyecto</summary>
+<ul>
+<li>La <strong>configuración de usuario</strong> se aplica a <strong>todo</strong> lo que abras en VS Code.</li>
+<li>La <strong>configuración del proyecto</strong> (<code>.vscode/settings.json</code>) solo se aplica a esa carpeta y <strong>tiene prioridad</strong> sobre la de usuario. Es útil para que todo el equipo de un proyecto trabaje igual, porque se puede subir al repositorio.</li>
+</ul>
+</details>
+<hr />
+<h2 id="8-configurar-las-actualizaciones">8. Configurar las actualizaciones</h2>
+<p>Abre <strong>Configuración</strong> (<span class="keys"><kbd class="key-control">Ctrl</kbd><span>+</span><kbd class="key-comma">,</kbd></span>) y busca <code>update</code>:</p>
+<table>
+<thead>
+<tr>
+<th>Opción</th>
+<th>Valores</th>
+<th>Qué controla</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>update.mode</code></td>
+<td><code>default</code>, <code>start</code>, <code>manual</code>, <code>none</code></td>
+<td>Si VS Code busca e instala actualizaciones de sí mismo</td>
+</tr>
+<tr>
+<td><code>extensions.autoUpdate</code></td>
+<td><code>true</code>, <code>onlyEnabledExtensions</code>, <code>false</code></td>
+<td>Si las extensiones se actualizan solas</td>
+</tr>
+</tbody>
+</table>
+<p>Deja <code>extensions.autoUpdate</code> activado y revisa el valor de <code>update.mode</code> en cada sistema.</p>
+<div class="admonition note">
+<p class="admonition-title">Las actualizaciones no funcionan igual en los dos sistemas</p>
+<ul>
+<li>En <strong>Windows</strong>, VS Code se actualiza <strong>a sí mismo</strong> y te avisa cuando hay una versión nueva.</li>
+<li>En <strong>Xubuntu</strong>, lo instalaste desde un repositorio, así que se actualiza <strong>con el sistema</strong>: <code>sudo apt update &amp;&amp; sudo apt upgrade</code>. VS Code solo te avisa de que hay una versión nueva.</li>
+</ul>
+</div>
+<hr />
+<h2 id="entregables">📑 Entregables</h2>
+<p>Carpeta <strong><code>ut02p03</code></strong> comprimida en un fichero llamado <strong><code>ut02p03_apellido_nombre.zip</code></strong> con:</p>
+<ul>
+<li>El proyecto <strong><code>hola-vscode</code></strong> completo (de uno de los dos sistemas).</li>
+<li>Un documento <strong><code>ut02p03.md</code></strong>, escrito en VS Code con Markdown All in One, con las siguientes capturas y una breve explicación de cada una:<ul>
+<li><strong>Captura 1 (Xubuntu):</strong> salida de <code>code --version</code> y <code>which code</code>.</li>
+<li><strong>Captura 2 (Windows):</strong> salida de <code>code --version</code> y <code>where.exe code</code>.</li>
+<li><strong>Captura 3:</strong> salida de <code>code --list-extensions</code> antes y después de desinstalar Markdown All in One.</li>
+<li><strong>Captura 4:</strong> ventana <strong>Java: Configure Java Runtime</strong> mostrando Temurin 21.</li>
+<li><strong>Captura 5:</strong> ejecución de <code>App.java</code> en el terminal integrado (en los dos sistemas).</li>
+<li><strong>Captura 6:</strong> depurador detenido en el punto de ruptura, con la vista <strong>Variables</strong> visible.</li>
+<li><strong>Captura 7:</strong> tu <code>settings.json</code> de usuario.</li>
+<li><strong>Captura 8:</strong> valor de <code>update.mode</code> y <code>extensions.autoUpdate</code> en cada sistema.</li>
+</ul>
+</li>
+<li>Un último apartado en <code>ut02p03.md</code>: <strong>«Diferencias entre la instalación en Xubuntu y en Windows»</strong> (instalación, <code>PATH</code> y actualizaciones).</li>
+<li>Foto de las páginas del <strong>cuaderno</strong>: esquema de la ventana de VS Code y traza del bucle.</li>
+</ul>
+<div class="admonition info">
+<p class="admonition-title">Entrega en Moodle</p>
+<p>Sube el <code>.zip</code> a la tarea <strong>«UT02 – Práctica 03: VS Code para Java»</strong> del aula virtual (<a href="https://aulavirtual.murciaeduca.es">aulavirtual.murciaeduca.es</a>) antes de la fecha indicada en la tarea.</p>
+</div>
+<hr />
+<h2 id="criterios-de-correccion">✅ Criterios de corrección</h2>
+<table>
+<thead>
+<tr>
+<th>Criterio</th>
+<th>RA – CE</th>
+<th>Excelente (100 %)</th>
+<th>Adecuado (50 %)</th>
+<th>Insuficiente (0 %)</th>
+<th>Peso</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Instalación de VS Code en los dos sistemas, con <code>code</code> en el <code>PATH</code></td>
+<td>RA2 – CE a)</td>
+<td>Instalado en ambos desde las fuentes oficiales; <code>code</code> funciona en las dos terminales</td>
+<td>Instalado en ambos, pero <code>code</code> no funciona en alguno</td>
+<td>Instalado solo en uno o sin evidencias</td>
+<td>20 %</td>
+</tr>
+<tr>
+<td>Añadir y eliminar extensiones</td>
+<td>RA2 – CE b)</td>
+<td>Extension Pack for Java instalado; instala y desinstala desde la terminal con evidencias</td>
+<td>Solo instala, o faltan evidencias</td>
+<td>No instala las extensiones</td>
+<td>15 %</td>
+</tr>
+<tr>
+<td>JDK configurado en VS Code</td>
+<td>RA2 – CE a), c)</td>
+<td>Temurin 21 detectado y fijado en <code>java.configuration.runtimes</code></td>
+<td>Detectado pero no fijado en la configuración</td>
+<td>VS Code no encuentra el JDK</td>
+<td>15 %</td>
+</tr>
+<tr>
+<td>Proyecto Java creado, ejecutado y depurado</td>
+<td>RA2 – CE a)</td>
+<td>Proyecto completo; ejecución y depuración con punto de ruptura y variables visibles</td>
+<td>Se ejecuta, pero no se depura</td>
+<td>No se ejecuta</td>
+<td>20 %</td>
+</tr>
+<tr>
+<td>Personalización y automatización</td>
+<td>RA2 – CE c)</td>
+<td>Todas las opciones aplicadas y el formato al guardar comprobado</td>
+<td>Opciones aplicadas sin comprobación</td>
+<td>Sin personalizar</td>
+<td>10 %</td>
+</tr>
+<tr>
+<td>Configuración de actualizaciones</td>
+<td>RA2 – CE d)</td>
+<td>Opciones revisadas en ambos sistemas y diferencias explicadas</td>
+<td>Opciones revisadas sin explicación</td>
+<td>No realizado</td>
+<td>10 %</td>
+</tr>
+<tr>
+<td>Comparación Xubuntu/Windows y cuaderno</td>
+<td>RA2 – CE g)</td>
+<td>Diferencias bien explicadas; esquema y traza correctos</td>
+<td>Incompletos</td>
+<td>No presentado</td>
+<td>10 %</td>
+</tr>
+</tbody>
+</table>
+              
+            </div>
+          </div><footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="Navegación de pie de página">
+        <a href="../practica02/" class="btn btn-neutral float-left" title="PRÁCTICA 02"><span class="icon icon-circle-arrow-left"></span> Anterior</a>
+        <a href="../practica04/" class="btn btn-neutral float-right" title="PRÁCTICA 04">Siguiente <span class="icon icon-circle-arrow-right"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+  </div>
+
+  Construído con <a href="https://properdocs.org/">ProperDocs</a> usando un <a href="https://github.com/readthedocs/sphinx_rtd_theme">tema</a> provisto por <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+          
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="Versiones">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+    
+      <span><a href="../practica02/" style="color: #fcfcfc">&laquo; Anterior</a></span>
+    
+    
+      <span><a href="../practica04/" style="color: #fcfcfc">Siguiente &raquo;</a></span>
+    
+  </span>
+</div>
+    <script src="../../../js/jquery-3.6.0.min.js"></script>
+    <script>var base_url = "../../..";</script>
+    <script src="../../../js/theme_extra.js"></script>
+    <script src="../../../js/theme.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+      <script src="../../../js/copy-button.js"></script>
+      <script src="../../../search/main.js"></script>
+    <script>
+        jQuery(function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        });
+    </script>
+
+</body>
+</html>
