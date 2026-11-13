@@ -84,16 +84,34 @@
     <li class="toctree-l2"><a class="reference internal" href="#1-por-que-probamos-el-software">1. ¿POR QUÉ PROBAMOS EL SOFTWARE?</a>
         <ul>
     <li class="toctree-l3"><a class="reference internal" href="#error-defecto-y-fallo">Error, defecto y fallo</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#ejemplo-practico-un-defecto-escondido">Ejemplo práctico: un defecto escondido</a>
+    </li>
+        </ul>
     </li>
     <li class="toctree-l3"><a class="reference internal" href="#verificacion-y-validacion">Verificación y validación</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#ejemplo-practico-verificado-pero-no-validado">Ejemplo práctico: verificado, pero no validado</a>
+    </li>
+        </ul>
     </li>
     <li class="toctree-l3"><a class="reference internal" href="#principios-de-las-pruebas">Principios de las pruebas</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#ejemplo-practico-las-pruebas-pasan-pero-el-defecto-sigue-ahi-principio-1">Ejemplo práctico: las pruebas pasan, pero el defecto sigue ahí (principio 1)</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#ejemplo-practico-y-si-lo-probamos-todo-principio-2">Ejemplo práctico: ¿y si lo probamos todo? (principio 2)</a>
+    </li>
+        </ul>
     </li>
         </ul>
     </li>
     <li class="toctree-l2"><a class="reference internal" href="#2-las-pruebas-en-el-ciclo-de-vida-del-software">2. LAS PRUEBAS EN EL CICLO DE VIDA DEL SOFTWARE</a>
         <ul>
     <li class="toctree-l3"><a class="reference internal" href="#plan-de-pruebas">Plan de pruebas</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#ejemplo-practico-la-aplicacion-que-calcula-tu-nota">Ejemplo práctico: la aplicación que calcula tu nota</a>
+    </li>
+        </ul>
     </li>
         </ul>
     </li>
@@ -272,26 +290,79 @@
 <tr>
 <td><strong>Error</strong> (<em>error</em>, equivocación)</td>
 <td>Acción humana que produce un resultado incorrecto</td>
-<td>El programador confunde <code>&lt;</code> con <code>&lt;=</code></td>
+<td>El programador confunde <code>&gt;</code> con <code>&gt;=</code></td>
 </tr>
 <tr>
 <td><strong>Defecto</strong> (<em>defect</em>, <em>bug</em>)</td>
 <td>Imperfección en el código o en un documento, consecuencia del error</td>
-<td>La línea <code>if (edad &lt; 18)</code> debería ser <code>if (edad &lt;= 17)</code> y no lo es</td>
+<td>La línea <code>return edad &gt; 18;</code> debería ser <code>return edad &gt;= 18;</code></td>
 </tr>
 <tr>
 <td><strong>Fallo</strong> (<em>failure</em>)</td>
 <td>Comportamiento observable incorrecto al ejecutar el código defectuoso</td>
-<td>La aplicación cobra la entrada de adulto a un chaval de 17 años</td>
+<td>La aplicación no deja votar a una persona que acaba de cumplir 18 años</td>
 </tr>
 </tbody>
 </table>
 <p>Un defecto puede pasar años sin producir ningún fallo si nadie ejecuta esa línea con los datos que lo provocan. Por eso hay que <strong>buscarlos</strong>.</p>
+<h4 id="ejemplo-practico-un-defecto-escondido">Ejemplo práctico: un defecto escondido</h4>
+<p>Este método debe indicar si una persona es mayor de edad (18 años o más):</p>
+<div class="highlight"><pre><span></span><code><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">boolean</span><span class="w"> </span><span class="nf">esMayorDeEdad</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">edad</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">edad</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mi">18</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div>
+<p>Lo probamos con tres edades:</p>
+<table>
+<thead>
+<tr>
+<th>Entrada</th>
+<th>Resultado esperado</th>
+<th>Resultado obtenido</th>
+<th>¿Fallo?</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>17</td>
+<td><code>false</code></td>
+<td><code>false</code></td>
+<td>No</td>
+</tr>
+<tr>
+<td>30</td>
+<td><code>true</code></td>
+<td><code>true</code></td>
+<td>No</td>
+</tr>
+<tr>
+<td>18</td>
+<td><code>true</code></td>
+<td><code>false</code></td>
+<td><strong>Sí</strong></td>
+</tr>
+</tbody>
+</table>
+<p>El <strong>defecto</strong> está en el código desde el primer día, pero el <strong>fallo</strong> solo aparece con un dato concreto: la edad 18. Si nadie prueba justo ese valor, el defecto llega a producción.</p>
+<div class="admonition note">
+<p class="admonition-title">Para tu cuaderno</p>
+<p>Escribe en pseudocódigo un algoritmo que diga si un número es par. Introduce a propósito un defecto que solo produzca fallo con <strong>un</strong> valor concreto. Intercambia el cuaderno con tu compañero: ¿es capaz de encontrar ese valor sin mirar el código?</p>
+</div>
 <h3 id="verificacion-y-validacion">Verificación y validación</h3>
 <ul>
 <li><strong>Verificación:</strong> ¿estamos construyendo el producto <strong>correctamente</strong>? Comprueba que el software cumple su especificación.</li>
 <li><strong>Validación:</strong> ¿estamos construyendo el producto <strong>correcto</strong>? Comprueba que el software hace lo que el cliente necesita de verdad.</li>
 </ul>
+<h4 id="ejemplo-practico-verificado-pero-no-validado">Ejemplo práctico: verificado, pero no validado</h4>
+<p>Una frutería encarga un programa para cobrar. La especificación que redacta el analista dice "el precio final es el precio más el 21 % de IVA". El programador escribe:</p>
+<div class="highlight"><pre><span></span><code>FUNCIÓN calcularPrecioFinal(precio)
+    DEVOLVER precio * 1.21
+FIN FUNCIÓN
+</code></pre></div>
+<ul>
+<li><strong>Verificación:</strong> <code>calcularPrecioFinal(10)</code> devuelve <code>12.10</code>, exactamente lo que dice la especificación. ✔</li>
+<li><strong>Validación:</strong> la fruta y la verdura llevan un IVA superreducido del 4 %, así que el programa cobra de más en casi todos los productos. El cliente no lo acepta. ✘</li>
+</ul>
+<p>El código es correcto respecto a la especificación; el error estaba <strong>en la especificación</strong>. Por eso hacen falta las dos comprobaciones.</p>
 <h3 id="principios-de-las-pruebas">Principios de las pruebas</h3>
 <ol>
 <li><strong>Las pruebas muestran la presencia de defectos, no su ausencia.</strong> Que no encuentres errores no demuestra que no los haya.</li>
@@ -302,6 +373,28 @@
 <li><strong>Las pruebas dependen del contexto.</strong> No se prueba igual el software de un marcapasos que una web de recetas.</li>
 <li><strong>La falacia de la ausencia de errores.</strong> Un programa sin defectos que no resuelve lo que el usuario necesita sigue siendo un mal programa.</li>
 </ol>
+<h4 id="ejemplo-practico-las-pruebas-pasan-pero-el-defecto-sigue-ahi-principio-1">Ejemplo práctico: las pruebas pasan, pero el defecto sigue ahí (principio 1)</h4>
+<div class="highlight"><pre><span></span><code><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">boolean</span><span class="w"> </span><span class="nf">esPrimo</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">n</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">n</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="mi">2</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="kc">false</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">n</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="mi">2</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="kc">true</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">n</span><span class="w"> </span><span class="o">%</span><span class="w"> </span><span class="mi">2</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w">   </span><span class="c1">// solo comprueba que el número sea impar</span>
+<span class="p">}</span>
+</code></pre></div>
+<p>Si lo probamos con 1, 2, 3, 4, 5 y 7, <strong>todas las pruebas pasan</strong>. Pero <code>esPrimo(9)</code> devuelve <code>true</code>, y también <code>esPrimo(15)</code> y <code>esPrimo(21)</code>. Seis pruebas superadas no demostraban que el método fuera correcto: solo que no habíamos elegido el dato que lo hace fallar.</p>
+<h4 id="ejemplo-practico-y-si-lo-probamos-todo-principio-2">Ejemplo práctico: ¿y si lo probamos todo? (principio 2)</h4>
+<div class="highlight"><pre><span></span><code><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="nf">sumar</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">a</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">b</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">b</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div>
+<p>Cada <code>int</code> puede tomar 2³² valores, así que hay 2³² × 2³² = 2⁶⁴ ≈ 1,8 · 10¹⁹ combinaciones de entrada. Aunque el ordenador ejecutara <strong>mil millones de pruebas por segundo</strong>, tardaría unos <strong>585 años</strong>. Y este es el método más sencillo que se puede escribir. Por eso, en los apartados 5 y 6, aprenderás técnicas para elegir <strong>pocos casos que encuentren muchos errores</strong>.</p>
+<div class="admonition note">
+<p class="admonition-title">Para tu cuaderno</p>
+<p>Escribe una versión correcta de <code>esPrimo</code> en pseudocódigo y anota qué <strong>tres</strong> números usarías para comprobar que ya no tiene el defecto del ejemplo.</p>
+</div>
 <hr />
 <h2 id="2-las-pruebas-en-el-ciclo-de-vida-del-software">2. LAS PRUEBAS EN EL CICLO DE VIDA DEL SOFTWARE</h2>
 <p><em>RA3 – CE a)</em></p>
@@ -316,10 +409,107 @@
 <li><strong>Con qué</strong>: entorno, herramientas y datos de prueba.</li>
 <li><strong>Criterios de aceptación</strong>: cuándo damos una prueba por superada y cuándo paramos de probar.</li>
 </ul>
+<h4 id="ejemplo-practico-la-aplicacion-que-calcula-tu-nota">Ejemplo práctico: la aplicación que calcula tu nota</h4>
+<p>Durante esta sesión y la siguiente usaremos un ejemplo que conoces bien: una aplicación que calcula la nota de cada resultado de aprendizaje (RA) de este módulo, según la programación:</p>
+<ul>
+<li><strong>Nota de un bloque</strong> = 80 % teoría y prácticas + 10 % ejercicios de clase + 10 % cuaderno.</li>
+<li>Un <strong>RA está superado</strong> si todos sus bloques tienen al menos un 5.</li>
+</ul>
+<p>Así se relaciona cada fase del modelo en V con su prueba:</p>
+<table>
+<thead>
+<tr>
+<th>Fase (izquierda de la V)</th>
+<th>Qué se define</th>
+<th>Prueba asociada (derecha de la V)</th>
+<th>Qué se comprueba</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Requisitos</td>
+<td>"El profesor introduce las notas y la aplicación muestra la nota de cada RA"</td>
+<td><strong>Aceptación</strong></td>
+<td>El profesor usa la aplicación con las notas reales de un grupo y da el visto bueno</td>
+</tr>
+<tr>
+<td>Diseño del sistema</td>
+<td>Pantalla de introducción de notas, cálculo, exportación a Moodle</td>
+<td><strong>Sistema</strong></td>
+<td>La aplicación completa funciona de principio a fin, también con 30 alumnos y con datos erróneos</td>
+</tr>
+<tr>
+<td>Diseño detallado</td>
+<td>Clase <code>Calificaciones</code> con los métodos <code>notaBloque</code> y <code>raSuperado</code></td>
+<td><strong>Integración</strong></td>
+<td><code>raSuperado</code> recibe bien las notas que calcula <code>notaBloque</code></td>
+</tr>
+<tr>
+<td>Codificación</td>
+<td>El código de cada método</td>
+<td><strong>Unitarias</strong></td>
+<td><code>notaBloque(7, 8, 6)</code> devuelve <code>7.0</code></td>
+</tr>
+</tbody>
+</table>
+<p>Un <strong>plan de pruebas</strong> mínimo para esta aplicación:</p>
+<table>
+<thead>
+<tr>
+<th>Apartado</th>
+<th>Contenido</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Qué se prueba</td>
+<td>Cálculo de la nota de bloque, decisión de RA superado, exportación a Moodle. No se prueba el diseño gráfico.</td>
+</tr>
+<tr>
+<td>Cómo</td>
+<td>Pruebas unitarias automáticas con JUnit; pruebas de sistema manuales con las notas de un grupo ficticio</td>
+</tr>
+<tr>
+<td>Quién y cuándo</td>
+<td>El programador, las unitarias en cada cambio; el profesor, la aceptación antes de la primera evaluación</td>
+</tr>
+<tr>
+<td>Con qué</td>
+<td>IntelliJ, JUnit 5, un fichero con las notas inventadas de 30 alumnos</td>
+</tr>
+<tr>
+<td>Criterio de aceptación</td>
+<td>Todas las pruebas unitarias en verde y ninguna diferencia con el cálculo hecho a mano por el profesor</td>
+</tr>
+</tbody>
+</table>
+<div class="admonition note">
+<p class="admonition-title">Para tu cuaderno</p>
+<p>Piensa en una aplicación que uses a diario (la de tu banco, la del transporte, Moodle…). Elige una funcionalidad y escribe una prueba de <strong>cada</strong> nivel del modelo en V: unitaria, integración, sistema y aceptación.</p>
+</div>
 <hr />
 <h2 id="3-tipos-de-pruebas">3. TIPOS DE PRUEBAS</h2>
 <p><em>RA3 – CE a)</em></p>
 <p>Las pruebas se pueden clasificar según varios criterios. Una misma prueba puede ser, a la vez, unitaria, de caja negra y automática.</p>
+<p>En todo el apartado usaremos el código de la aplicación de notas del apartado 2:</p>
+<div class="highlight"><pre><span></span><code><span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">Calificaciones</span><span class="w"> </span><span class="p">{</span>
+
+<span class="w">    </span><span class="c1">// Nota de un bloque: 80 % teoría y prácticas, 10 % ejercicios de clase, 10 % cuaderno</span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">double</span><span class="w"> </span><span class="nf">notaBloque</span><span class="p">(</span><span class="kt">double</span><span class="w"> </span><span class="n">teoriaPracticas</span><span class="p">,</span><span class="w"> </span><span class="kt">double</span><span class="w"> </span><span class="n">ejerciciosClase</span><span class="p">,</span><span class="w"> </span><span class="kt">double</span><span class="w"> </span><span class="n">cuaderno</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">teoriaPracticas</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mf">0.8</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">ejerciciosClase</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mf">0.1</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">cuaderno</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mf">0.1</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span>
+
+<span class="w">    </span><span class="c1">// El RA está superado si todos los bloques tienen al menos un 5</span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">boolean</span><span class="w"> </span><span class="nf">raSuperado</span><span class="p">(</span><span class="kt">double</span><span class="o">[]</span><span class="w"> </span><span class="n">notasBloques</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">double</span><span class="w"> </span><span class="n">nota</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="n">notasBloques</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">nota</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="mi">5</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">                </span><span class="k">return</span><span class="w"> </span><span class="kc">false</span><span class="p">;</span>
+<span class="w">            </span><span class="p">}</span>
+<span class="w">        </span><span class="p">}</span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="kc">true</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
 <h3 id="segun-la-tecnica-caja-negra-y-caja-blanca">Según la técnica: caja negra y caja blanca</h3>
 <h4 id="pruebas-de-caja-negra-funcionales">Pruebas de caja negra (funcionales)</h4>
 <p><img alt="Caja negra: solo se ven las entradas y las salidas" src="../img/caja-negra.png" /></p>
@@ -342,6 +532,38 @@
 <tr>
 <td><strong>Técnicas</strong></td>
 <td>Clases de equivalencia, valores límite.</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Ejemplo.</strong> Sin mirar el código, solo con la regla "80 % + 10 % + 10 %", decidimos qué probar:</p>
+<table>
+<thead>
+<tr>
+<th>Entrada <code>notaBloque(teoría, clase, cuaderno)</code></th>
+<th>Resultado esperado</th>
+<th>Por qué lo elegimos</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>(10, 10, 10)</code></td>
+<td><code>10.0</code></td>
+<td>Nota máxima</td>
+</tr>
+<tr>
+<td><code>(7, 8, 6)</code></td>
+<td><code>7.0</code></td>
+<td>Caso normal</td>
+</tr>
+<tr>
+<td><code>(5, 0, 0)</code></td>
+<td><code>4.0</code></td>
+<td>Un 5 en el examen no basta si no hay nada más</td>
+</tr>
+<tr>
+<td><code>(4, 10, 10)</code></td>
+<td><code>5.2</code></td>
+<td>Con un 4 en teoría se puede aprobar el bloque</td>
 </tr>
 </tbody>
 </table>
@@ -369,6 +591,34 @@
 </tr>
 </tbody>
 </table>
+<p><strong>Ejemplo.</strong> Ahora miramos el código de <code>raSuperado</code>. Tiene un bucle y un <code>if</code>, así que buscamos datos que recorran cada camino:</p>
+<table>
+<thead>
+<tr>
+<th>Entrada <code>raSuperado(...)</code></th>
+<th>Camino que recorre</th>
+<th>Resultado</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>{8, 4.9}</code></td>
+<td>Entra en el bucle y el <code>if</code> es verdadero</td>
+<td><code>false</code></td>
+</tr>
+<tr>
+<td><code>{6.2, 7.5}</code></td>
+<td>Entra en el bucle y el <code>if</code> siempre es falso</td>
+<td><code>true</code></td>
+</tr>
+<tr>
+<td><code>{}</code> (sin bloques)</td>
+<td>No entra en el bucle</td>
+<td><code>true</code></td>
+</tr>
+</tbody>
+</table>
+<p>El último caso solo se nos ocurre <strong>mirando el código</strong>: con un array vacío, el método dice que el RA está superado sin ninguna nota. La especificación no decía nada de este caso; la caja blanca ha descubierto un hueco que hay que consultar con el cliente.</p>
 <h3 id="segun-el-nivel">Según el nivel</h3>
 <ul>
 <li><strong>Pruebas unitarias:</strong> comprueban una unidad aislada (un método o una clase). Las escribe el propio programador.</li>
@@ -376,6 +626,33 @@
 <li><strong>Pruebas de sistema:</strong> comprueban la aplicación completa en un entorno parecido al real, incluidos requisitos no funcionales (rendimiento, seguridad, usabilidad…).</li>
 <li><strong>Pruebas de aceptación:</strong> las realiza o supervisa el cliente para decidir si acepta el producto. Las versiones <strong>alfa</strong> se prueban en la empresa que desarrolla; las <strong>beta</strong>, con usuarios reales en su entorno.</li>
 </ul>
+<p><strong>Ejemplo con la aplicación de notas:</strong></p>
+<table>
+<thead>
+<tr>
+<th>Nivel</th>
+<th>Prueba concreta</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Unitaria</td>
+<td><code>notaBloque(7, 8, 6)</code> devuelve <code>7.0</code></td>
+</tr>
+<tr>
+<td>Integración</td>
+<td>Se calculan dos bloques con <code>notaBloque</code> (<code>5.2</code> y <code>4.0</code>), se pasan a <code>raSuperado</code> y devuelve <code>false</code></td>
+</tr>
+<tr>
+<td>Sistema</td>
+<td>Se cargan las notas de 30 alumnos, se exportan a Moodle y el fichero se importa sin errores</td>
+</tr>
+<tr>
+<td>Aceptación</td>
+<td>El profesor compara los resultados de la aplicación con su hoja de cálculo y los da por buenos</td>
+</tr>
+</tbody>
+</table>
 <h3 id="segun-el-objetivo">Según el objetivo</h3>
 <ul>
 <li><strong>Funcionales:</strong> comprueban que el programa hace lo que dice la especificación.</li>
@@ -383,6 +660,14 @@
 <li><strong>De regresión:</strong> se repiten tras <strong>cualquier cambio</strong> para comprobar que no se ha roto nada que antes funcionaba. Son el motivo principal para automatizar.</li>
 <li><strong>De humo</strong> (<em>smoke tests</em>): una batería mínima y rápida que comprueba que lo básico arranca antes de probar a fondo.</li>
 </ul>
+<p><strong>Ejemplo de regresión.</strong> El curso que viene cambia la programación y el cuaderno pasa a valer un 20 %. El programador modifica <code>notaBloque</code> y vuelve a ejecutar <strong>todas</strong> las pruebas: las que ya existían avisan de los resultados que han cambiado, y así se comprueba que <code>raSuperado</code> sigue funcionando.</p>
+<p><strong>Ejemplo de prueba de humo</strong> (pseudocódigo de lo que se comprueba antes de nada):</p>
+<div class="highlight"><pre><span></span><code>1. ¿Arranca la aplicación?
+2. ¿Se puede iniciar sesión como profesor?
+3. ¿Se abre la lista de alumnos de un grupo?
+4. ¿Se calcula la nota de un alumno cualquiera?
+SI alguna respuesta es NO → la versión se rechaza y no se sigue probando
+</code></pre></div>
 <h3 id="segun-la-ejecucion">Según la ejecución</h3>
 <ul>
 <li><strong>Estáticas:</strong> se revisa el código sin ejecutarlo (revisiones entre compañeros, analizadores de código como SonarLint, que verás en la UT 04).</li>
@@ -390,9 +675,34 @@
 <li><strong>Manuales:</strong> una persona ejecuta los pasos y comprueba el resultado.</li>
 <li><strong>Automáticas:</strong> un programa ejecuta las pruebas y compara el resultado obtenido con el esperado. Se pueden repetir miles de veces sin coste.</li>
 </ul>
+<p><strong>Ejemplo de prueba estática.</strong> En una revisión de código, una compañera lee este método <strong>sin ejecutarlo</strong>:</p>
+<div class="highlight"><pre><span></span><code><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">boolean</span><span class="w"> </span><span class="nf">esAlumno</span><span class="p">(</span><span class="n">String</span><span class="w"> </span><span class="n">tipo</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">tipo</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="s">"ALUMNO"</span><span class="p">;</span><span class="w">   </span><span class="c1">// compara referencias, no el contenido del texto</span>
+<span class="p">}</span>
+</code></pre></div>
+<p>y detecta que en Java los <code>String</code> se comparan con <code>equals</code>: <code>"ALUMNO".equals(tipo)</code>. El defecto se ha encontrado sin ejecutar ni una prueba.</p>
+<p><strong>Ejemplo de manual frente a automática.</strong> La misma comprobación hecha de las dos formas:</p>
+<ul>
+<li><strong>Manual:</strong> ejecutas el programa, escribes 7, 8 y 6, lees en la pantalla <code>7.0</code> y lo compruebas mentalmente. Cada vez que cambies el código tendrás que repetirlo.</li>
+<li><strong>Automática:</strong> escribes una vez esta prueba (la explicaremos en el apartado 8) y el ordenador la repite cuantas veces haga falta:</li>
+</ul>
+<div class="highlight"><pre><span></span><code><span class="nd">@Test</span>
+<span class="kt">void</span><span class="w"> </span><span class="nf">notaBloqueCasoNormal</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="n">assertEquals</span><span class="p">(</span><span class="mf">7.0</span><span class="p">,</span><span class="w"> </span><span class="n">Calificaciones</span><span class="p">.</span><span class="na">notaBloque</span><span class="p">(</span><span class="mi">7</span><span class="p">,</span><span class="w"> </span><span class="mi">8</span><span class="p">,</span><span class="w"> </span><span class="mi">6</span><span class="p">),</span><span class="w"> </span><span class="mf">0.001</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div>
+<div class="admonition tip">
+<p class="admonition-title">¿Por qué ese <code>0.001</code>?</p>
+<p>Prueba <code>Calificaciones.notaBloque(6, 5, 5)</code>: el resultado esperado es <code>5.8</code>, pero Java devuelve <code>5.800000000000001</code>, porque los decimales no se guardan de forma exacta en el ordenador. Por eso los <code>double</code> se comparan siempre con un pequeño margen.</p>
+</div>
 <h3 id="la-piramide-de-pruebas">La pirámide de pruebas</h3>
 <p>En un proyecto sano hay <strong>muchas pruebas unitarias</strong> (rápidas y baratas), algunas de integración y pocas de sistema (lentas y caras de mantener).</p>
 <p><img alt="Pirámide de pruebas" src="../img/piramide-pruebas.png" /></p>
+<p>En la aplicación de notas, la pirámide podría ser: <strong>decenas</strong> de pruebas unitarias de <code>notaBloque</code> y <code>raSuperado</code> (se ejecutan en milisegundos), <strong>unas pocas</strong> de integración entre el cálculo y la exportación a Moodle, y <strong>una o dos</strong> de sistema que recorren la aplicación entera.</p>
+<div class="admonition note">
+<p class="admonition-title">Para tu cuaderno</p>
+<p>Clasifica cada una de las pruebas de los ejemplos de este apartado según los cuatro criterios: técnica, nivel, objetivo y ejecución.</p>
+</div>
 <hr />
 <h2 id="4-casos-de-prueba-y-procedimientos">4. CASOS DE PRUEBA Y PROCEDIMIENTOS</h2>
 <p><em>RA3 – CE b)</em></p>
