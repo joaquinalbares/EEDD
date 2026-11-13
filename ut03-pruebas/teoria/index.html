@@ -1,0 +1,1405 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="es" >
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <link rel="shortcut icon" href="../../img/favicon.ico" />
+    <title>CONTENIDOS - Entornos de Desarrollo - IES Los Albares</title>
+    <link rel="stylesheet" href="../../css/theme.css" />
+    <link rel="stylesheet" href="../../css/theme_extra.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" />
+        <link href="../../css/estilo.css" rel="stylesheet" />
+    
+      <script>
+        // Current page data
+        var properdocs_page_name = "CONTENIDOS";
+        var properdocs_page_input_path = "ut03-pruebas/teoria/index.md";
+        var properdocs_page_url = null;
+      </script>
+    
+    <!--[if lt IE 9]>
+      <script src="../../js/html5shiv.min.js"></script>
+    <![endif]-->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+      <script>hljs.highlightAll();</script> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+          <a href="../.." class="icon icon-home"> Entornos de Desarrollo - IES Los Albares
+        </a><div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+      <input type="text" name="q" placeholder="Buscar documentos" aria-label="Buscar documentos" title="Escriba el término de búsqueda aquí" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Menu de navegación">
+              <ul>
+                <li class="toctree-l1"><a class="" href="https://joaquinalbares.github.io/">HOME</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../..">GUÍA DEL MÓDULO</a>
+                </li>
+              </ul>
+              <p class="caption"><span class="caption-text">UT00</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../ut00-destrezas-basicas/practicas/practica01/">PRÁCTICA 01</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../ut00-destrezas-basicas/practicas/practica02/">PRÁCTICA 02</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../ut00-destrezas-basicas/practicas/practica03/">PRÁCTICA 03</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">UT01</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../ut01-teoria-del-software/teoria/">CONTENIDOS</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../ut01-teoria-del-software/practicas/practica01/">PRÁCTICA 01</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">UT02</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../ut02-entornos-integrados-ide/teoria/">CONTENIDOS</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../ut02-entornos-integrados-ide/practicas/practica01/">PRÁCTICA 01</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../ut02-entornos-integrados-ide/practicas/practica02/">PRÁCTICA 02</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../ut02-entornos-integrados-ide/practicas/practica03/">PRÁCTICA 03</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../ut02-entornos-integrados-ide/practicas/practica04/">PRÁCTICA 04</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">UT03</span></p>
+              <ul class="current">
+                  <li class="toctree-l1 current"><a class="reference internal current" href="#">CONTENIDOS</a>
+    <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#1-por-que-probamos-el-software">1. ¿POR QUÉ PROBAMOS EL SOFTWARE?</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#error-defecto-y-fallo">Error, defecto y fallo</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#verificacion-y-validacion">Verificación y validación</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#principios-de-las-pruebas">Principios de las pruebas</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#2-las-pruebas-en-el-ciclo-de-vida-del-software">2. LAS PRUEBAS EN EL CICLO DE VIDA DEL SOFTWARE</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#plan-de-pruebas">Plan de pruebas</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#3-tipos-de-pruebas">3. TIPOS DE PRUEBAS</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#segun-la-tecnica-caja-negra-y-caja-blanca">Según la técnica: caja negra y caja blanca</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#pruebas-de-caja-negra-funcionales">Pruebas de caja negra (funcionales)</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#pruebas-de-caja-blanca-estructurales">Pruebas de caja blanca (estructurales)</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#segun-el-nivel">Según el nivel</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#segun-el-objetivo">Según el objetivo</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#segun-la-ejecucion">Según la ejecución</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#la-piramide-de-pruebas">La pirámide de pruebas</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#4-casos-de-prueba-y-procedimientos">4. CASOS DE PRUEBA Y PROCEDIMIENTOS</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#plantilla-de-caso-de-prueba">Plantilla de caso de prueba</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#5-pruebas-de-caja-negra">5. PRUEBAS DE CAJA NEGRA</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#51-clases-de-equivalencia">5.1. Clases de equivalencia</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#52-valores-limite">5.2. Valores límite</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#53-ejemplo-completo-precio-de-la-entrada-de-cine">5.3. Ejemplo completo: precio de la entrada de cine</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#6-pruebas-de-caja-blanca">6. PRUEBAS DE CAJA BLANCA</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#61-criterios-de-cobertura">6.1. Criterios de cobertura</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#62-la-prueba-del-camino-basico">6.2. La prueba del camino básico</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#63-el-grafo-de-flujo">6.3. El grafo de flujo</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#64-complejidad-ciclomatica">6.4. Complejidad ciclomática</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#65-ejemplo-1-clasificar-una-nota">6.5. Ejemplo 1: clasificar una nota</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#66-ejemplo-2-un-bucle">6.6. Ejemplo 2: un bucle</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#7-maven-construccion-y-pruebas-automaticas">7. MAVEN: CONSTRUCCIÓN Y PRUEBAS AUTOMÁTICAS</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#71-estructura-de-un-proyecto-maven">7.1. Estructura de un proyecto Maven</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#72-el-fichero-pomxml">7.2. El fichero pom.xml</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#73-ciclo-de-vida">7.3. Ciclo de vida</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#74-proyecto-maven-en-intellij-idea">7.4. Proyecto Maven en IntelliJ IDEA</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#8-pruebas-unitarias-con-junit-5">8. PRUEBAS UNITARIAS CON JUNIT 5</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#81-mi-primera-prueba">8.1. Mi primera prueba</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#82-anotaciones-principales">8.2. Anotaciones principales</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#83-aserciones">8.3. Aserciones</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#84-probar-excepciones">8.4. Probar excepciones</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#85-pruebas-parametrizadas">8.5. Pruebas parametrizadas</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#86-ejecutar-las-pruebas">8.6. Ejecutar las pruebas</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#87-cobertura-de-codigo">8.7. Cobertura de código</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#88-buenas-practicas">8.8. Buenas prácticas</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#9-automatizacion-integracion-y-regresion">9. AUTOMATIZACIÓN, INTEGRACIÓN Y REGRESIÓN</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#pruebas-automaticas-e-integracion-continua">Pruebas automáticas e integración continua</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#pruebas-de-regresion">Pruebas de regresión</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#pruebas-de-integracion">Pruebas de integración</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#10-depuracion-de-programas">10. DEPURACIÓN DE PROGRAMAS</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#101-herramientas-de-depuracion-del-ide">10.1. Herramientas de depuración del IDE</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#102-puntos-de-ruptura-breakpoints">10.2. Puntos de ruptura (breakpoints)</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#103-seguimiento-paso-a-paso">10.3. Seguimiento paso a paso</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#104-examinar-y-modificar-variables">10.4. Examinar y modificar variables</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#105-ejemplo-de-depuracion">10.5. Ejemplo de depuración</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#11-documentacion-de-incidencias">11. DOCUMENTACIÓN DE INCIDENCIAS</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#contenido-de-un-informe-de-incidencia">Contenido de un informe de incidencia</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#ciclo-de-vida-de-una-incidencia">Ciclo de vida de una incidencia</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#herramientas">Herramientas</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#12-normas-de-calidad">12. NORMAS DE CALIDAD</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#resumen">RESUMEN</a>
+    </li>
+    </ul>
+                  </li>
+              </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+      <nav class="wy-nav-top" role="navigation" aria-label="Menú de navegación en móvil">
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../..">Entornos de Desarrollo - IES Los Albares</a>
+        
+      </nav>
+      <div class="wy-nav-content">
+        <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../.." class="icon icon-home" aria-label="Documentos"></a></li>
+          <li class="breadcrumb-item">UT03</li>
+      <li class="breadcrumb-item active">CONTENIDOS</li>
+    <li class="wy-breadcrumbs-aside">
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+            <div class="section" itemprop="articleBody">
+              
+                <h1 id="ut-03-diseno-y-realizacion-de-pruebas-y-depuracion">UT 03: DISEÑO Y REALIZACIÓN DE PRUEBAS Y DEPURACIÓN</h1>
+<hr />
+<div class="admonition note">
+<p class="admonition-title">Qué vas a aprender en esta unidad</p>
+<p>Esta unidad desarrolla el <strong>RA3: Verifica el funcionamiento de programas diseñando y realizando pruebas</strong>.</p>
+<p>Al terminarla sabrás distinguir los tipos de pruebas, diseñar casos de prueba con técnicas de caja negra y de caja blanca, programar pruebas unitarias automáticas con <strong>JUnit 5</strong> y <strong>Maven</strong>, depurar un programa con <strong>IntelliJ IDEA</strong> y documentar las incidencias que encuentres.</p>
+<p><strong>Conocimientos previos:</strong> Java básico (métodos, condicionales, bucles, arrays y clases), el IDE de la UT 02 y Git básico.</p>
+</div>
+<hr />
+<h2 id="1-por-que-probamos-el-software">1. ¿POR QUÉ PROBAMOS EL SOFTWARE?</h2>
+<p><em>RA3 – CE a)</em></p>
+<p>Probar un programa es <strong>ejecutarlo con la intención de encontrar errores</strong>. Una prueba tiene éxito cuando descubre un error que aún no conocíamos, no cuando "todo sale bien".</p>
+<h3 id="error-defecto-y-fallo">Error, defecto y fallo</h3>
+<p>Son tres conceptos que en el lenguaje de la calle se mezclan, pero que en ingeniería del software se distinguen:</p>
+<table>
+<thead>
+<tr>
+<th>Concepto</th>
+<th>Qué es</th>
+<th>Ejemplo</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Error</strong> (<em>error</em>, equivocación)</td>
+<td>Acción humana que produce un resultado incorrecto</td>
+<td>El programador confunde <code>&lt;</code> con <code>&lt;=</code></td>
+</tr>
+<tr>
+<td><strong>Defecto</strong> (<em>defect</em>, <em>bug</em>)</td>
+<td>Imperfección en el código o en un documento, consecuencia del error</td>
+<td>La línea <code>if (edad &lt; 18)</code> debería ser <code>if (edad &lt;= 17)</code> y no lo es</td>
+</tr>
+<tr>
+<td><strong>Fallo</strong> (<em>failure</em>)</td>
+<td>Comportamiento observable incorrecto al ejecutar el código defectuoso</td>
+<td>La aplicación cobra la entrada de adulto a un chaval de 17 años</td>
+</tr>
+</tbody>
+</table>
+<p>Un defecto puede pasar años sin producir ningún fallo si nadie ejecuta esa línea con los datos que lo provocan. Por eso hay que <strong>buscarlos</strong>.</p>
+<h3 id="verificacion-y-validacion">Verificación y validación</h3>
+<ul>
+<li><strong>Verificación:</strong> ¿estamos construyendo el producto <strong>correctamente</strong>? Comprueba que el software cumple su especificación.</li>
+<li><strong>Validación:</strong> ¿estamos construyendo el producto <strong>correcto</strong>? Comprueba que el software hace lo que el cliente necesita de verdad.</li>
+</ul>
+<h3 id="principios-de-las-pruebas">Principios de las pruebas</h3>
+<ol>
+<li><strong>Las pruebas muestran la presencia de defectos, no su ausencia.</strong> Que no encuentres errores no demuestra que no los haya.</li>
+<li><strong>Las pruebas exhaustivas son imposibles.</strong> Un método que recibe un <code>int</code> admite más de 4.000 millones de valores; hay que elegir bien qué probar.</li>
+<li><strong>Probar pronto ahorra dinero.</strong> Un defecto detectado en el análisis cuesta mucho menos que uno detectado en producción.</li>
+<li><strong>Los defectos se agrupan.</strong> Unos pocos módulos suelen concentrar la mayoría de los errores.</li>
+<li><strong>Paradoja del pesticida.</strong> Si repites siempre las mismas pruebas, dejan de encontrar errores nuevos; hay que revisarlas y ampliarlas.</li>
+<li><strong>Las pruebas dependen del contexto.</strong> No se prueba igual el software de un marcapasos que una web de recetas.</li>
+<li><strong>La falacia de la ausencia de errores.</strong> Un programa sin defectos que no resuelve lo que el usuario necesita sigue siendo un mal programa.</li>
+</ol>
+<hr />
+<h2 id="2-las-pruebas-en-el-ciclo-de-vida-del-software">2. LAS PRUEBAS EN EL CICLO DE VIDA DEL SOFTWARE</h2>
+<p><em>RA3 – CE a)</em></p>
+<p>Las pruebas no son una fase que se hace "al final si sobra tiempo". Se <strong>planifican desde el principio</strong> y acompañan a todo el desarrollo. El <strong>modelo en V</strong> lo representa así: cada fase de diseño (izquierda) tiene asociado un nivel de prueba (derecha) que comprueba lo que esa fase definió.</p>
+<p><img alt="Modelo en V: cada fase de desarrollo se corresponde con un nivel de prueba" src="../img/modelo-v-pruebas.png" /></p>
+<h3 id="plan-de-pruebas">Plan de pruebas</h3>
+<p>Antes de probar se redacta un <strong>plan de pruebas</strong>, que recoge:</p>
+<ul>
+<li><strong>Qué</strong> se va a probar (módulos, funcionalidades) y qué no.</li>
+<li><strong>Cómo</strong>: técnicas y niveles de prueba.</li>
+<li><strong>Quién</strong> prueba y <strong>cuándo</strong>.</li>
+<li><strong>Con qué</strong>: entorno, herramientas y datos de prueba.</li>
+<li><strong>Criterios de aceptación</strong>: cuándo damos una prueba por superada y cuándo paramos de probar.</li>
+</ul>
+<hr />
+<h2 id="3-tipos-de-pruebas">3. TIPOS DE PRUEBAS</h2>
+<p><em>RA3 – CE a)</em></p>
+<p>Las pruebas se pueden clasificar según varios criterios. Una misma prueba puede ser, a la vez, unitaria, de caja negra y automática.</p>
+<h3 id="segun-la-tecnica-caja-negra-y-caja-blanca">Según la técnica: caja negra y caja blanca</h3>
+<h4 id="pruebas-de-caja-negra-funcionales">Pruebas de caja negra (funcionales)</h4>
+<p><img alt="Caja negra: solo se ven las entradas y las salidas" src="../img/caja-negra.png" /></p>
+<table>
+<thead>
+<tr>
+<th>Aspecto</th>
+<th>Caja negra</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Qué miramos</strong></td>
+<td>Solo <strong>qué hace</strong> el programa: entradas y salidas. No necesitamos ver el código.</td>
+</tr>
+<tr>
+<td><strong>Punto de partida</strong></td>
+<td>La <strong>especificación</strong>.</td>
+</tr>
+<tr>
+<td><strong>Técnicas</strong></td>
+<td>Clases de equivalencia, valores límite.</td>
+</tr>
+</tbody>
+</table>
+<h4 id="pruebas-de-caja-blanca-estructurales">Pruebas de caja blanca (estructurales)</h4>
+<p><img alt="Caja blanca: se ve el flujo interno del código" src="../img/caja-blanca.png" /></p>
+<table>
+<thead>
+<tr>
+<th>Aspecto</th>
+<th>Caja blanca</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Qué miramos</strong></td>
+<td><strong>Cómo lo hace</strong>: analizamos el código para recorrer sus caminos.</td>
+</tr>
+<tr>
+<td><strong>Punto de partida</strong></td>
+<td>El <strong>código fuente</strong>.</td>
+</tr>
+<tr>
+<td><strong>Técnicas</strong></td>
+<td>Cobertura, camino básico (complejidad ciclomática).</td>
+</tr>
+</tbody>
+</table>
+<h3 id="segun-el-nivel">Según el nivel</h3>
+<ul>
+<li><strong>Pruebas unitarias:</strong> comprueban una unidad aislada (un método o una clase). Las escribe el propio programador.</li>
+<li><strong>Pruebas de integración:</strong> comprueban que varias unidades funcionan bien <strong>juntas</strong> (por ejemplo, que la clase <code>Carrito</code> usa correctamente la clase <code>Producto</code>, o que la aplicación se comunica con la base de datos).</li>
+<li><strong>Pruebas de sistema:</strong> comprueban la aplicación completa en un entorno parecido al real, incluidos requisitos no funcionales (rendimiento, seguridad, usabilidad…).</li>
+<li><strong>Pruebas de aceptación:</strong> las realiza o supervisa el cliente para decidir si acepta el producto. Las versiones <strong>alfa</strong> se prueban en la empresa que desarrolla; las <strong>beta</strong>, con usuarios reales en su entorno.</li>
+</ul>
+<h3 id="segun-el-objetivo">Según el objetivo</h3>
+<ul>
+<li><strong>Funcionales:</strong> comprueban que el programa hace lo que dice la especificación.</li>
+<li><strong>No funcionales:</strong> rendimiento, carga, estrés, seguridad, usabilidad, accesibilidad, compatibilidad…</li>
+<li><strong>De regresión:</strong> se repiten tras <strong>cualquier cambio</strong> para comprobar que no se ha roto nada que antes funcionaba. Son el motivo principal para automatizar.</li>
+<li><strong>De humo</strong> (<em>smoke tests</em>): una batería mínima y rápida que comprueba que lo básico arranca antes de probar a fondo.</li>
+</ul>
+<h3 id="segun-la-ejecucion">Según la ejecución</h3>
+<ul>
+<li><strong>Estáticas:</strong> se revisa el código sin ejecutarlo (revisiones entre compañeros, analizadores de código como SonarLint, que verás en la UT 04).</li>
+<li><strong>Dinámicas:</strong> se ejecuta el programa.</li>
+<li><strong>Manuales:</strong> una persona ejecuta los pasos y comprueba el resultado.</li>
+<li><strong>Automáticas:</strong> un programa ejecuta las pruebas y compara el resultado obtenido con el esperado. Se pueden repetir miles de veces sin coste.</li>
+</ul>
+<h3 id="la-piramide-de-pruebas">La pirámide de pruebas</h3>
+<p>En un proyecto sano hay <strong>muchas pruebas unitarias</strong> (rápidas y baratas), algunas de integración y pocas de sistema (lentas y caras de mantener).</p>
+<p><img alt="Pirámide de pruebas" src="../img/piramide-pruebas.png" /></p>
+<hr />
+<h2 id="4-casos-de-prueba-y-procedimientos">4. CASOS DE PRUEBA Y PROCEDIMIENTOS</h2>
+<p><em>RA3 – CE b)</em></p>
+<p>Un <strong>caso de prueba</strong> es un conjunto de <strong>entradas</strong>, <strong>condiciones de ejecución</strong> y <strong>resultado esperado</strong> diseñado para comprobar un aspecto concreto del programa.</p>
+<p>Un buen caso de prueba se puede repetir y su resultado esperado se decide <strong>antes</strong> de ejecutarlo. Si decides el resultado esperado después de ver la salida, no estás probando: estás copiando.</p>
+<h3 id="plantilla-de-caso-de-prueba">Plantilla de caso de prueba</h3>
+<table>
+<thead>
+<tr>
+<th>Campo</th>
+<th>Contenido</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>ID</strong></td>
+<td>Identificador único: <code>CP-01</code>, <code>CP-02</code>…</td>
+</tr>
+<tr>
+<td><strong>Descripción</strong></td>
+<td>Qué se comprueba: "Edad en el límite inferior de la tarifa juvenil"</td>
+</tr>
+<tr>
+<td><strong>Precondiciones</strong></td>
+<td>Estado necesario antes de empezar</td>
+</tr>
+<tr>
+<td><strong>Entrada</strong></td>
+<td>Datos concretos: <code>edad = 4</code></td>
+</tr>
+<tr>
+<td><strong>Resultado esperado</strong></td>
+<td><code>5.0</code></td>
+</tr>
+<tr>
+<td><strong>Resultado obtenido</strong></td>
+<td>Se rellena al ejecutar</td>
+</tr>
+<tr>
+<td><strong>Estado</strong></td>
+<td>Superado / No superado</td>
+</tr>
+</tbody>
+</table>
+<p>Un <strong>procedimiento de prueba</strong> es la secuencia de pasos para ejecutar uno o varios casos de prueba: preparar el entorno, introducir los datos, ejecutar, comparar y registrar el resultado.</p>
+<hr />
+<h2 id="5-pruebas-de-caja-negra">5. PRUEBAS DE CAJA NEGRA</h2>
+<p><em>RA3 – CE b)</em></p>
+<p>Como probarlo todo es imposible, las técnicas de caja negra nos ayudan a elegir <strong>pocos casos que encuentren muchos errores</strong>.</p>
+<h3 id="51-clases-de-equivalencia">5.1. Clases de equivalencia</h3>
+<p>Una <strong>clase de equivalencia</strong> es un conjunto de valores de entrada para los que el programa debería comportarse <strong>igual</strong>. Si un valor de la clase revela un error, cualquier otro de la misma clase probablemente también lo haría; por tanto, basta con probar <strong>un representante</strong> de cada clase.</p>
+<p>Hay dos tipos:</p>
+<ul>
+<li><strong>Clases válidas:</strong> valores que el programa debe aceptar.</li>
+<li><strong>Clases no válidas:</strong> valores que debe rechazar.</li>
+</ul>
+<p>Reglas prácticas para identificarlas:</p>
+<table>
+<thead>
+<tr>
+<th>Si la condición de entrada es…</th>
+<th>Clases válidas</th>
+<th>Clases no válidas</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Un <strong>rango</strong> (de 1 a 100)</td>
+<td>1 (dentro del rango)</td>
+<td>2 (por debajo y por encima)</td>
+</tr>
+<tr>
+<td>Un <strong>valor concreto</strong> (exactamente 8 caracteres)</td>
+<td>1</td>
+<td>2 (menos y más)</td>
+</tr>
+<tr>
+<td>Un <strong>conjunto</strong> de valores ("ALUMNO", "PROFESOR")</td>
+<td>1 por cada valor si se tratan distinto</td>
+<td>1 (cualquier otro valor)</td>
+</tr>
+<tr>
+<td>Una <strong>condición lógica</strong> (debe empezar por letra)</td>
+<td>1</td>
+<td>1</td>
+</tr>
+</tbody>
+</table>
+<h3 id="52-valores-limite">5.2. Valores límite</h3>
+<p>La experiencia dice que <strong>los errores se esconden en los bordes</strong>: un <code>&lt;</code> que debía ser <code>&lt;=</code>, un bucle que da una vuelta de más… El análisis de valores límite complementa las clases de equivalencia probando:</p>
+<ul>
+<li>El <strong>valor exacto del límite</strong>.</li>
+<li>El valor <strong>inmediatamente anterior</strong> y el <strong>inmediatamente posterior</strong>.</li>
+</ul>
+<p>Para enteros, el "inmediatamente" es ±1; para importes en euros, ±0,01.</p>
+<h3 id="53-ejemplo-completo-precio-de-la-entrada-de-cine">5.3. Ejemplo completo: precio de la entrada de cine</h3>
+<p><strong>Especificación:</strong> el método <code>calcularPrecio(int edad)</code> devuelve el precio de la entrada:</p>
+<ul>
+<li>De 0 a 3 años: gratis (0 €).</li>
+<li>De 4 a 17 años: 5 €.</li>
+<li>De 18 a 64 años: 8 €.</li>
+<li>De 65 a 120 años: 4 €.</li>
+<li>Una edad menor que 0 o mayor que 120 lanza <code>IllegalArgumentException</code>.</li>
+</ul>
+<p><strong>Paso 1. Clases de equivalencia</strong></p>
+<table>
+<thead>
+<tr>
+<th>Clase</th>
+<th>Tipo</th>
+<th>Rango</th>
+<th>Representante</th>
+<th>Resultado esperado</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>CE1</td>
+<td>No válida</td>
+<td>edad &lt; 0</td>
+<td>-5</td>
+<td>Excepción</td>
+</tr>
+<tr>
+<td>CE2</td>
+<td>Válida</td>
+<td>0 ≤ edad ≤ 3</td>
+<td>2</td>
+<td>0 €</td>
+</tr>
+<tr>
+<td>CE3</td>
+<td>Válida</td>
+<td>4 ≤ edad ≤ 17</td>
+<td>10</td>
+<td>5 €</td>
+</tr>
+<tr>
+<td>CE4</td>
+<td>Válida</td>
+<td>18 ≤ edad ≤ 64</td>
+<td>40</td>
+<td>8 €</td>
+</tr>
+<tr>
+<td>CE5</td>
+<td>Válida</td>
+<td>65 ≤ edad ≤ 120</td>
+<td>80</td>
+<td>4 €</td>
+</tr>
+<tr>
+<td>CE6</td>
+<td>No válida</td>
+<td>edad &gt; 120</td>
+<td>200</td>
+<td>Excepción</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Paso 2. Valores límite</strong></p>
+<table>
+<thead>
+<tr>
+<th>Límite</th>
+<th>Valores a probar</th>
+<th>Resultados esperados</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>0</td>
+<td>-1, 0, 1</td>
+<td>Excepción, 0 €, 0 €</td>
+</tr>
+<tr>
+<td>3 / 4</td>
+<td>3, 4</td>
+<td>0 €, 5 €</td>
+</tr>
+<tr>
+<td>17 / 18</td>
+<td>17, 18</td>
+<td>5 €, 8 €</td>
+</tr>
+<tr>
+<td>64 / 65</td>
+<td>64, 65</td>
+<td>8 €, 4 €</td>
+</tr>
+<tr>
+<td>120</td>
+<td>119, 120, 121</td>
+<td>4 €, 4 €, Excepción</td>
+</tr>
+</tbody>
+</table>
+<p>En el apartado 8 convertirás esta tabla en pruebas automáticas con JUnit.</p>
+<div class="admonition note">
+<p class="admonition-title">Para tu cuaderno</p>
+<p>Copia las dos tablas del ejemplo y añade una tercera columna con el <strong>resultado obtenido</strong> cuando ejecutes las pruebas en el ordenador. Es la forma de documentar una batería de pruebas.</p>
+</div>
+<hr />
+<h2 id="6-pruebas-de-caja-blanca">6. PRUEBAS DE CAJA BLANCA</h2>
+<p><em>RA3 – CE b)</em></p>
+<p>En las pruebas de caja blanca <strong>leemos el código</strong> para diseñar casos que recorran sus distintos caminos.</p>
+<h3 id="61-criterios-de-cobertura">6.1. Criterios de cobertura</h3>
+<p>La <strong>cobertura</strong> mide qué parte del código ejecutan nuestras pruebas. De menos a más exigente:</p>
+<ul>
+<li><strong>Cobertura de sentencias:</strong> cada línea se ejecuta al menos una vez.</li>
+<li><strong>Cobertura de decisiones (ramas):</strong> cada <code>if</code>, <code>while</code>… se evalúa al menos una vez como verdadero y otra como falso.</li>
+<li><strong>Cobertura de condiciones:</strong> en una decisión compuesta (<code>a &amp;&amp; b</code>), cada condición simple toma los valores verdadero y falso.</li>
+<li><strong>Cobertura de caminos:</strong> se recorren todos los caminos posibles. Con bucles suele ser imposible, por eso usamos los <strong>caminos independientes</strong>.</li>
+</ul>
+<h3 id="62-la-prueba-del-camino-basico">6.2. La prueba del camino básico</h3>
+<p>Es la técnica de caja blanca más conocida (propuesta por Thomas McCabe). Sigue cuatro pasos:</p>
+<ol>
+<li>Dibujar el <strong>grafo de flujo</strong> del método.</li>
+<li>Calcular su <strong>complejidad ciclomática</strong> V(G).</li>
+<li>Obtener un conjunto de V(G) <strong>caminos independientes</strong>.</li>
+<li>Diseñar un <strong>caso de prueba</strong> que fuerce cada camino.</li>
+</ol>
+<h3 id="63-el-grafo-de-flujo">6.3. El grafo de flujo</h3>
+<p>El grafo de flujo representa el flujo de control de un método:</p>
+<ul>
+<li><strong>Nodo</strong> (círculo): una o varias sentencias que se ejecutan siempre seguidas. Se numeran.</li>
+<li><strong>Nodo predicado</strong> (en naranja en nuestros dibujos): contiene una <strong>condición simple</strong>; de él salen dos aristas (V y F).</li>
+<li><strong>Arista</strong> (flecha): el paso de un nodo a otro.</li>
+<li><strong>Región</strong>: zona del plano delimitada por aristas y nodos. <strong>La zona exterior del grafo también cuenta como región.</strong></li>
+</ul>
+<p>Así se representan las estructuras básicas:</p>
+<p><img alt="Grafos de las estructuras básicas" src="../img/grafo-estructuras-basicas.png" /></p>
+<p>Si una condición es <strong>compuesta</strong>, cada condición simple es un nodo predicado distinto, porque Java evalúa en cortocircuito: en <code>A &amp;&amp; B</code>, si <code>A</code> es falsa, <code>B</code> ni se evalúa.</p>
+<p><img alt="Grafos de condiciones compuestas AND y OR" src="../img/grafo-condiciones-compuestas.png" /></p>
+<div class="admonition warning">
+<p class="admonition-title">Reglas para numerar los nodos</p>
+<ol>
+<li>Las sentencias consecutivas sin saltos van en el <strong>mismo nodo</strong>.</li>
+<li><strong>Cada condición simple</strong> es un nodo predicado.</li>
+<li>Cuando dos ramas se juntan (fin de un <code>if</code>) hace falta un nodo de unión; si justo después viene una sentencia, esa sentencia puede ser el nodo de unión.</li>
+<li>Todos los <code>return</code> y <code>throw</code> deben llegar a un <strong>único nodo final</strong>. Si el método tiene varias salidas, añade un nodo "fin" al que lleguen todas.</li>
+</ol>
+</div>
+<h3 id="64-complejidad-ciclomatica">6.4. Complejidad ciclomática</h3>
+<p>La <strong>complejidad ciclomática V(G)</strong> mide la complejidad lógica de un método e indica el <strong>número de caminos independientes</strong> que hay que probar. Se calcula de tres formas, que <strong>deben dar el mismo resultado</strong> (si no coinciden, revisa el grafo):</p>
+<table>
+<thead>
+<tr>
+<th>Fórmula</th>
+<th>Significado</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>V(G) = número de regiones</strong></td>
+<td>Contando la región exterior</td>
+</tr>
+<tr>
+<td><strong>V(G) = A − N + 2</strong></td>
+<td>A = aristas, N = nodos</td>
+</tr>
+<tr>
+<td><strong>V(G) = P + 1</strong></td>
+<td>P = nodos predicado</td>
+</tr>
+</tbody>
+</table>
+<p>Valores de referencia:</p>
+<table>
+<thead>
+<tr>
+<th>V(G)</th>
+<th>Riesgo</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1 – 10</td>
+<td>Método sencillo, riesgo bajo</td>
+</tr>
+<tr>
+<td>11 – 20</td>
+<td>Más complejo, riesgo moderado</td>
+</tr>
+<tr>
+<td>21 – 50</td>
+<td>Complejo, riesgo alto</td>
+</tr>
+<tr>
+<td>&gt; 50</td>
+<td>No se puede probar con garantías: hay que dividirlo</td>
+</tr>
+</tbody>
+</table>
+<p>Un <strong>camino independiente</strong> es un camino desde el nodo inicial al final que recorre <strong>al menos una arista nueva</strong> respecto a los caminos anteriores.</p>
+<h3 id="65-ejemplo-1-clasificar-una-nota">6.5. Ejemplo 1: clasificar una nota</h3>
+<div class="highlight"><pre><span></span><code><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="nf">clasificarNota</span><span class="p">(</span><span class="kt">double</span><span class="w"> </span><span class="n">nota</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="n">String</span><span class="w"> </span><span class="n">resultado</span><span class="p">;</span><span class="w">                       </span><span class="c1">// 1 (junto con nota &lt; 0)</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">nota</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="o">||</span><span class="w"> </span><span class="n">nota</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mi">10</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w">            </span><span class="c1">// 1: nota &lt; 0   2: nota &gt; 10</span>
+<span class="w">        </span><span class="n">resultado</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">"Nota no válida"</span><span class="p">;</span><span class="w">       </span><span class="c1">// 3</span>
+<span class="w">    </span><span class="p">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">nota</span><span class="w"> </span><span class="o">&gt;=</span><span class="w"> </span><span class="mi">5</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w">                 </span><span class="c1">// 4</span>
+<span class="w">        </span><span class="n">resultado</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">"Aprobado"</span><span class="p">;</span><span class="w">             </span><span class="c1">// 5</span>
+<span class="w">    </span><span class="p">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="n">resultado</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">"Suspenso"</span><span class="p">;</span><span class="w">             </span><span class="c1">// 6</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">resultado</span><span class="p">;</span><span class="w">                       </span><span class="c1">// 7</span>
+<span class="p">}</span>
+</code></pre></div>
+<p><img alt="Grafo de flujo de clasificarNota" src="../img/grafo-clasificar-nota.png" /></p>
+<p><strong>Complejidad ciclomática</strong></p>
+<ul>
+<li>Aristas A = 9, nodos N = 7 → V(G) = 9 − 7 + 2 = <strong>4</strong></li>
+<li>Nodos predicado P = 3 (nodos 1, 2 y 4) → V(G) = 3 + 1 = <strong>4</strong></li>
+<li>Regiones = 3 interiores + 1 exterior = <strong>4</strong></li>
+</ul>
+<p><strong>Caminos independientes y casos de prueba</strong></p>
+<table>
+<thead>
+<tr>
+<th>Camino</th>
+<th>Recorrido</th>
+<th>Entrada</th>
+<th>Resultado esperado</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>C1</td>
+<td>1 – 3 – 7</td>
+<td>nota = -1</td>
+<td>"Nota no válida"</td>
+</tr>
+<tr>
+<td>C2</td>
+<td>1 – 2 – 3 – 7</td>
+<td>nota = 11</td>
+<td>"Nota no válida"</td>
+</tr>
+<tr>
+<td>C3</td>
+<td>1 – 2 – 4 – 5 – 7</td>
+<td>nota = 7</td>
+<td>"Aprobado"</td>
+</tr>
+<tr>
+<td>C4</td>
+<td>1 – 2 – 4 – 6 – 7</td>
+<td>nota = 3</td>
+<td>"Suspenso"</td>
+</tr>
+</tbody>
+</table>
+<h3 id="66-ejemplo-2-un-bucle">6.6. Ejemplo 2: un bucle</h3>
+<div class="highlight"><pre><span></span><code><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="nf">sumarPares</span><span class="p">(</span><span class="kt">int</span><span class="o">[]</span><span class="w"> </span><span class="n">numeros</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">suma</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w">                           </span><span class="c1">// 1</span>
+<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w">                              </span><span class="c1">// 1</span>
+<span class="w">    </span><span class="k">while</span><span class="w"> </span><span class="p">(</span><span class="n">i</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">numeros</span><span class="p">.</span><span class="na">length</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w">            </span><span class="c1">// 2</span>
+<span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">numeros</span><span class="o">[</span><span class="n">i</span><span class="o">]</span><span class="w"> </span><span class="o">%</span><span class="w"> </span><span class="mi">2</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="mi">0</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w">          </span><span class="c1">// 3</span>
+<span class="w">            </span><span class="n">suma</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="n">numeros</span><span class="o">[</span><span class="n">i</span><span class="o">]</span><span class="p">;</span><span class="w">             </span><span class="c1">// 4</span>
+<span class="w">        </span><span class="p">}</span>
+<span class="w">        </span><span class="n">i</span><span class="o">++</span><span class="p">;</span><span class="w">                                </span><span class="c1">// 5</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">suma</span><span class="p">;</span><span class="w">                            </span><span class="c1">// 6</span>
+<span class="p">}</span>
+</code></pre></div>
+<p><img alt="Grafo de flujo de sumarPares" src="../img/grafo-sumar-pares.png" /></p>
+<ul>
+<li>A = 7, N = 6 → V(G) = 7 − 6 + 2 = <strong>3</strong></li>
+<li>P = 2 (nodos 2 y 3) → V(G) = 2 + 1 = <strong>3</strong></li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>Camino</th>
+<th>Recorrido</th>
+<th>Entrada</th>
+<th>Resultado esperado</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>C1</td>
+<td>1 – 2 – 6</td>
+<td><code>{}</code> (vacío)</td>
+<td>0</td>
+</tr>
+<tr>
+<td>C2</td>
+<td>1 – 2 – 3 – 4 – 5 – 2 – 6</td>
+<td><code>{4}</code></td>
+<td>4</td>
+</tr>
+<tr>
+<td>C3</td>
+<td>1 – 2 – 3 – 5 – 2 – 6</td>
+<td><code>{3}</code></td>
+<td>0</td>
+</tr>
+</tbody>
+</table>
+<div class="admonition tip">
+<p class="admonition-title">Caminos no factibles</p>
+<p>A veces un camino del grafo es <strong>imposible</strong> de recorrer con ningún dato (por ejemplo, porque dos condiciones se contradicen). Si te pasa, indícalo y elige otro camino independiente que sí se pueda forzar.</p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Para tu cuaderno</p>
+<p>Los grafos se dibujan <strong>a mano</strong>. Para cada método: código con los nodos numerados, grafo, las tres fórmulas de V(G) y la tabla de caminos y casos de prueba.</p>
+</div>
+<hr />
+<h2 id="7-maven-construccion-y-pruebas-automaticas">7. MAVEN: CONSTRUCCIÓN Y PRUEBAS AUTOMÁTICAS</h2>
+<p><em>RA3 – CE c), g)</em></p>
+<p><strong>Maven</strong> es una herramienta de <strong>gestión y construcción de proyectos Java</strong>. Se encarga de:</p>
+<ul>
+<li><strong>Descargar las dependencias</strong> (librerías como JUnit) desde el repositorio central.</li>
+<li><strong>Compilar</strong>, <strong>ejecutar las pruebas</strong> y <strong>empaquetar</strong> el proyecto con un solo comando.</li>
+<li>Imponer una <strong>estructura de carpetas estándar</strong>, de modo que cualquier IDE (IntelliJ, VS Code, Eclipse…) entiende el proyecto.</li>
+</ul>
+<h3 id="71-estructura-de-un-proyecto-maven">7.1. Estructura de un proyecto Maven</h3>
+<div class="highlight"><pre><span></span><code>mi-proyecto/
+├── pom.xml                      ← configuración del proyecto
+└── src/
+    ├── main/java/               ← código de la aplicación
+    │   └── es/albares/eedd/ut03/
+    │       └── PrecioEntrada.java
+    └── test/java/               ← código de las pruebas (mismo paquete)
+        └── es/albares/eedd/ut03/
+            └── PrecioEntradaTest.java
+</code></pre></div>
+<p>Las pruebas van en <code>src/test/java</code> con <strong>el mismo paquete</strong> que la clase que prueban. No se incluyen en el <code>.jar</code> final.</p>
+<h3 id="72-el-fichero-pomxml">7.2. El fichero pom.xml</h3>
+<p>El <strong>POM</strong> (<em>Project Object Model</em>) describe el proyecto. Este es el que usaremos en la unidad:</p>
+<div class="highlight"><pre><span></span><code><span class="cp">&lt;?xml version="1.0" encoding="UTF-8"?&gt;</span>
+<span class="nt">&lt;project</span><span class="w"> </span><span class="na">xmlns=</span><span class="s">"http://maven.apache.org/POM/4.0.0"</span>
+<span class="w">         </span><span class="na">xmlns:xsi=</span><span class="s">"http://www.w3.org/2001/XMLSchema-instance"</span>
+<span class="w">         </span><span class="na">xsi:schemaLocation=</span><span class="s">"http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd"</span><span class="nt">&gt;</span>
+<span class="w">    </span><span class="nt">&lt;modelVersion&gt;</span>4.0.0<span class="nt">&lt;/modelVersion&gt;</span>
+
+<span class="w">    </span><span class="cm">&lt;!-- Coordenadas: identifican el proyecto --&gt;</span>
+<span class="w">    </span><span class="nt">&lt;groupId&gt;</span>es.albares.eedd<span class="nt">&lt;/groupId&gt;</span>
+<span class="w">    </span><span class="nt">&lt;artifactId&gt;</span>ut03-pruebas<span class="nt">&lt;/artifactId&gt;</span>
+<span class="w">    </span><span class="nt">&lt;version&gt;</span>1.0-SNAPSHOT<span class="nt">&lt;/version&gt;</span>
+
+<span class="w">    </span><span class="nt">&lt;properties&gt;</span>
+<span class="w">        </span><span class="nt">&lt;maven.compiler.release&gt;</span>21<span class="nt">&lt;/maven.compiler.release&gt;</span>
+<span class="w">        </span><span class="nt">&lt;project.build.sourceEncoding&gt;</span>UTF-8<span class="nt">&lt;/project.build.sourceEncoding&gt;</span>
+<span class="w">    </span><span class="nt">&lt;/properties&gt;</span>
+
+<span class="w">    </span><span class="nt">&lt;dependencies&gt;</span>
+<span class="w">        </span><span class="cm">&lt;!-- JUnit 5: solo se usa para las pruebas (scope test) --&gt;</span>
+<span class="w">        </span><span class="nt">&lt;dependency&gt;</span>
+<span class="w">            </span><span class="nt">&lt;groupId&gt;</span>org.junit.jupiter<span class="nt">&lt;/groupId&gt;</span>
+<span class="w">            </span><span class="nt">&lt;artifactId&gt;</span>junit-jupiter<span class="nt">&lt;/artifactId&gt;</span>
+<span class="w">            </span><span class="nt">&lt;version&gt;</span>5.13.4<span class="nt">&lt;/version&gt;</span>
+<span class="w">            </span><span class="nt">&lt;scope&gt;</span>test<span class="nt">&lt;/scope&gt;</span>
+<span class="w">        </span><span class="nt">&lt;/dependency&gt;</span>
+<span class="w">    </span><span class="nt">&lt;/dependencies&gt;</span>
+
+<span class="w">    </span><span class="nt">&lt;build&gt;</span>
+<span class="w">        </span><span class="nt">&lt;plugins&gt;</span>
+<span class="w">            </span><span class="cm">&lt;!-- Surefire: el plugin que ejecuta las pruebas en la fase test --&gt;</span>
+<span class="w">            </span><span class="nt">&lt;plugin&gt;</span>
+<span class="w">                </span><span class="nt">&lt;groupId&gt;</span>org.apache.maven.plugins<span class="nt">&lt;/groupId&gt;</span>
+<span class="w">                </span><span class="nt">&lt;artifactId&gt;</span>maven-surefire-plugin<span class="nt">&lt;/artifactId&gt;</span>
+<span class="w">                </span><span class="nt">&lt;version&gt;</span>3.5.3<span class="nt">&lt;/version&gt;</span>
+<span class="w">            </span><span class="nt">&lt;/plugin&gt;</span>
+<span class="w">        </span><span class="nt">&lt;/plugins&gt;</span>
+<span class="w">    </span><span class="nt">&lt;/build&gt;</span>
+<span class="nt">&lt;/project&gt;</span>
+</code></pre></div>
+<ul>
+<li><strong><code>groupId</code></strong>: organización (dominio al revés). <strong><code>artifactId</code></strong>: nombre del proyecto. <strong><code>version</code></strong>: versión; <code>SNAPSHOT</code> significa "en desarrollo".</li>
+<li><strong><code>dependencies</code></strong>: librerías que necesita el proyecto. Maven las descarga solo.</li>
+<li><strong><code>scope test</code></strong>: la dependencia solo está disponible para el código de <code>src/test</code>.</li>
+</ul>
+<h3 id="73-ciclo-de-vida">7.3. Ciclo de vida</h3>
+<p>Maven organiza la construcción en <strong>fases</strong>. Al pedir una fase, se ejecutan también todas las anteriores:</p>
+<table>
+<thead>
+<tr>
+<th>Fase</th>
+<th>Qué hace</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>validate</code></td>
+<td>Comprueba que el proyecto es correcto</td>
+</tr>
+<tr>
+<td><code>compile</code></td>
+<td>Compila <code>src/main/java</code></td>
+</tr>
+<tr>
+<td><code>test</code></td>
+<td>Compila <code>src/test/java</code> y <strong>ejecuta las pruebas</strong></td>
+</tr>
+<tr>
+<td><code>package</code></td>
+<td>Genera el <code>.jar</code> (solo si las pruebas pasan)</td>
+</tr>
+<tr>
+<td><code>install</code></td>
+<td>Copia el <code>.jar</code> en tu repositorio local (<code>~/.m2</code>)</td>
+</tr>
+</tbody>
+</table>
+<p>Comandos útiles en la terminal (dentro de la carpeta del proyecto):</p>
+<div class="highlight"><pre><span></span><code>mvn<span class="w"> </span><span class="nb">test</span><span class="w">                              </span><span class="c1"># compila y ejecuta todas las pruebas</span>
+mvn<span class="w"> </span><span class="nb">test</span><span class="w"> </span>-Dtest<span class="o">=</span>PrecioEntradaTest<span class="w">     </span><span class="c1"># ejecuta solo una clase de prueba</span>
+mvn<span class="w"> </span>clean<span class="w"> </span>package<span class="w">                     </span><span class="c1"># borra target/, prueba y empaqueta</span>
+</code></pre></div>
+<p>Esto es lo que convierte las pruebas en <strong>automáticas</strong>: cualquiera puede ejecutar toda la batería con un comando, y si una falla, <strong>el proyecto no se empaqueta</strong>.</p>
+<h3 id="74-proyecto-maven-en-intellij-idea">7.4. Proyecto Maven en IntelliJ IDEA</h3>
+<ol>
+<li><strong>File → New → Project…</strong></li>
+<li>Elige <strong>Java</strong>, escribe el nombre (<code>ut03-pruebas</code>) y en <strong>Build system</strong> marca <strong>Maven</strong>.</li>
+<li>En <strong>JDK</strong> selecciona el 21. Despliega <strong>Advanced Settings</strong> y escribe el <strong>GroupId</strong> (<code>es.albares.eedd</code>).</li>
+<li>Pulsa <strong>Create</strong>. IntelliJ genera el <code>pom.xml</code> y las carpetas <code>src/main/java</code> y <code>src/test/java</code>.</li>
+<li>Añade la dependencia de JUnit al <code>pom.xml</code> y pulsa el icono <strong>Load Maven Changes</strong> (o <span class="keys"><kbd class="key-control">Ctrl</kbd><span>+</span><kbd class="key-shift">Shift</kbd><span>+</span><kbd class="key-o">O</kbd></span>).</li>
+</ol>
+<p>IntelliJ incluye la ventana <strong>Maven</strong> (a la derecha), desde la que puedes lanzar cualquier fase con doble clic en <em>Lifecycle → test</em>.</p>
+<details>
+<summary>¿Y si no tienes Maven instalado en la terminal?</summary>
+<p>IntelliJ trae Maven integrado (<em>bundled</em>), así que desde el IDE funciona igual. Para usar <code>mvn</code> en la terminal de Xubuntu: <code>sudo apt install maven</code>. En Windows, descarga Maven desde la web oficial, descomprímelo y añade su carpeta <code>bin</code> al <code>PATH</code>.</p>
+</details>
+<hr />
+<h2 id="8-pruebas-unitarias-con-junit-5">8. PRUEBAS UNITARIAS CON JUNIT 5</h2>
+<p><em>RA3 – CE c), f), g)</em></p>
+<p><strong>JUnit</strong> es el <em>framework</em> estándar de pruebas unitarias en Java. Una prueba es un <strong>método de una clase de prueba</strong> que llama al código y <strong>comprueba el resultado con una aserción</strong>.</p>
+<h3 id="81-mi-primera-prueba">8.1. Mi primera prueba</h3>
+<div class="highlight"><pre><span></span><code><span class="kn">package</span><span class="w"> </span><span class="nn">es.albares.eedd.ut03</span><span class="p">;</span>
+
+<span class="kn">import</span><span class="w"> </span><span class="nn">org.junit.jupiter.api.DisplayName</span><span class="p">;</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">org.junit.jupiter.api.Test</span><span class="p">;</span>
+
+<span class="kn">import static</span><span class="w"> </span><span class="nn">org.junit.jupiter.api.Assertions.*</span><span class="p">;</span>
+
+<span class="kd">class</span> <span class="nc">PrecioEntradaTest</span><span class="w"> </span><span class="p">{</span>
+
+<span class="w">    </span><span class="nd">@Test</span>
+<span class="w">    </span><span class="nd">@DisplayName</span><span class="p">(</span><span class="s">"Un adulto de 30 años paga 8 €"</span><span class="p">)</span>
+<span class="w">    </span><span class="kt">void</span><span class="w"> </span><span class="nf">adultoPagaOcho</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="c1">// Preparar (Arrange)</span>
+<span class="w">        </span><span class="kt">int</span><span class="w"> </span><span class="n">edad</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">30</span><span class="p">;</span>
+<span class="w">        </span><span class="c1">// Actuar (Act)</span>
+<span class="w">        </span><span class="kt">double</span><span class="w"> </span><span class="n">precio</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">PrecioEntrada</span><span class="p">.</span><span class="na">calcularPrecio</span><span class="p">(</span><span class="n">edad</span><span class="p">);</span>
+<span class="w">        </span><span class="c1">// Comprobar (Assert)</span>
+<span class="w">        </span><span class="n">assertEquals</span><span class="p">(</span><span class="mf">8.0</span><span class="p">,</span><span class="w"> </span><span class="n">precio</span><span class="p">,</span><span class="w"> </span><span class="mf">0.001</span><span class="p">);</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+<p>Cada prueba sigue el patrón <strong>AAA</strong>: <strong>preparar</strong> los datos, <strong>actuar</strong> (llamar al método) y <strong>comprobar</strong> el resultado.</p>
+<div class="admonition tip">
+<p class="admonition-title">Crear la clase de prueba en IntelliJ</p>
+<p>Sitúate en el nombre de la clase que quieres probar y pulsa <span class="keys"><kbd class="key-control">Ctrl</kbd><span>+</span><kbd class="key-shift">Shift</kbd><span>+</span><kbd class="key-t">T</kbd></span> (<em>Navigate → Test</em>) → <strong>Create New Test…</strong>. Elige <strong>JUnit5</strong> y marca los métodos. IntelliJ crea la clase en <code>src/test/java</code> con el paquete correcto.</p>
+</div>
+<h3 id="82-anotaciones-principales">8.2. Anotaciones principales</h3>
+<table>
+<thead>
+<tr>
+<th>Anotación</th>
+<th>Uso</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>@Test</code></td>
+<td>Marca un método como prueba</td>
+</tr>
+<tr>
+<td><code>@DisplayName("…")</code></td>
+<td>Nombre legible que aparece en el informe</td>
+</tr>
+<tr>
+<td><code>@BeforeEach</code> / <code>@AfterEach</code></td>
+<td>Se ejecuta antes / después de <strong>cada</strong> prueba (preparar o limpiar objetos)</td>
+</tr>
+<tr>
+<td><code>@BeforeAll</code> / <code>@AfterAll</code></td>
+<td>Se ejecuta una sola vez antes / después de todas (método <code>static</code>)</td>
+</tr>
+<tr>
+<td><code>@Disabled("motivo")</code></td>
+<td>Desactiva temporalmente una prueba</td>
+</tr>
+<tr>
+<td><code>@ParameterizedTest</code></td>
+<td>Prueba que se repite con distintos datos</td>
+</tr>
+<tr>
+<td><code>@CsvSource</code>, <code>@ValueSource</code></td>
+<td>Proporcionan los datos de una prueba parametrizada</td>
+</tr>
+</tbody>
+</table>
+<h3 id="83-aserciones">8.3. Aserciones</h3>
+<p>Todas están en <code>org.junit.jupiter.api.Assertions</code>. Si una aserción no se cumple, la prueba <strong>falla</strong> y JUnit muestra el valor esperado y el obtenido.</p>
+<table>
+<thead>
+<tr>
+<th>Aserción</th>
+<th>Comprueba que…</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>assertEquals(esperado, real)</code></td>
+<td>son iguales. Con <code>double</code>, añade un margen: <code>assertEquals(8.0, real, 0.001)</code></td>
+</tr>
+<tr>
+<td><code>assertNotEquals(a, b)</code></td>
+<td>son distintos</td>
+</tr>
+<tr>
+<td><code>assertTrue(cond)</code> / <code>assertFalse(cond)</code></td>
+<td>la condición es verdadera / falsa</td>
+</tr>
+<tr>
+<td><code>assertNull(obj)</code> / <code>assertNotNull(obj)</code></td>
+<td>el objeto es / no es <code>null</code></td>
+</tr>
+<tr>
+<td><code>assertArrayEquals(esp, real)</code></td>
+<td>dos arrays tienen el mismo contenido</td>
+</tr>
+<tr>
+<td><code>assertThrows(Excepcion.class, () -&gt; …)</code></td>
+<td>el código lanza esa excepción</td>
+</tr>
+<tr>
+<td><code>assertAll(() -&gt; …, () -&gt; …)</code></td>
+<td>ejecuta varias aserciones y muestra <strong>todos</strong> los fallos juntos</td>
+</tr>
+</tbody>
+</table>
+<div class="admonition warning">
+<p class="admonition-title">Cuidado con el orden y con los <code>double</code></p>
+<p>En <code>assertEquals</code> el <strong>primer</strong> parámetro es el valor <strong>esperado</strong> y el segundo el <strong>obtenido</strong>. Si los inviertes, el mensaje de error te confundirá.</p>
+<p>Nunca compares <code>double</code> sin margen: <code>0.1 + 0.2</code> no es exactamente <code>0.3</code> en coma flotante.</p>
+</div>
+<h3 id="84-probar-excepciones">8.4. Probar excepciones</h3>
+<div class="highlight"><pre><span></span><code><span class="nd">@Test</span>
+<span class="kt">void</span><span class="w"> </span><span class="nf">edadNegativaLanzaExcepcion</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="n">IllegalArgumentException</span><span class="w"> </span><span class="n">ex</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">assertThrows</span><span class="p">(</span><span class="n">IllegalArgumentException</span><span class="p">.</span><span class="na">class</span><span class="p">,</span>
+<span class="w">            </span><span class="p">()</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="n">PrecioEntrada</span><span class="p">.</span><span class="na">calcularPrecio</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">));</span>
+<span class="w">    </span><span class="n">assertTrue</span><span class="p">(</span><span class="n">ex</span><span class="p">.</span><span class="na">getMessage</span><span class="p">().</span><span class="na">contains</span><span class="p">(</span><span class="s">"-1"</span><span class="p">));</span>
+<span class="p">}</span>
+</code></pre></div>
+<p>El código que debe fallar va dentro de una <strong>expresión lambda</strong> <code>() -&gt; …</code> para que JUnit pueda capturar la excepción.</p>
+<h3 id="85-pruebas-parametrizadas">8.5. Pruebas parametrizadas</h3>
+<p>Cuando tienes una tabla de casos de prueba (como la de clases de equivalencia y valores límite), no escribas un método por fila: usa una <strong>prueba parametrizada</strong>.</p>
+<div class="highlight"><pre><span></span><code><span class="nd">@ParameterizedTest</span><span class="p">(</span><span class="n">name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">"edad {0} → {1} €"</span><span class="p">)</span>
+<span class="nd">@CsvSource</span><span class="p">({</span>
+<span class="w">    </span><span class="s">"0, 0.0"</span><span class="p">,</span><span class="w"> </span><span class="s">"3, 0.0"</span><span class="p">,</span>
+<span class="w">    </span><span class="s">"4, 5.0"</span><span class="p">,</span><span class="w"> </span><span class="s">"17, 5.0"</span><span class="p">,</span>
+<span class="w">    </span><span class="s">"18, 8.0"</span><span class="p">,</span><span class="w"> </span><span class="s">"64, 8.0"</span><span class="p">,</span>
+<span class="w">    </span><span class="s">"65, 4.0"</span><span class="p">,</span><span class="w"> </span><span class="s">"120, 4.0"</span>
+<span class="p">})</span>
+<span class="kt">void</span><span class="w"> </span><span class="nf">precioSegunEdad</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">edad</span><span class="p">,</span><span class="w"> </span><span class="kt">double</span><span class="w"> </span><span class="n">esperado</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="n">assertEquals</span><span class="p">(</span><span class="n">esperado</span><span class="p">,</span><span class="w"> </span><span class="n">PrecioEntrada</span><span class="p">.</span><span class="na">calcularPrecio</span><span class="p">(</span><span class="n">edad</span><span class="p">),</span><span class="w"> </span><span class="mf">0.001</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="nd">@ParameterizedTest</span>
+<span class="nd">@ValueSource</span><span class="p">(</span><span class="n">ints</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">121</span><span class="p">})</span>
+<span class="kt">void</span><span class="w"> </span><span class="nf">edadNoValidaLanzaExcepcion</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">edad</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="n">assertThrows</span><span class="p">(</span><span class="n">IllegalArgumentException</span><span class="p">.</span><span class="na">class</span><span class="p">,</span>
+<span class="w">            </span><span class="p">()</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="n">PrecioEntrada</span><span class="p">.</span><span class="na">calcularPrecio</span><span class="p">(</span><span class="n">edad</span><span class="p">));</span>
+<span class="p">}</span>
+</code></pre></div>
+<ul>
+<li><code>@CsvSource</code>: cada cadena es una ejecución; los valores separados por comas se asignan a los parámetros en orden. Las cadenas de texto con espacios se escriben entre comillas simples: <code>"'hola que tal', 3"</code>.</li>
+<li><code>@ValueSource</code>: un solo parámetro; admite <code>ints</code>, <code>doubles</code>, <code>strings</code>…</li>
+</ul>
+<h3 id="86-ejecutar-las-pruebas">8.6. Ejecutar las pruebas</h3>
+<ul>
+<li><strong>Desde el editor:</strong> icono ▶ verde junto a la clase o al método de prueba.</li>
+<li><strong>Todas las pruebas:</strong> clic derecho sobre <code>src/test/java</code> → <strong>Run 'All Tests'</strong>.</li>
+<li><strong>Desde Maven:</strong> ventana Maven → <em>Lifecycle</em> → <code>test</code>, o <code>mvn test</code> en la terminal.</li>
+</ul>
+<p>La ventana <strong>Run</strong> muestra un árbol con cada prueba: ✔ verde si pasa y ✘ rojo si falla, con el mensaje <code>expected: &lt;8.0&gt; but was: &lt;5.0&gt;</code>.</p>
+<h3 id="87-cobertura-de-codigo">8.7. Cobertura de código</h3>
+<p>IntelliJ mide la cobertura: clic derecho sobre la clase de prueba → <strong>More Run/Debug → Run '…' with Coverage</strong>. El editor colorea el margen de cada línea:</p>
+<ul>
+<li><strong>Verde:</strong> línea ejecutada por las pruebas.</li>
+<li><strong>Amarillo:</strong> ejecutada parcialmente (alguna rama de la condición no se ha probado).</li>
+<li><strong>Rojo:</strong> ninguna prueba ha pasado por ella.</li>
+</ul>
+<p>Si has diseñado bien los casos con el camino básico, debes tener todas las líneas en verde.</p>
+<h3 id="88-buenas-practicas">8.8. Buenas prácticas</h3>
+<ul>
+<li><strong>Una prueba, un comportamiento.</strong> Si falla, el nombre debe decirte qué se ha roto.</li>
+<li><strong>Nombres descriptivos:</strong> <code>dividirEntreCeroLanzaExcepcion</code> mejor que <code>test3</code>.</li>
+<li><strong>Pruebas independientes:</strong> el resultado no debe depender del orden en que se ejecutan.</li>
+<li><strong>Rápidas y repetibles:</strong> sin depender de la hora, de Internet o de datos aleatorios.</li>
+<li><strong>Ejecuta las pruebas antes de cada <code>commit</code>.</strong> Si una falla, no subas el cambio.</li>
+</ul>
+<details>
+<summary>¿Y en Python? pytest</summary>
+<p>Si un ejercicio es en Python, el equivalente a JUnit es <strong>pytest</strong>. Las pruebas son funciones que empiezan por <code>test_</code> dentro de ficheros <code>test_*.py</code>, y se usa <code>assert</code> directamente:</p>
+<div class="highlight"><pre><span></span><code><span class="c1"># test_precio.py</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">pytest</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">precio</span><span class="w"> </span><span class="kn">import</span> <span class="n">calcular_precio</span>
+
+<span class="k">def</span><span class="w"> </span><span class="nf">test_adulto_paga_ocho</span><span class="p">():</span>
+    <span class="k">assert</span> <span class="n">calcular_precio</span><span class="p">(</span><span class="mi">30</span><span class="p">)</span> <span class="o">==</span> <span class="mf">8.0</span>
+
+<span class="nd">@pytest</span><span class="o">.</span><span class="n">mark</span><span class="o">.</span><span class="n">parametrize</span><span class="p">(</span><span class="s2">"edad, esperado"</span><span class="p">,</span> <span class="p">[(</span><span class="mi">0</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">),</span> <span class="p">(</span><span class="mi">4</span><span class="p">,</span> <span class="mf">5.0</span><span class="p">),</span> <span class="p">(</span><span class="mi">18</span><span class="p">,</span> <span class="mf">8.0</span><span class="p">),</span> <span class="p">(</span><span class="mi">65</span><span class="p">,</span> <span class="mf">4.0</span><span class="p">)])</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">test_precio_segun_edad</span><span class="p">(</span><span class="n">edad</span><span class="p">,</span> <span class="n">esperado</span><span class="p">):</span>
+    <span class="k">assert</span> <span class="n">calcular_precio</span><span class="p">(</span><span class="n">edad</span><span class="p">)</span> <span class="o">==</span> <span class="n">pytest</span><span class="o">.</span><span class="n">approx</span><span class="p">(</span><span class="n">esperado</span><span class="p">)</span>
+
+<span class="k">def</span><span class="w"> </span><span class="nf">test_edad_negativa</span><span class="p">():</span>
+    <span class="k">with</span> <span class="n">pytest</span><span class="o">.</span><span class="n">raises</span><span class="p">(</span><span class="ne">ValueError</span><span class="p">):</span>
+        <span class="n">calcular_precio</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span>
+</code></pre></div>
+<p>Se instala con <code>pip install pytest</code> (dentro de un entorno virtual) y se ejecuta con <code>pytest</code> en la carpeta del proyecto.</p>
+</details>
+<hr />
+<h2 id="9-automatizacion-integracion-y-regresion">9. AUTOMATIZACIÓN, INTEGRACIÓN Y REGRESIÓN</h2>
+<p><em>RA3 – CE g)</em></p>
+<h3 id="pruebas-automaticas-e-integracion-continua">Pruebas automáticas e integración continua</h3>
+<p>Una vez escritas, las pruebas JUnit son <strong>automáticas</strong>: <code>mvn test</code> ejecuta cientos de ellas en segundos. El siguiente paso es que se ejecuten <strong>solas cada vez que alguien sube código</strong> al repositorio. Eso se llama <strong>integración continua</strong> (CI).</p>
+<p>Con GitHub basta con añadir al repositorio el fichero <code>.github/workflows/pruebas.yml</code>:</p>
+<div class="highlight"><pre><span></span><code><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Pruebas</span>
+<span class="nt">on</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="nv">push</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">pull_request</span><span class="p p-Indicator">]</span>
+<span class="nt">jobs</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">test</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">runs-on</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ubuntu-latest</span>
+<span class="w">    </span><span class="nt">steps</span><span class="p">:</span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">uses</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">actions/checkout@v4</span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">uses</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">actions/setup-java@v4</span>
+<span class="w">        </span><span class="nt">with</span><span class="p">:</span>
+<span class="w">          </span><span class="nt">distribution</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">temurin</span>
+<span class="w">          </span><span class="nt">java-version</span><span class="p">:</span><span class="w"> </span><span class="s">'21'</span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">run</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">mvn -B test</span>
+</code></pre></div>
+<p>En cada <code>push</code>, GitHub compila el proyecto y ejecuta las pruebas. En la pestaña <strong>Actions</strong> verás un ✔ verde o un ✘ rojo junto a cada commit.</p>
+<h3 id="pruebas-de-regresion">Pruebas de regresión</h3>
+<p>Cuando corriges un error, <strong>escribe primero una prueba que lo reproduzca</strong> (fallará) y luego corrige el código (pasará). Esa prueba se queda en el proyecto para siempre: si alguien vuelve a introducir el mismo error, la prueba lo detectará. Así se construye la batería de regresión.</p>
+<h3 id="pruebas-de-integracion">Pruebas de integración</h3>
+<p>Comprueban que varias clases colaboran correctamente. Con JUnit se escriben igual que las unitarias, pero usando objetos reales de varias clases:</p>
+<div class="highlight"><pre><span></span><code><span class="nd">@Test</span>
+<span class="kt">void</span><span class="w"> </span><span class="nf">totalDelCarritoSumaLosProductos</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="n">Carrito</span><span class="w"> </span><span class="n">carrito</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Carrito</span><span class="p">();</span>
+<span class="w">    </span><span class="n">carrito</span><span class="p">.</span><span class="na">anadir</span><span class="p">(</span><span class="k">new</span><span class="w"> </span><span class="n">Producto</span><span class="p">(</span><span class="s">"Teclado"</span><span class="p">,</span><span class="w"> </span><span class="mf">25.0</span><span class="p">),</span><span class="w"> </span><span class="mi">2</span><span class="p">);</span>
+<span class="w">    </span><span class="n">carrito</span><span class="p">.</span><span class="na">anadir</span><span class="p">(</span><span class="k">new</span><span class="w"> </span><span class="n">Producto</span><span class="p">(</span><span class="s">"Ratón"</span><span class="p">,</span><span class="w"> </span><span class="mf">10.0</span><span class="p">),</span><span class="w"> </span><span class="mi">1</span><span class="p">);</span>
+<span class="w">    </span><span class="n">assertEquals</span><span class="p">(</span><span class="mf">60.0</span><span class="p">,</span><span class="w"> </span><span class="n">carrito</span><span class="p">.</span><span class="na">total</span><span class="p">(),</span><span class="w"> </span><span class="mf">0.001</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div>
+<p>Si una de las clases todavía no existe o depende de algo externo (una base de datos, un servicio web), se sustituye por un <strong>doble de prueba</strong>: un objeto falso que responde lo que necesitamos. Lo verás en cursos posteriores.</p>
+<hr />
+<h2 id="10-depuracion-de-programas">10. DEPURACIÓN DE PROGRAMAS</h2>
+<p><em>RA3 – CE c), d), e)</em></p>
+<p>Las pruebas nos dicen <strong>que</strong> hay un error; la <strong>depuración</strong> nos ayuda a encontrar <strong>dónde</strong> está y <strong>por qué</strong> ocurre. Consiste en ejecutar el programa de forma controlada, pararlo en puntos concretos e inspeccionar su estado.</p>
+<h3 id="101-herramientas-de-depuracion-del-ide">10.1. Herramientas de depuración del IDE</h3>
+<p>Todos los IDE modernos incluyen un <strong>depurador</strong> (<em>debugger</em>). En IntelliJ:</p>
+<ul>
+<li>Se inicia con el icono del bicho 🐞, con <span class="keys"><kbd class="key-shift">Shift</kbd><span>+</span><kbd class="key-f9">F9</kbd></span>, o desde el ▶ del margen → <strong>Debug</strong>.</li>
+<li>También puedes depurar una <strong>prueba JUnit</strong> que falla: clic derecho sobre la prueba → <strong>Debug</strong>.</li>
+<li>Se abre la ventana <strong>Debug</strong> con: la <strong>barra de control</strong>, el panel de <strong>Frames</strong> (pila de llamadas), el panel de <strong>Variables</strong>, las <strong>Watches</strong> (expresiones vigiladas) y la <strong>Consola</strong>.</li>
+</ul>
+<h3 id="102-puntos-de-ruptura-breakpoints">10.2. Puntos de ruptura (<em>breakpoints</em>)</h3>
+<p>Un <strong>punto de ruptura</strong> detiene la ejecución <strong>justo antes</strong> de ejecutar una línea, para que puedas observar el estado del programa.</p>
+<table>
+<thead>
+<tr>
+<th>Tipo</th>
+<th>Cómo se crea en IntelliJ</th>
+<th>Cuándo se usa</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>De línea</strong></td>
+<td>Clic en el margen izquierdo de la línea o <span class="keys"><kbd class="key-control">Ctrl</kbd><span>+</span><kbd class="key-f8">F8</kbd></span> (círculo rojo)</td>
+<td>Parar siempre en esa línea</td>
+</tr>
+<tr>
+<td><strong>Condicional</strong></td>
+<td>Clic derecho sobre el punto → escribe la <em>Condition</em> (<code>i == 17</code>)</td>
+<td>Parar solo cuando ocurre algo concreto, por ejemplo en la vuelta 17 de un bucle</td>
+</tr>
+<tr>
+<td><strong>De registro</strong> (<em>logging</em>)</td>
+<td>Clic derecho → desmarca <em>Suspend</em> y marca <em>Evaluate and log</em></td>
+<td>Escribir un valor en la consola sin parar el programa ni llenar el código de <code>println</code></td>
+</tr>
+<tr>
+<td><strong>De método</strong></td>
+<td>Clic en el margen de la línea de cabecera del método (rombo)</td>
+<td>Parar al entrar o salir de un método</td>
+</tr>
+<tr>
+<td><strong>De campo</strong> (<em>field watchpoint</em>)</td>
+<td>Clic en el margen de la declaración de un atributo (ojo)</td>
+<td>Parar cuando alguien lee o modifica ese atributo</td>
+</tr>
+<tr>
+<td><strong>De excepción</strong></td>
+<td><em>Run → View Breakpoints</em> (<span class="keys"><kbd class="key-control">Ctrl</kbd><span>+</span><kbd class="key-shift">Shift</kbd><span>+</span><kbd class="key-f8">F8</kbd></span>) → + → <em>Java Exception Breakpoints</em></td>
+<td>Parar en el momento en que se lanza una excepción (por ejemplo <code>NullPointerException</code>)</td>
+</tr>
+</tbody>
+</table>
+<p>En <em>Run → View Breakpoints</em> ves todos los puntos de ruptura del proyecto, puedes desactivarlos sin borrarlos y cambiar sus propiedades.</p>
+<h3 id="103-seguimiento-paso-a-paso">10.3. Seguimiento paso a paso</h3>
+<p>Con el programa detenido, la barra de control permite avanzar:</p>
+<table>
+<thead>
+<tr>
+<th>Acción</th>
+<th>Tecla</th>
+<th>Qué hace</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Step Over</strong></td>
+<td><span class="keys"><kbd class="key-f8">F8</kbd></span></td>
+<td>Ejecuta la línea actual y para en la siguiente. Si hay una llamada a un método, la ejecuta entera sin entrar</td>
+</tr>
+<tr>
+<td><strong>Step Into</strong></td>
+<td><span class="keys"><kbd class="key-f7">F7</kbd></span></td>
+<td>Si la línea llama a un método, <strong>entra</strong> en él</td>
+</tr>
+<tr>
+<td><strong>Smart Step Into</strong></td>
+<td><span class="keys"><kbd class="key-shift">Shift</kbd><span>+</span><kbd class="key-f7">F7</kbd></span></td>
+<td>Si la línea tiene varias llamadas, te deja elegir en cuál entrar</td>
+</tr>
+<tr>
+<td><strong>Step Out</strong></td>
+<td><span class="keys"><kbd class="key-shift">Shift</kbd><span>+</span><kbd class="key-f8">F8</kbd></span></td>
+<td>Termina el método actual y vuelve al que lo llamó</td>
+</tr>
+<tr>
+<td><strong>Run to Cursor</strong></td>
+<td><span class="keys"><kbd class="key-alt">Alt</kbd><span>+</span><kbd class="key-f9">F9</kbd></span></td>
+<td>Continúa hasta la línea donde está el cursor</td>
+</tr>
+<tr>
+<td><strong>Resume</strong></td>
+<td><span class="keys"><kbd class="key-f9">F9</kbd></span></td>
+<td>Continúa hasta el siguiente punto de ruptura</td>
+</tr>
+<tr>
+<td><strong>Stop</strong></td>
+<td><span class="keys"><kbd class="key-control">Ctrl</kbd><span>+</span><kbd class="key-f2">F2</kbd></span></td>
+<td>Detiene la ejecución</td>
+</tr>
+</tbody>
+</table>
+<p>Los atajos son los del mapa de teclado de Windows/Linux; en macOS cambian (consúltalos en <em>Settings → Keymap</em>).</p>
+<h3 id="104-examinar-y-modificar-variables">10.4. Examinar y modificar variables</h3>
+<ul>
+<li><strong>Variables:</strong> muestra las variables locales, los parámetros y los atributos del objeto actual (<code>this</code>). Los valores que acaban de cambiar aparecen resaltados. IntelliJ también los escribe en gris al final de cada línea del editor.</li>
+<li><strong>Watches:</strong> expresiones que quieres vigilar todo el rato, por ejemplo <code>suma / i</code> o <code>notas[i] &gt;= 5</code>. Se añaden con el botón <strong>+</strong> del panel.</li>
+<li><strong>Evaluate Expression</strong> (<span class="keys"><kbd class="key-alt">Alt</kbd><span>+</span><kbd class="key-f8">F8</kbd></span>): evalúa <strong>cualquier expresión Java</strong> con el estado actual: <code>notas.length</code>, <code>calificacion(9.0)</code>, <code>Math.max(a, b)</code>…</li>
+<li><strong>Set Value</strong> (<span class="keys"><kbd class="key-f2">F2</kbd></span> sobre una variable en el panel Variables): <strong>cambia el valor de una variable en plena ejecución</strong>. Sirve para comprobar hipótesis ("¿y si <code>i</code> valiera 0?") o para forzar una rama del código sin modificar el programa ni reiniciarlo.</li>
+<li><strong>Frames:</strong> la pila de llamadas. Al hacer clic en un nivel anterior ves las variables del método que hizo la llamada.</li>
+</ul>
+<h3 id="105-ejemplo-de-depuracion">10.5. Ejemplo de depuración</h3>
+<p>Este método debería calcular la media de un array, pero <code>media(new int[]{4, 6, 7, 5})</code> devuelve <code>4.0</code> en lugar de <code>5.5</code>:</p>
+<div class="highlight"><pre><span></span><code><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">double</span><span class="w"> </span><span class="nf">media</span><span class="p">(</span><span class="kt">int</span><span class="o">[]</span><span class="w"> </span><span class="n">datos</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">suma</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+<span class="w">    </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">datos</span><span class="p">.</span><span class="na">length</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="o">++</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="n">suma</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="n">datos</span><span class="o">[</span><span class="n">i</span><span class="o">]</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">suma</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="n">datos</span><span class="p">.</span><span class="na">length</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div>
+<ol>
+<li>Pon un punto de ruptura en <code>suma += datos[i];</code> y lanza el programa en modo depuración.</li>
+<li>En la primera parada, el panel Variables muestra <code>i = 1</code>: <strong>el bucle se ha saltado el primer elemento</strong> (<code>datos[0] = 4</code>). Primer defecto encontrado.</li>
+<li>Añade una <em>watch</em> con <code>suma</code> y avanza con <span class="keys"><kbd class="key-f9">F9</kbd></span> hasta salir del bucle: <code>suma = 18</code> (6 + 7 + 5).</li>
+<li>Para en <code>return</code> y abre <strong>Evaluate Expression</strong> con <code>suma / datos.length</code>: el resultado es <code>4</code>, un <strong>entero</strong>. La división entre dos <code>int</code> descarta los decimales. Segundo defecto.</li>
+<li>Prueba la hipótesis sin reiniciar: con <strong>Set Value</strong> cambia <code>suma</code> a <code>22</code> y evalúa <code>(double) suma / datos.length</code> → <code>5.5</code>. </li>
+<li>Corrige: el bucle empieza en <code>i = 0</code> y la división es <code>(double) suma / datos.length</code>. Escribe una prueba de regresión con <code>{4, 6, 7, 5}</code> → <code>5.5</code>.</li>
+</ol>
+<div class="admonition note">
+<p class="admonition-title">Para tu cuaderno</p>
+<p>Anota en tu cuaderno una tabla con las teclas de depuración y, para cada error que depures en clase, una <strong>traza</strong>: valores de las variables en cada parada del depurador.</p>
+</div>
+<hr />
+<h2 id="11-documentacion-de-incidencias">11. DOCUMENTACIÓN DE INCIDENCIAS</h2>
+<p><em>RA3 – CE h)</em></p>
+<p>Cuando una prueba falla o el depurador revela un defecto, hay que <strong>registrarlo</strong> para que quede constancia, alguien lo corrija y luego se compruebe la corrección. Ese registro es una <strong>incidencia</strong> (<em>issue</em>, <em>bug report</em>).</p>
+<h3 id="contenido-de-un-informe-de-incidencia">Contenido de un informe de incidencia</h3>
+<table>
+<thead>
+<tr>
+<th>Campo</th>
+<th>Descripción</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>ID y título</strong></td>
+<td>Breve y concreto: "La media ignora la primera nota del array"</td>
+</tr>
+<tr>
+<td><strong>Fecha y autor</strong></td>
+<td>Quién la detecta y cuándo</td>
+</tr>
+<tr>
+<td><strong>Entorno</strong></td>
+<td>Versión del programa, sistema operativo, versión de Java</td>
+</tr>
+<tr>
+<td><strong>Pasos para reproducirla</strong></td>
+<td>Lista numerada y exacta. Si otra persona no puede reproducirla, no se podrá corregir</td>
+</tr>
+<tr>
+<td><strong>Resultado esperado</strong></td>
+<td>Lo que dice la especificación</td>
+</tr>
+<tr>
+<td><strong>Resultado obtenido</strong></td>
+<td>Lo que pasa realmente (mensaje de error, valor…)</td>
+</tr>
+<tr>
+<td><strong>Gravedad</strong></td>
+<td>Impacto en el sistema: crítica, alta, media, baja</td>
+</tr>
+<tr>
+<td><strong>Prioridad</strong></td>
+<td>Urgencia de la corrección: alta, media, baja</td>
+</tr>
+<tr>
+<td><strong>Evidencias</strong></td>
+<td>Capturas, trazas de la consola, la prueba JUnit que falla</td>
+</tr>
+<tr>
+<td><strong>Estado</strong></td>
+<td>Situación en su ciclo de vida</td>
+</tr>
+</tbody>
+</table>
+<p>Gravedad y prioridad no son lo mismo: una falta de ortografía en la portada tiene gravedad <strong>baja</strong> pero puede tener prioridad <strong>alta</strong>.</p>
+<h3 id="ciclo-de-vida-de-una-incidencia">Ciclo de vida de una incidencia</h3>
+<p><img alt="Ciclo de vida de una incidencia" src="../img/ciclo-vida-incidencia.png" /></p>
+<h3 id="herramientas">Herramientas</h3>
+<p>En la empresa se usan gestores como <strong>Jira</strong>, <strong>Redmine</strong>, <strong>Bugzilla</strong> o <strong>GitHub Issues</strong>. En GitHub, cada repositorio tiene una pestaña <strong>Issues</strong>: creas la incidencia, le asignas etiquetas (<code>bug</code>, <code>enhancement</code>…) y, si en el mensaje de un commit escribes <code>Fixes #3</code>, la incidencia número 3 se cierra automáticamente al llegar ese commit a la rama principal.</p>
+<hr />
+<h2 id="12-normas-de-calidad">12. NORMAS DE CALIDAD</h2>
+<p><em>RA3 – CE a)</em></p>
+<p>Las pruebas son una parte del <strong>aseguramiento de la calidad</strong> del software. Existen normas internacionales que definen qué es la calidad y cómo se prueba:</p>
+<ul>
+<li><strong>ISO/IEC 25010</strong> (dentro de la familia <strong>ISO/IEC 25000, SQuaRE</strong>): define el modelo de <strong>calidad del producto software</strong>. Su revisión de 2023 recoge nueve características: adecuación funcional, eficiencia de desempeño, compatibilidad, capacidad de interacción (antes "usabilidad"), fiabilidad, seguridad, mantenibilidad, flexibilidad (antes "portabilidad") y protección (<em>safety</em>).</li>
+<li><strong>ISO/IEC/IEEE 29119</strong>: norma específica de <strong>pruebas de software</strong>. Define conceptos, procesos, documentación (plan de pruebas, especificación de casos, informes de incidencias) y técnicas.</li>
+<li><strong>ISTQB</strong> (<em>International Software Testing Qualifications Board</em>): no es una norma sino una <strong>certificación profesional</strong> de <em>testers</em> muy reconocida. Los siete principios del apartado 1 vienen de su temario.</li>
+</ul>
+<p>En el día a día, la calidad también depende de <strong>buenas prácticas</strong> del equipo: seguir una guía de estilo, revisar el código entre compañeros, mantener una batería de pruebas automáticas y no subir código que rompa las pruebas.</p>
+<hr />
+<h2 id="resumen">RESUMEN</h2>
+<ul>
+<li>Probar es buscar errores. Las pruebas exhaustivas son imposibles: hay que diseñar casos con técnica.</li>
+<li><strong>Caja negra:</strong> clases de equivalencia + valores límite, a partir de la especificación.</li>
+<li><strong>Caja blanca:</strong> grafo de flujo → V(G) (regiones = A − N + 2 = P + 1) → caminos independientes → casos de prueba.</li>
+<li><strong>JUnit 5 + Maven:</strong> pruebas unitarias automáticas, <code>@Test</code>, <code>@ParameterizedTest</code>, <code>assertEquals</code>, <code>assertThrows</code>, <code>mvn test</code>.</li>
+<li><strong>Depuración:</strong> puntos de ruptura (también condicionales), paso a paso, Variables, Watches, Evaluate Expression y Set Value.</li>
+<li><strong>Incidencias:</strong> se documentan con pasos para reproducirlas, resultado esperado y obtenido, gravedad y prioridad.</li>
+</ul>
+              
+            </div>
+          </div><footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="Navegación de pie de página">
+        <a href="../../ut02-entornos-integrados-ide/practicas/practica04/" class="btn btn-neutral float-left" title="PRÁCTICA 04"><span class="icon icon-circle-arrow-left"></span> Anterior</a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+  </div>
+
+  Construído con <a href="https://properdocs.org/">ProperDocs</a> usando un <a href="https://github.com/readthedocs/sphinx_rtd_theme">tema</a> provisto por <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+          
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="Versiones">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+    
+      <span><a href="../../ut02-entornos-integrados-ide/practicas/practica04/" style="color: #fcfcfc">&laquo; Anterior</a></span>
+    
+    
+  </span>
+</div>
+    <script src="../../js/jquery-3.6.0.min.js"></script>
+    <script>var base_url = "../..";</script>
+    <script src="../../js/theme_extra.js"></script>
+    <script src="../../js/theme.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+      <script src="../../js/copy-button.js"></script>
+      <script src="../../search/main.js"></script>
+    <script>
+        jQuery(function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        });
+    </script>
+
+</body>
+</html>
