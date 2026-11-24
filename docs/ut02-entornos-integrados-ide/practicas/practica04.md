@@ -1,4 +1,4 @@
-# Práctica UT02P04: Instalación y configuración de IntelliJ IDEA para Java
+## UT02 - PRÁCTICA 04 · Instalación y configuración de IntelliJ IDEA para Java
 
 | | |
 |---|---|
@@ -9,7 +9,7 @@
 
 ---
 
-## 🎯 Objetivos
+### 🎯 Objetivos
 
 - Instalar **IntelliJ IDEA** en Xubuntu y en Windows 11.
 - Añadir y eliminar *plugins*.
@@ -19,7 +19,7 @@
 - Configurar las actualizaciones.
 - Comparar IntelliJ IDEA con VS Code generando el ejecutable del mismo código en los dos entornos.
 
-## 🧰 Requisitos
+### 🧰 Requisitos
 
 - Haber terminado la **Práctica 02** (Temurin 21 con `JAVA_HOME` y `PATH`) y la **Práctica 03** (VS Code con el proyecto `hola-vscode`).
 - Al menos **8 GB de RAM** (IntelliJ consume bastante más memoria que VS Code).
@@ -42,11 +42,11 @@ Durante la práctica, completa en tu **cuaderno** una tabla comparativa entre **
 
 ---
 
-## 1. Instalación en Xubuntu 24.04
+### 1. Instalación en Xubuntu 24.04
 
 En Linux, la forma más sencilla y oficial de instalar IntelliJ IDEA es mediante **Snap**, el sistema de paquetes de Canonical. Los paquetes Snap se actualizan solos en segundo plano.
 
-### Paso 1: Comprobar que Snap está disponible
+#### Paso 1: Comprobar que Snap está disponible
 
 Xubuntu 24.04 trae Snap instalado. Compruébalo:
 
@@ -60,7 +60,7 @@ Si no aparece, instálalo:
 sudo apt update && sudo apt install -y snapd
 ```
 
-### Paso 2: Instalar IntelliJ IDEA
+#### Paso 2: Instalar IntelliJ IDEA
 
 ```bash
 sudo snap install intellij-idea --classic
@@ -70,7 +70,7 @@ sudo snap install intellij-idea --classic
 Los paquetes Snap se ejecutan normalmente **aislados** del resto del sistema. Un IDE necesita acceder a tus carpetas, al JDK, a Git…, así que se instala en modo **clásico**, sin ese aislamiento. Por eso Snap te pide confirmarlo con `--classic`.
 ///
 
-### Paso 3: Comprobar la instalación
+#### Paso 3: Comprobar la instalación
 
 ```bash
 snap list intellij-idea
@@ -92,13 +92,13 @@ En este caso tendrás que actualizarlo a mano y, si quieres el comando en la ter
 
 ---
 
-## 2. Instalación en Windows 11
+### 2. Instalación en Windows 11
 
-### Paso 1: Descargar el instalador
+#### Paso 1: Descargar el instalador
 
 Entra en [jetbrains.com/idea/download](https://www.jetbrains.com/idea/download/), selecciona **Windows** y descarga el instalador **`.exe`**.
 
-### Paso 2: Ejecutar el instalador
+#### Paso 2: Ejecutar el instalador
 
 En la pantalla **Installation Options**, marca estas opciones:
 
@@ -111,7 +111,7 @@ En la pantalla **Installation Options**, marca estas opciones:
 
 Termina la instalación y **reinicia** el equipo si te lo pide: es necesario para que se aplique el cambio en el `PATH`.
 
-### Paso 3: Comprobar el `PATH`
+#### Paso 3: Comprobar el `PATH`
 
 En una **nueva** ventana de PowerShell:
 
@@ -127,9 +127,9 @@ idea64
 
 ---
 
-## 3. Primer arranque
+### 3. Primer arranque
 
-### Paso 1: Pantalla de bienvenida
+#### Paso 1: Pantalla de bienvenida
 
 Al abrirlo por primera vez:
 
@@ -139,7 +139,7 @@ Al abrirlo por primera vez:
 
 Llegarás a la pantalla **Welcome to IntelliJ IDEA**.
 
-### Paso 2: Tema e idioma
+#### Paso 2: Tema e idioma
 
 1. En la pantalla de bienvenida, abre **Customize**.
 2. En **Color theme**, elige el tema que prefieras.
@@ -151,21 +151,21 @@ Como el IDE está en inglés, en esta práctica los menús aparecen con su nombr
 
 ---
 
-## 4. *Plugins*: añadir y eliminar módulos
+### 4. *Plugins*: añadir y eliminar módulos
 
 En IntelliJ, los módulos adicionales se llaman ***plugins***. A diferencia de VS Code, el soporte para Java ya viene **incluido de serie**.
 
-### Paso 1: Ver los *plugins* instalados
+#### Paso 1: Ver los *plugins* instalados
 
 Abre **File → Settings → Plugins** y entra en la pestaña **Installed**. Localiza los *plugins* de Java, Maven, Git y JUnit que vienen de serie.
 
-### Paso 2: Instalar un *plugin*
+#### Paso 2: Instalar un *plugin*
 
 1. Entra en la pestaña **Marketplace**.
 2. Busca **Key Promoter X**. Este *plugin* te enseña los atajos de teclado: cada vez que usas el ratón para algo que tiene atajo, te lo muestra.
 3. Pulsa **Install** y reinicia el IDE cuando te lo pida.
 
-### Paso 3: Desinstalar un *plugin*
+#### Paso 3: Desinstalar un *plugin*
 
 Instala también el *plugin* **VSCode Keymap**, que permite usar en IntelliJ los mismos atajos de teclado que en VS Code. Después, en la pestaña **Installed**, búscalo, despliega la flecha junto a **Disable** y elige **Uninstall**. Reinicia el IDE.
 
@@ -178,11 +178,11 @@ Desactivar *plugins* que no usas hace que el IDE arranque más rápido y consuma
 
 ---
 
-## 5. Configurar el JDK
+### 5. Configurar el JDK
 
 IntelliJ llama **SDK** al kit de desarrollo con el que compila un proyecto. Vamos a registrar el **Temurin 21** de la práctica 02.
 
-### Paso 1: Añadir el JDK
+#### Paso 1: Añadir el JDK
 
 1. Abre **File → Project Structure** (++ctrl+alt+shift+s++). Si estás en la pantalla de bienvenida, crea antes el proyecto del apartado 6.
 2. En **Platform Settings → SDKs**, pulsa **+** y elige **Add JDK from disk…**
@@ -204,9 +204,9 @@ En el desplegable del SDK, IntelliJ ofrece la opción **Download JDK…**. **No 
 
 ---
 
-## 6. Crear, ejecutar y depurar un proyecto Java
+### 6. Crear, ejecutar y depurar un proyecto Java
 
-### Paso 1: Crear el proyecto
+#### Paso 1: Crear el proyecto
 
 1. Elige **New Project** en la pantalla de bienvenida (o **File → New → Project**).
 2. Rellena el asistente:
@@ -231,7 +231,7 @@ hola-intellij/
 
 Al compilar aparecerá también la carpeta `out/`, con los ficheros `.class`.
 
-### Paso 2: Escribir el programa
+#### Paso 2: Escribir el programa
 
 Sustituye el contenido de `src/Main.java` por el mismo programa de la práctica 03, cambiando solo el nombre de la clase y el mensaje:
 
@@ -253,11 +253,11 @@ public class Main {
 }
 ```
 
-### Paso 3: Ejecutar
+#### Paso 3: Ejecutar
 
 Pulsa el triángulo verde ▶ junto al método `main` y elige **Run 'Main.main()'** (o ++shift+f10++). La salida aparece en la ventana **Run**, en la parte inferior.
 
-### Paso 4: Depurar
+#### Paso 4: Depurar
 
 1. Haz clic en el margen izquierdo de la línea `suma = suma + i;` para poner un **punto de ruptura**.
 2. Pulsa el triángulo verde y elige **Debug 'Main.main()'** (o ++shift+f9++).
@@ -272,13 +272,13 @@ Compara la depuración con la de VS Code en la práctica 03: ¿qué ventanas y a
 
 ---
 
-## 7. Personalizar y automatizar el entorno
+### 7. Personalizar y automatizar el entorno
 
-### Paso 1: Tamaño de letra
+#### Paso 1: Tamaño de letra
 
 En **File → Settings → Editor → Font**, cambia **Size** a 16.
 
-### Paso 2: Acciones al guardar
+#### Paso 2: Acciones al guardar
 
 En **File → Settings → Tools → Actions on Save**, marca:
 
@@ -287,7 +287,7 @@ En **File → Settings → Tools → Actions on Save**, marca:
 
 IntelliJ guarda los cambios automáticamente, así que estas acciones se aplican también cuando cambias de ventana. Pruébalo: desordena la sangría de `Main.java`, pulsa ++ctrl+s++ y observa cómo se corrige.
 
-### Paso 3: Plantillas de código (*live templates*)
+#### Paso 3: Plantillas de código (*live templates*)
 
 Las plantillas escriben fragmentos de código por ti. En una línea vacía dentro de una clase o un método, escribe la abreviatura y pulsa ++tab++:
 
@@ -301,7 +301,7 @@ Puedes ver y modificar todas las plantillas en **File → Settings → Editor �
 
 ---
 
-## 8. Configurar las actualizaciones
+### 8. Configurar las actualizaciones
 
 Abre **File → Settings → Appearance & Behavior → System Settings → Updates**:
 
@@ -319,7 +319,7 @@ Deja ambas activadas, con el canal **Stable Releases**.
 
 ---
 
-## 9. El mismo código en dos entornos
+### 9. El mismo código en dos entornos
 
 Abre en IntelliJ el proyecto **`hola-vscode`** que creaste en la práctica 03 (**File → Open** y selecciona la carpeta). Ejecútalo y comprueba que funciona igual que en VS Code.
 
@@ -327,7 +327,7 @@ Observa qué carpetas y ficheros nuevos ha creado IntelliJ dentro del proyecto (
 
 ---
 
-## 📑 Entregables
+### 📑 Entregables
 
 Carpeta **`ut02p04`** comprimida en un fichero llamado **`ut02p04_apellido_nombre.zip`** con:
 
@@ -350,10 +350,9 @@ Carpeta **`ut02p04`** comprimida en un fichero llamado **`ut02p04_apellido_nombr
 
 Sube el `.zip` a la tarea **«UT02 – Práctica 04: IntelliJ IDEA para Java»** del aula virtual ([aulavirtual.murciaeduca.es](https://aulavirtual.murciaeduca.es)) antes de la fecha indicada en la tarea.
 ///
-
 ---
 
-## ✅ Criterios de corrección
+### ✅ Criterios de corrección
 
 | Criterio | RA – CE | Excelente (100 %) | Adecuado (50 %) | Insuficiente (0 %) | Peso |
 |---|---|---|---|---|---|

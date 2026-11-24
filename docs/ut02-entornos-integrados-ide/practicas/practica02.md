@@ -1,4 +1,4 @@
-# Práctica UT02P02: Instalación de Java (Eclipse Temurin) y configuración del PATH
+## UT02 - PRÁCTICA 02 · Instalación de Java (Eclipse Temurin) y configuración del PATH
 
 | | |
 |---|---|
@@ -9,14 +9,14 @@
 
 ---
 
-## 🎯 Objetivos
+### 🎯 Objetivos
 
 - Instalar el kit de desarrollo de Java (**JDK**) de **Eclipse Temurin** en Xubuntu y en Windows 11.
 - Entender qué son las variables de entorno **`PATH`** y **`JAVA_HOME`** y para qué sirven.
 - Configurar `PATH` y `JAVA_HOME` en los dos sistemas operativos.
 - Compilar y ejecutar un programa Java desde la terminal, diferenciando código fuente, *bytecode* y máquina virtual.
 
-## 🧰 Requisitos
+### 🧰 Requisitos
 
 - Una máquina (física o virtual) con **Xubuntu 24.04** y otra con **Windows 11**.
 - Usuario con permisos de administrador (`sudo` en Xubuntu; cuenta de administrador en Windows).
@@ -32,7 +32,7 @@ Instalaremos siempre una versión **LTS** (*Long Term Support*, soporte a largo 
 
 ---
 
-## 1. Conceptos previos: `PATH` y `JAVA_HOME`
+### 1. Conceptos previos: `PATH` y `JAVA_HOME`
 
 Cuando escribes un comando en la terminal (por ejemplo, `javac`), el sistema operativo no busca el programa en todo el disco: lo busca **solo en las carpetas que aparecen en la variable de entorno `PATH`**, en orden, y ejecuta el primero que encuentra. Si la carpeta donde está `javac` no aparece en el `PATH`, verás un error como este:
 
@@ -60,7 +60,7 @@ Antes de empezar, responde en tu **cuaderno** (a mano):
 
 ---
 
-## 2. Instalación en Xubuntu 24.04
+### 2. Instalación en Xubuntu 24.04
 
 Crea primero la carpeta de la práctica:
 
@@ -68,14 +68,14 @@ Crea primero la carpeta de la práctica:
 mkdir -p ~/ut02p02 && cd ~/ut02p02
 ```
 
-### Paso 1: Actualizar el sistema e instalar las herramientas necesarias
+#### Paso 1: Actualizar el sistema e instalar las herramientas necesarias
 
 ```bash
 sudo apt update && sudo apt upgrade -y
 sudo apt install -y wget apt-transport-https gpg
 ```
 
-### Paso 2: Añadir la clave del repositorio de Adoptium
+#### Paso 2: Añadir la clave del repositorio de Adoptium
 
 La clave GPG permite comprobar que los paquetes que descargas proceden realmente de Adoptium y no han sido modificados:
 
@@ -83,7 +83,7 @@ La clave GPG permite comprobar que los paquetes que descargas proceden realmente
 wget -qO - https://packages.adoptium.net/artifactory/api/gpg/key/public | gpg --dearmor | sudo tee /etc/apt/trusted.gpg.d/adoptium.gpg > /dev/null
 ```
 
-### Paso 3: Añadir el repositorio de Temurin
+#### Paso 3: Añadir el repositorio de Temurin
 
 ```bash
 echo "deb https://packages.adoptium.net/artifactory/deb $(awk -F= '/^VERSION_CODENAME/{print$2}' /etc/os-release) main" | sudo tee /etc/apt/sources.list.d/adoptium.list
@@ -95,14 +95,14 @@ Lee el nombre en clave de tu versión de Ubuntu del fichero `/etc/os-release` (e
 En distribuciones derivadas que **no** son sabores oficiales de Ubuntu (por ejemplo, Linux Mint), hay que cambiar `VERSION_CODENAME` por `UBUNTU_CODENAME`. Xubuntu es un sabor oficial, así que no hace falta.
 ///
 
-### Paso 4: Instalar el JDK
+#### Paso 4: Instalar el JDK
 
 ```bash
 sudo apt update
 sudo apt install -y temurin-21-jdk
 ```
 
-### Paso 5: Comprobar la instalación
+#### Paso 5: Comprobar la instalación
 
 ```bash
 java -version
@@ -126,11 +126,11 @@ Escribe el número de la opción que contiene `temurin-21` y pulsa ++enter++.
 
 ---
 
-## 3. Configuración de `PATH` y `JAVA_HOME` en Xubuntu
+### 3. Configuración de `PATH` y `JAVA_HOME` en Xubuntu
 
 Al instalar con `apt`, el sistema crea enlaces en `/usr/bin`, que ya está en el `PATH`; por eso `java` funciona sin hacer nada más. Aun así, vamos a configurar las variables **a mano**, porque es lo que necesitarás con herramientas como Maven o si algún día instalas un JDK descargado en un `.tar.gz`.
 
-### Paso 1: Localizar la carpeta del JDK
+#### Paso 1: Localizar la carpeta del JDK
 
 ```bash
 readlink -f "$(which javac)"
@@ -138,7 +138,7 @@ readlink -f "$(which javac)"
 
 La salida será parecida a `/usr/lib/jvm/temurin-21-jdk-amd64/bin/javac`. La carpeta raíz del JDK (tu `JAVA_HOME`) es la parte **anterior** a `/bin/javac`.
 
-### Paso 2: Ver el `PATH` actual
+#### Paso 2: Ver el `PATH` actual
 
 ```bash
 echo $PATH
@@ -146,7 +146,7 @@ echo $PATH
 
 Las carpetas aparecen separadas por **dos puntos** (`:`).
 
-### Paso 3: Añadir las variables a `~/.bashrc`
+#### Paso 3: Añadir las variables a `~/.bashrc`
 
 El fichero `~/.bashrc` se ejecuta cada vez que abres una terminal. Añade al final las dos variables:
 
@@ -161,7 +161,7 @@ echo 'export PATH="$JAVA_HOME/bin:$PATH"' >> ~/.bashrc
 Usa siempre **dos** símbolos `>>` (añadir al final). Con uno solo (`>`) **borrarías todo el contenido** de tu `~/.bashrc`.
 ///
 
-### Paso 4: Cargar los cambios y comprobar
+#### Paso 4: Cargar los cambios y comprobar
 
 ```bash
 source ~/.bashrc
@@ -175,15 +175,15 @@ java -version
 
 ---
 
-## 4. Instalación en Windows 11
+### 4. Instalación en Windows 11
 
-### Paso 1: Descargar el instalador
+#### Paso 1: Descargar el instalador
 
 1. Entra en [https://adoptium.net/es/temurin/releases/](https://adoptium.net/es/temurin/releases/).
 2. Selecciona: **Sistema operativo** `Windows`, **Arquitectura** `x64`, **Tipo de paquete** `JDK`, **Versión** `21 - LTS`.
 3. Descarga el fichero **`.msi`**.
 
-### Paso 2: Ejecutar el instalador y elegir las opciones
+#### Paso 2: Ejecutar el instalador y elegir las opciones
 
 Ejecuta el `.msi` y avanza hasta la pantalla **Configuración personalizada** (*Custom Setup*). Comprueba que están marcadas estas opciones (haz clic en el icono de cada una y elige *Se instalará en la unidad de disco duro local*):
 
@@ -206,7 +206,7 @@ winget install EclipseAdoptium.Temurin.21.JDK
 En este caso **no** se crea `JAVA_HOME`, así que tendrás que configurarla a mano como se explica en el apartado 5.
 ///
 
-### Paso 3: Comprobar la instalación
+#### Paso 3: Comprobar la instalación
 
 Cierra todas las terminales abiertas y abre una **nueva** (las variables de entorno solo se leen al abrir la terminal). En **PowerShell**:
 
@@ -217,17 +217,17 @@ javac -version
 
 ---
 
-## 5. Configuración de `PATH` y `JAVA_HOME` en Windows 11
+### 5. Configuración de `PATH` y `JAVA_HOME` en Windows 11
 
 Aunque el instalador ya haya creado las variables, debes saber **revisarlas y crearlas a mano**: es una tarea habitual cuando una herramienta no encuentra Java.
 
-### Paso 1: Abrir el editor de variables de entorno
+#### Paso 1: Abrir el editor de variables de entorno
 
 1. Pulsa ++win++ y escribe **«variables de entorno»**.
 2. Abre **Editar las variables de entorno del sistema**.
 3. Pulsa el botón **Variables de entorno…**
 
-### Paso 2: Revisar o crear `JAVA_HOME`
+#### Paso 2: Revisar o crear `JAVA_HOME`
 
 En **Variables del sistema**:
 
@@ -242,7 +242,7 @@ En **Variables del sistema**:
 `JAVA_HOME` apunta a la carpeta **raíz** del JDK, **sin** `\bin` al final.
 ///
 
-### Paso 3: Revisar o añadir la entrada en `Path`
+#### Paso 3: Revisar o añadir la entrada en `Path`
 
 1. En **Variables del sistema**, selecciona **Path** y pulsa **Editar**.
 2. Comprueba si existe una línea con la carpeta `bin` del JDK. Si no existe, pulsa **Nuevo** y escribe:
@@ -254,7 +254,7 @@ En **Variables del sistema**:
 3. Usa **Subir** para colocarla **por encima** de cualquier otra entrada de Java (por ejemplo, `C:\Program Files\Common Files\Oracle\Java\javapath`), porque Windows usa la primera que encuentra.
 4. Acepta todas las ventanas.
 
-### Paso 4: Comprobar la configuración
+#### Paso 4: Comprobar la configuración
 
 Abre una **nueva** ventana de PowerShell:
 
@@ -276,7 +276,7 @@ where java
 
 ---
 
-## 6. Prueba final: compilar y ejecutar en los dos sistemas
+### 6. Prueba final: compilar y ejecutar en los dos sistemas
 
 Realiza estos pasos **en Xubuntu (carpeta `~/ut02p02`) y en Windows** (crea una carpeta `ut02p02` en tus Documentos).
 
@@ -310,7 +310,7 @@ Realiza estos pasos **en Xubuntu (carpeta `~/ut02p02`) y en Windows** (crea una 
 
 ---
 
-## 📑 Entregables
+### 📑 Entregables
 
 Carpeta **`ut02p02`** comprimida en un fichero llamado **`ut02p02_apellido_nombre.zip`** con:
 
@@ -333,7 +333,7 @@ Sube el `.zip` a la tarea **«UT02 – Práctica 02: Java y PATH»** del aula vi
 
 ---
 
-## ✅ Criterios de corrección
+### ✅ Criterios de corrección
 
 | Criterio | RA – CE | Excelente (100 %) | Adecuado (50 %) | Insuficiente (0 %) | Peso |
 |---|---|---|---|---|---|
@@ -343,3 +343,5 @@ Sube el `.zip` a la tarea **«UT02 – Práctica 02: Java y PATH»** del aula vi
 | Configuración de `PATH` y `JAVA_HOME` en Windows | RA2 – CE c) | Variables correctas (`JAVA_HOME` sin `\bin`, `%JAVA_HOME%\bin` en `Path`) y comprobadas | Variables configuradas con algún error menor | No configuradas | 15 % |
 | Compilación y ejecución en ambos sistemas | RA1 – CE c) | `HolaMundo` compilado y ejecutado en los dos sistemas | Solo en uno de los sistemas | No se ejecuta | 15 % |
 | Cuaderno: conceptos y portabilidad del *bytecode* | RA1 – CE c), RA1 – CE d) | Esquema correcto y explicación clara de por qué el `.class` funciona en ambos sistemas | Respuestas incompletas | No presentado | 15 % |
+
+---

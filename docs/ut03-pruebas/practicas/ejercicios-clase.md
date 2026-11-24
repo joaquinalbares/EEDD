@@ -55,29 +55,7 @@ Termina con una línea: ¿qué **dos** herramientas tiene también VS Code (con 
 
 ---
 
-## EC2. Caja negra: tarifa del aparcamiento
-
-**RA3 – CE b)** · Duración: 45 min · En el cuaderno
-
-Un aparcamiento calcula su tarifa con el método `int calcularTarifa(int minutos)`:
-
-* De 0 a 15 minutos: **gratis**.
-* De 16 a 60 minutos: **2 €**.
-* Más de 60 minutos: **2 €** más **1 € por cada hora o fracción** adicional (61 minutos son 3 €; 121 minutos, 4 €).
-* La tarifa nunca supera **15 €** al día.
-* Valores válidos: de 0 a 1440 minutos (un día). Fuera de ese rango lanza `IllegalArgumentException`.
-
-Se pide:
-
-1. Tabla de **clases de equivalencia** (válidas y no válidas) con un representante de cada una y su resultado esperado.
-2. Tabla de **valores límite**. Pista: ¿a partir de qué minuto se alcanza el tope de 15 €?
-3. Tabla final de **casos de prueba** con la plantilla de la teoría (ID, descripción, entrada, resultado esperado). Mínimo 12 casos.
-
-**Criterios de corrección:** clases de equivalencia (3 puntos), valores límite incluido el del tope (4 puntos), tabla de casos con formato correcto (3 puntos).
-
----
-
-## EC3. Caja blanca: camino básico
+## EC2. Caja blanca: camino básico
 
 **RA3 – CE b)** · Duración: 55 min · En el cuaderno
 
@@ -116,6 +94,28 @@ public static boolean esBisiesto(int anio) {
 En el método B, ¿hay algún camino del grafo que **no se pueda recorrer** con ningún año? Explica por qué.
 
 **Criterios de corrección (por método, 5 puntos):** numeración y grafo (2), V(G) con las tres fórmulas coincidentes (1), caminos independientes (1), casos de prueba con resultado esperado (1).
+
+---
+
+## EC3. Caja negra: tarifa del aparcamiento
+
+**RA3 – CE b)** · Duración: 45 min · En el cuaderno
+
+Un aparcamiento calcula su tarifa con el método `int calcularTarifa(int minutos)`:
+
+* De 0 a 15 minutos: **gratis**.
+* De 16 a 60 minutos: **2 €**.
+* Más de 60 minutos: **2 €** más **1 € por cada hora o fracción** adicional (61 minutos son 3 €; 121 minutos, 4 €).
+* La tarifa nunca supera **15 €** al día.
+* Valores válidos: de 0 a 1440 minutos (un día). Fuera de ese rango lanza `IllegalArgumentException`.
+
+Se pide:
+
+1. Tabla de **clases de equivalencia** (válidas y no válidas) con un representante de cada una y su resultado esperado.
+2. Tabla de **valores límite**. Pista: ¿a partir de qué minuto se alcanza el tope de 15 €?
+3. Tabla final de **casos de prueba** con la plantilla de la teoría (ID, descripción, entrada, resultado esperado). Mínimo 12 casos.
+
+**Criterios de corrección:** clases de equivalencia (3 puntos), valores límite incluido el del tope (4 puntos), tabla de casos con formato correcto (3 puntos).
 
 ---
 
@@ -172,7 +172,7 @@ En el método B, ¿hay algún camino del grafo que **no se pueda recorrer** con 
 
 **RA3 – CE b), f)** · Duración: 45 min · En el ordenador, mismo proyecto
 
-1. Copia en el proyecto la clase `PrecioEntrada` del apartado 5.3 de la teoría (escríbela tú a partir de la especificación).
+1. Copia en el proyecto la clase `PrecioEntrada` del apartado 6.3 de la teoría (escríbela tú a partir de la especificación).
 2. Crea `PrecioEntradaTest` con:
     * Una prueba `@ParameterizedTest` con `@CsvSource` que cubra **todas** las clases válidas y **todos** los valores límite válidos de las tablas de la teoría.
     * Una prueba `@ParameterizedTest` con `@ValueSource` para las edades no válidas.

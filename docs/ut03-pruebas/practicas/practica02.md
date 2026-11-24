@@ -1,4 +1,4 @@
-# PRÁCTICA 02: CAJA BLANCA — CAMINO BÁSICO, JUNIT Y COBERTURA
+# PRÁCTICA 02: CAJA NEGRA Y JUNIT — COSTE DE ENVÍO
 
 ---
 
@@ -11,92 +11,130 @@
 
 ## Objetivos
 
-* Aplicar la técnica del **camino básico**: grafo de flujo, complejidad ciclomática, caminos independientes y casos de prueba.
-* Implementar en **JUnit 5** una prueba por cada camino independiente.
-* Comprobar con la herramienta de **cobertura** del IDE que las pruebas recorren todo el código.
-* Combinar caja blanca y caja negra en un mismo método.
+* Diseñar casos de prueba con **clases de equivalencia** y **valores límite** a partir de una especificación.
+* Convertir los casos de prueba en **pruebas JUnit 5** parametrizadas y de excepciones.
+* Ejecutar las pruebas de forma **automática con Maven**.
+* Usar las pruebas para **encontrar defectos** reales y llevar el trabajo con **Git**.
+* Comprobar que la caja negra completa a la caja blanca: los caminos independientes no garantizan que los límites estén bien.
 
 ## Requisitos
 
-* IntelliJ IDEA con JDK 21, Maven y Git.
-* Haber hecho EC3 y la PRÁCTICA 01.
+* IntelliJ IDEA con JDK 21.
+* Haber hecho los ejercicios de clase EC3 (caja negra) y EC5 (pruebas parametrizadas).
+* Tener hecha la PRÁCTICA 01: la necesitas para la parte E.
+* Cuenta de GitHub.
 
 ---
 
 ## Enunciado
 
-Vas a probar la clase `AnalisisArrays`, que contiene dos métodos:
+Una empresa de mensajería te pasa la clase `CalculadoraEnvio`, que calcula el coste de enviar un paquete. Esta es la **especificación**:
+
+* `double calcularCoste(double pesoKg, String zona)`
+* El peso debe ser **mayor que 0 y como máximo 30 kg**. Si no, lanza `IllegalArgumentException`.
+* La zona debe ser exactamente `"PENINSULA"`, `"BALEARES"` o `"CANARIAS"`. Cualquier otro valor, incluido `null`, lanza `IllegalArgumentException`.
+* Precio base según el peso:
+
+| Peso | Precio base |
+| --- | --- |
+| Hasta 2 kg (incluido) | 4,50 € |
+| Más de 2 kg y hasta 10 kg (incluido) | 7,90 € |
+| Más de 10 kg y hasta 30 kg (incluido) | 12,50 € |
+
+* Recargo por zona: península, 0 €; Baleares, **+3,00 €**; Canarias, **+8,00 €**.
+
+Los pesos se expresan con dos decimales como máximo, así que el valor "inmediatamente posterior" a un límite está a **0,01 kg**.
+
+/// warning | La clase tiene defectos
+El programador asegura que la clase "funciona", pero contiene **dos defectos**. Tu batería de pruebas debe encontrarlos. **No leas el código buscando los errores**: diseña primero las pruebas a partir de la especificación, como harías en una empresa con una caja negra.
+///
+
+### Parte A. Diseño de los casos de prueba (en la memoria)
+
+1. **Clases de equivalencia** para el peso y para la zona: tabla con número de clase, tipo (válida / no válida), condición, representante y resultado esperado.
+2. **Valores límite** del peso: para cada límite (0, 2, 10 y 30), el valor del límite y los inmediatamente anterior y posterior, con su resultado esperado.
+3. **Tabla de casos de prueba** con la plantilla de la teoría (ID, descripción, entrada, resultado esperado). Combina peso y zona: no hace falta probar todos los pesos en todas las zonas, pero **cada zona** debe aparecer con **cada tramo** de peso al menos una vez.
+
+### Parte B. Proyecto Maven y repositorio
+
+1. Crea un repositorio **privado** en GitHub llamado `eedd-ut03-practica02` e invita a tu profesor como colaborador.
+2. Crea en IntelliJ un proyecto Maven `ut03-practica02` con el `pom.xml` de la teoría (apartado 7.2). Paquete: `es.albares.eedd.ut03`.
+3. Añade la clase tal como te la dan:
 
 ```java
 package es.albares.eedd.ut03;
 
-public class AnalisisArrays {
+/**
+ * Calcula el coste de envío de un paquete según su peso y la zona de destino.
+ */
+public class CalculadoraEnvio {
 
-    /**
-     * Devuelve el mayor valor del array.
-     * @throws IllegalArgumentException si el array es null o está vacío
-     */
-    public static int buscarMaximo(int[] v) {
-        if (v == null || v.length == 0) {
-            throw new IllegalArgumentException("El array no puede estar vacío");
-        }
-        int max = v[0];
-        for (int i = 1; i < v.length; i++) {
-            if (v[i] > max) {
-                max = v[i];
-            }
-        }
-        return max;
-    }
+    public static final String PENINSULA = "PENINSULA";
+    public static final String BALEARES = "BALEARES";
+    public static final String CANARIAS = "CANARIAS";
 
-    /**
-     * Cuenta cuántas notas están aprobadas (entre 5 y 10, ambos incluidos).
-     * Las notas fuera del rango [0, 10] se ignoran.
-     */
-    public static int contarAprobados(double[] notas) {
-        int aprobados = 0;
-        for (double nota : notas) {
-            if (nota >= 5 && nota <= 10) {
-                aprobados++;
-            }
+    public static double calcularCoste(double pesoKg, String zona) {
+        if (pesoKg <= 0 || pesoKg >= 30) {
+            throw new IllegalArgumentException("Peso no válido: " + pesoKg);
         }
-        return aprobados;
+        if (zona == null) {
+            throw new IllegalArgumentException("La zona no puede ser nula");
+        }
+        double coste;
+        if (pesoKg < 2) {
+            coste = 4.50;
+        } else if (pesoKg <= 10) {
+            coste = 7.90;
+        } else {
+            coste = 12.50;
+        }
+        switch (zona) {
+            case PENINSULA:
+                break;
+            case BALEARES:
+                coste += 3.00;
+                break;
+            case CANARIAS:
+                coste += 8.00;
+                break;
+            default:
+                throw new IllegalArgumentException("Zona desconocida: " + zona);
+        }
+        return coste;
     }
 }
 ```
 
-### Parte A. Camino básico (a mano, en el cuaderno)
+4. Añade un `.gitignore` con `target/` y `.idea/`, haz el primer commit (`Proyecto inicial con CalculadoraEnvio`) y súbelo.
 
-Para **cada método**:
+### Parte C. Pruebas JUnit
 
-1. Copia el código y **numera los nodos** siguiendo las reglas de la teoría (apartado 6.3). Recuerda: cada condición simple es un nodo predicado y todas las salidas (`return`, `throw`) deben llegar a un **único nodo final**.
-2. Dibuja el **grafo de flujo**, marcando las aristas V y F de cada nodo predicado.
-3. Calcula **V(G) con las tres fórmulas** (regiones, A − N + 2 y P + 1). Deben coincidir.
-4. Escribe los **caminos independientes** como secuencias de nodos.
-5. Diseña un **caso de prueba por camino**: entrada concreta y resultado esperado.
+Crea `CalculadoraEnvioTest` en `src/test/java` e implementa **todos** los casos de tu tabla de la parte A:
 
-Haz una foto clara de cada página: irán en la memoria.
+1. Una prueba `@ParameterizedTest` con `@CsvSource` para los **tramos de peso en península** (clases válidas y valores límite).
+2. Una prueba `@ParameterizedTest` con `@CsvSource` para los **recargos por zona** (columnas: peso, zona, esperado).
+3. Una prueba `@ParameterizedTest` con `@ValueSource(doubles = …)` para los **pesos no válidos**.
+4. Una prueba `@ParameterizedTest` con `@ValueSource(strings = …)` para las **zonas no válidas**, y una prueba `@Test` aparte para la zona `null`.
+5. Todas con `@DisplayName` o con un `name` legible en la prueba parametrizada.
+6. Recuerda usar un margen al comparar `double`: `assertEquals(esperado, obtenido, 0.001)`.
 
-### Parte B. Proyecto y pruebas JUnit
+Haz commit: `Pruebas de caja negra de CalculadoraEnvio`.
 
-1. Crea un repositorio privado `eedd-ut03-practica02` en GitHub (invita al profesor) y un proyecto Maven `ut03-practica02` con el `pom.xml` de la teoría.
-2. Añade `AnalisisArrays` y haz el primer commit.
-3. Crea `AnalisisArraysTest` con **una prueba `@Test` por cada camino independiente** de `buscarMaximo`. Cada prueba debe llevar un `@DisplayName` que empiece por el camino que recorre, por ejemplo `@DisplayName("C3: array con un solo elemento")`.
-4. Haz lo mismo para `contarAprobados`. Aquí puedes agrupar los caminos en una prueba con `assertAll` o hacer una prueba por camino.
-5. Commit: `Pruebas de caminos independientes`.
+### Parte D. Ejecución automática y corrección
 
-### Parte C. Caja negra sobre el mismo método
+1. Ejecuta `mvn test` en la terminal. Algunas pruebas fallarán: **anota en la memoria** qué ejecuciones fallan y el mensaje de cada una.
+2. A partir de los fallos, localiza los **dos defectos** en el código. Explica cada uno en la memoria: línea, qué dice el código, qué dice la especificación.
+3. Corrige **cada defecto en un commit distinto**, con un mensaje que lo describa (por ejemplo `Corrige el límite superior del peso (30 kg es válido)`).
+4. Vuelve a ejecutar `mvn test`: todas las pruebas deben pasar. Ejecuta también la clase de prueba **con cobertura**.
+5. Haz `push`.
 
-Los caminos independientes de `contarAprobados` no garantizan que los **límites** estén bien. Añade una prueba parametrizada con los valores límite de la condición `nota >= 5 && nota <= 10`, usando arrays de una sola nota (por ejemplo `4.99`, `5`, `10` y `10.01`) con su resultado esperado.
+### Parte E. Vuelve a la PRÁCTICA 01: los caminos no bastan
 
-Commit: `Pruebas de valores límite de contarAprobados`.
+Los caminos independientes de `contarAprobados` (PRÁCTICA 01) no garantizan que los **límites** estén bien.
 
-### Parte D. Cobertura y automatización
-
-1. Ejecuta `AnalisisArraysTest` **con cobertura**. El objetivo es **100 % de líneas y de ramas** en `AnalisisArrays`. Si no llegas, revisa qué camino te falta.
-2. Ejecuta `mvn test` en la terminal.
-3. Contesta en la memoria: si `buscarMaximo` recibiera también un parámetro `boolean ignorarNegativos` y añadieras dentro del bucle un `if (ignorarNegativos && v[i] < 0) continue;`, ¿cuánto valdría V(G)? Razónalo sin dibujar el grafo completo.
-4. Haz `push`.
+1. En el proyecto `ut03-practica01`, añade a `AnalisisArraysTest` una prueba parametrizada con los valores límite de la condición `nota >= 5 && nota <= 10`, usando arrays de una sola nota (por ejemplo `4.99`, `5`, `10` y `10.01`) con su resultado esperado.
+2. Commit en ese repositorio: `Pruebas de valores límite de contarAprobados`, y `push`.
+3. Contesta en la memoria: si alguien cambiara `nota >= 5` por `nota > 5`, ¿lo detectarían tus pruebas de caminos de la PRÁCTICA 01? ¿Y la nueva prueba? Razónalo con los datos concretos que usaste.
 
 /// details | Ampliación opcional: integración continua
 Añade al repositorio el fichero `.github/workflows/pruebas.yml` del apartado 9 de la teoría y comprueba en la pestaña **Actions** que las pruebas se ejecutan solas tras cada `push`. Incluye una captura en la memoria. No suma nota, pero el profesor lo tendrá en cuenta para redondear.
@@ -108,27 +146,28 @@ Añade al repositorio el fichero `.github/workflows/pruebas.yml` del apartado 9 
 
 1. **Memoria en PDF** (`apellido1_apellido2_nombre_ut03p02.pdf`) con:
     * Portada con tu nombre y el **enlace al repositorio**.
-    * Fotos del cuaderno con la parte A de los dos métodos.
-    * Una tabla resumen por método: camino, entrada, esperado y **nombre de la prueba JUnit** que lo implementa.
-    * Respuesta razonada a la pregunta de la parte D.3.
-    * **Captura 1:** ventana Run de IntelliJ con todas las pruebas en verde.
-    * **Captura 2:** informe de cobertura con los porcentajes de `AnalisisArrays` (clases, métodos, líneas y ramas).
-    * **Captura 3:** salida de `mvn test`.
-    * **Captura 4:** historial de commits.
-2. **Repositorio de GitHub** con el proyecto Maven completo.
+    * Parte A: las tres tablas.
+    * Parte D: lista de ejecuciones que fallan con su mensaje, explicación de los dos defectos y su corrección.
+    * Parte E: enlace al commit de la prueba de límites en `eedd-ut03-practica01` y respuesta razonada.
+    * **Captura 1:** salida de `mvn test` con fallos (antes de corregir).
+    * **Captura 2:** salida de `mvn test` con `BUILD SUCCESS` (después de corregir).
+    * **Captura 3:** informe de cobertura de `CalculadoraEnvio`.
+    * **Captura 4:** historial de commits (`git log --oneline` o la pestaña *Commits* de GitHub).
+2. **Repositorio de GitHub** con el proyecto Maven completo (sin la carpeta `target/`).
 
 ## Entrega en Moodle
 
-Sube **solo el PDF** a la tarea **"UT03 · PRÁCTICA 02"** del aula virtual antes de la fecha indicada en ella. Las prácticas entregadas fuera de plazo no se califican.
+Sube **solo el PDF** a la tarea **"UT03 · PRÁCTICA 02"** del aula virtual antes de la fecha indicada en ella. El profesor revisará el repositorio a partir del enlace. Las prácticas entregadas fuera de plazo no se califican (programación, apartado 9.3).
 
 ## Rúbrica
 
 | Criterio | CE | Excelente | Adecuado | Insuficiente | Puntos |
 | --- | --- | --- | --- | --- | --- |
-| Grafos de flujo | b) | Los dos grafos correctos, con nodos predicado y nodo final únicos (2,5) | Un grafo correcto y otro con errores menores (1,25) | Grafos incorrectos o sin hacer (0) | 2,5 |
-| Complejidad ciclomática | b) | Tres fórmulas coincidentes en los dos métodos (1,5) | Correcta con una o dos fórmulas (0,75) | Incorrecta (0) | 1,5 |
-| Caminos y casos de prueba | b) | Caminos independientes y casos con entrada y esperado para todos (2) | Falta algún camino o algún esperado (1) | No identifica los caminos (0) | 2 |
-| Pruebas JUnit por camino y valores límite | f) | Una prueba por camino con `@DisplayName`, más la prueba parametrizada de límites (2,5) | Faltan caminos o la prueba de límites (1,25) | Pruebas que no se corresponden con los caminos (0) | 2,5 |
-| Cobertura y Maven | g) | 100 % de líneas y ramas, `mvn test` y respuesta D.3 correcta (1) | Cobertura incompleta o respuesta D.3 sin razonar (0,5) | Sin cobertura ni Maven (0) | 1 |
-| Git y memoria | — | Commits descriptivos por parte, memoria completa (0,5) | Pocos commits o faltan capturas (0,25) | Sin repositorio (0) | 0,5 |
+| Clases de equivalencia | b) | Todas las clases de peso y zona, válidas y no válidas, con representante y esperado (2) | Falta alguna clase o algún esperado (1) | Faltan varias clases o están mal planteadas (0) | 2 |
+| Valores límite y tabla de casos | b) | Los cuatro límites con anterior/posterior y tabla completa (2) | Falta algún límite o la tabla está incompleta (1) | No aplica la técnica (0) | 2 |
+| Pruebas JUnit | f) | Todas las pruebas pedidas, parametrizadas, con excepciones, `null` y nombres legibles (2,5) | Faltan algunos casos o no usa pruebas parametrizadas (1,25) | Menos de la mitad de los casos o no compilan (0) | 2,5 |
+| Detección y corrección de defectos | b), f) | Detecta, explica y corrige los dos defectos (1,5) | Detecta y corrige uno (0,75) | No los detecta con sus pruebas (0) | 1,5 |
+| Ejecución automática con Maven | g) | `mvn test` antes y después, con cobertura (1) | Solo una de las ejecuciones (0,5) | No usa Maven (0) | 1 |
+| Límites sobre la PRÁCTICA 01 (parte E) | b), f) | Prueba parametrizada de límites correcta y respuesta razonada (0,5) | Solo la prueba o solo la respuesta (0,25) | Sin hacer (0) | 0,5 |
+| Git y memoria | — | Commits separados y descriptivos, memoria clara con todas las capturas (0,5) | Pocos commits o faltan capturas (0,25) | Sin repositorio o memoria desordenada (0) | 0,5 |
 | | | | | | **10** |

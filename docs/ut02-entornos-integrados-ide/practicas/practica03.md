@@ -1,4 +1,4 @@
-# Práctica UT02P03: Instalación y configuración de Visual Studio Code para Java
+## UT02 - PRÁCTICA 03 · Instalación y configuración de Visual Studio Code para Java
 
 | | |
 |---|---|
@@ -9,7 +9,7 @@
 
 ---
 
-## 🎯 Objetivos
+### 🎯 Objetivos
 
 - Instalar **Visual Studio Code** en Xubuntu y en Windows 11.
 - Usar el comando **`code`** desde la terminal y comprobar que está en el `PATH`.
@@ -18,7 +18,7 @@
 - Crear, ejecutar y depurar un proyecto Java.
 - Personalizar el editor y configurar sus actualizaciones.
 
-## 🧰 Requisitos
+### 🧰 Requisitos
 
 - Haber terminado la **Práctica 02**: Temurin 21 instalado y `JAVA_HOME` y `PATH` configurados en los dos sistemas.
 - Usuario con permisos de administrador.
@@ -38,7 +38,7 @@ Durante la práctica, dibuja en tu **cuaderno** un esquema de la ventana de VS C
 
 ---
 
-## 1. Instalación en Xubuntu 24.04
+### 1. Instalación en Xubuntu 24.04
 
 Instalaremos VS Code desde el **repositorio oficial de Microsoft**. Así se actualizará junto con el resto del sistema cada vez que hagas `sudo apt upgrade`.
 
@@ -48,20 +48,20 @@ Crea primero la carpeta de la práctica:
 mkdir -p ~/ut02p03 && cd ~/ut02p03
 ```
 
-### Paso 1: Actualizar el sistema e instalar las herramientas necesarias
+#### Paso 1: Actualizar el sistema e instalar las herramientas necesarias
 
 ```bash
 sudo apt update && sudo apt upgrade -y
 sudo apt install -y wget gpg apt-transport-https
 ```
 
-### Paso 2: Añadir la clave de Microsoft
+#### Paso 2: Añadir la clave de Microsoft
 
 ```bash
 wget -qO- https://packages.microsoft.com/keys/microsoft.asc | sudo gpg --dearmor -o /usr/share/keyrings/microsoft.gpg
 ```
 
-### Paso 3: Añadir el repositorio de VS Code
+#### Paso 3: Añadir el repositorio de VS Code
 
 Crea el fichero `/etc/apt/sources.list.d/vscode.sources` con este contenido:
 
@@ -80,14 +80,14 @@ EOF
 Las versiones recientes de Ubuntu usan el formato **deb822** (ficheros `.sources`, con un campo por línea), más fácil de leer que la antigua línea única de los ficheros `.list`. Las dos formas funcionan, pero no debes tener **las dos a la vez** para el mismo repositorio, porque `apt` mostraría avisos de repositorio duplicado.
 ///
 
-### Paso 4: Instalar VS Code
+#### Paso 4: Instalar VS Code
 
 ```bash
 sudo apt update
 sudo apt install -y code
 ```
 
-### Paso 5: Comprobar la instalación y el comando `code`
+#### Paso 5: Comprobar la instalación y el comando `code`
 
 ```bash
 code --version
@@ -108,13 +108,13 @@ Durante la instalación te preguntará si quieres añadir el repositorio de Micr
 
 ---
 
-## 2. Instalación en Windows 11
+### 2. Instalación en Windows 11
 
-### Paso 1: Descargar el instalador
+#### Paso 1: Descargar el instalador
 
 Entra en [code.visualstudio.com/download](https://code.visualstudio.com/download) y descarga el **User Installer** de Windows x64. Se instala solo para tu usuario y no necesita permisos de administrador.
 
-### Paso 2: Ejecutar el instalador
+#### Paso 2: Ejecutar el instalador
 
 En la pantalla **Seleccione las tareas adicionales**, marca estas opciones:
 
@@ -133,7 +133,7 @@ winget install Microsoft.VisualStudioCode
 ```
 ///
 
-### Paso 3: Comprobar la instalación y el comando `code`
+#### Paso 3: Comprobar la instalación y el comando `code`
 
 Abre una **nueva** ventana de PowerShell (las variables de entorno se leen al abrir la terminal):
 
@@ -155,9 +155,9 @@ El comando de la paleta **«Shell Command: Install 'code' command in PATH»** qu
 
 ---
 
-## 3. Primer arranque y uso del comando `code`
+### 3. Primer arranque y uso del comando `code`
 
-### Paso 1: Abrir VS Code desde la terminal
+#### Paso 1: Abrir VS Code desde la terminal
 
 El comando `code` abre VS Code directamente en una carpeta o fichero. En los dos sistemas, desde la carpeta de la práctica:
 
@@ -172,21 +172,21 @@ El comando `code` abre VS Code directamente en una carpeta o fichero. En los dos
 
 Ejecuta `code .` dentro de `ut02p03`. La primera vez, VS Code te preguntará si **confías en los autores** de la carpeta: responde que sí, porque es tu propia carpeta.
 
-### Paso 2: Poner VS Code en castellano
+#### Paso 2: Poner VS Code en castellano
 
 1. Pulsa ++ctrl+shift+p++ para abrir la **paleta de comandos**.
 2. Escribe `Configure Display Language` y selecciona **Español**.
 3. Si no aparece, VS Code te ofrecerá instalar el paquete de idioma **Spanish Language Pack for Visual Studio Code**. Instálalo y reinicia cuando te lo pida.
 
-### Paso 3: Elegir un tema
+#### Paso 3: Elegir un tema
 
 Abre la paleta de comandos y busca **Preferencias: Tema de color**. Elige el que prefieras; puedes cambiarlo cuando quieras.
 
 ---
 
-## 4. Extensiones: añadir y eliminar módulos
+### 4. Extensiones: añadir y eliminar módulos
 
-### Paso 1: Instalar el Extension Pack for Java
+#### Paso 1: Instalar el Extension Pack for Java
 
 1. Pulsa el icono **Extensiones** de la barra de actividad (o ++ctrl+shift+x++).
 2. Busca **Extension Pack for Java** (publicado por Microsoft, identificador `vscjava.vscode-java-pack`).
@@ -209,7 +209,7 @@ Comprueba desde la terminal qué extensiones tienes instaladas:
 code --list-extensions
 ```
 
-### Paso 2: Instalar y desinstalar una extensión desde la terminal
+#### Paso 2: Instalar y desinstalar una extensión desde la terminal
 
 Instala la extensión **Markdown All in One**, que te será útil para escribir la documentación de las prácticas:
 
@@ -229,15 +229,15 @@ Vuelve a instalarla (desde la terminal o desde la vista Extensiones); la usarás
 
 ---
 
-## 5. Indicar a VS Code qué JDK debe usar
+### 5. Indicar a VS Code qué JDK debe usar
 
 La extensión de Java busca el JDK en `JAVA_HOME` y en el `PATH`. Si hiciste bien la práctica 02, ya encontrará **Temurin 21**. Aun así, vamos a comprobarlo y a fijarlo en la configuración.
 
-### Paso 1: Comprobar el JDK detectado
+#### Paso 1: Comprobar el JDK detectado
 
 Abre la paleta de comandos y ejecuta **Java: Configure Java Runtime**. En la pestaña **Project JDKs** debe aparecer el JDK 21 de Temurin.
 
-### Paso 2: Fijar el JDK en la configuración de usuario
+#### Paso 2: Fijar el JDK en la configuración de usuario
 
 Abre la paleta de comandos y ejecuta **Preferencias: Abrir configuración de usuario (JSON)**. Añade la configuración de tu sistema dentro de las llaves `{ }` (si ya hay otras líneas, separa cada entrada con una coma).
 
@@ -273,9 +273,9 @@ Sustituye `jdk-21.0.x.y-hotspot` por el nombre real de la carpeta que tengas en 
 
 ---
 
-## 6. Crear, ejecutar y depurar un proyecto Java
+### 6. Crear, ejecutar y depurar un proyecto Java
 
-### Paso 1: Crear el proyecto
+#### Paso 1: Crear el proyecto
 
 1. Abre la paleta de comandos y ejecuta **Java: Create Java Project…**
 2. Elige **No build tools** (sin Maven ni Gradle; los veremos en la UT03).
@@ -292,7 +292,7 @@ hola-vscode/
 └── README.md
 ```
 
-### Paso 2: Escribir el programa
+#### Paso 2: Escribir el programa
 
 Sustituye el contenido de `src/App.java` por este:
 
@@ -314,11 +314,11 @@ public class App {
 }
 ```
 
-### Paso 3: Ejecutar
+#### Paso 3: Ejecutar
 
 Pulsa **Run** (encima del método `main`) o el botón ▷ de la esquina superior derecha. La salida aparece en el **terminal** integrado.
 
-### Paso 4: Depurar
+#### Paso 4: Depurar
 
 1. Haz clic a la izquierda del número de la línea `suma = suma + i;` para poner un **punto de ruptura** (aparece un círculo rojo).
 2. Pulsa **Debug** encima del método `main` (o ++f5++).
@@ -333,7 +333,7 @@ Antes de depurar, haz en tu **cuaderno** la **traza** del bucle: una tabla con l
 
 ---
 
-## 7. Personalizar y automatizar el editor
+### 7. Personalizar y automatizar el editor
 
 Abre la configuración de usuario en JSON (como en el apartado 5) y añade estas opciones:
 
@@ -360,7 +360,7 @@ Comprueba que funciona: desordena la sangría de `App.java`, guarda con ++ctrl+s
 
 ---
 
-## 8. Configurar las actualizaciones
+### 8. Configurar las actualizaciones
 
 Abre **Configuración** (++ctrl+comma++) y busca `update`:
 
@@ -378,9 +378,9 @@ Deja `extensions.autoUpdate` activado y revisa el valor de `update.mode` en cada
 
 ---
 
-## 📑 Entregables
+### 📑 Entregables
 
-Carpeta **`ut02p03`** comprimida en un fichero llamado **`ut02p03_apellido_nombre.zip`** con:
+Carpeta **`ut02p03`** comprimida en un fichero llamado **`ut02p03_NRE.zip`** con:
 
 - El proyecto **`hola-vscode`** completo (de uno de los dos sistemas).
 - Un documento **`ut02p03.md`**, escrito en VS Code con Markdown All in One, con las siguientes capturas y una breve explicación de cada una:
@@ -403,7 +403,7 @@ Sube el `.zip` a la tarea **«UT02 – Práctica 03: VS Code para Java»** del a
 
 ---
 
-## ✅ Criterios de corrección
+### ✅ Criterios de corrección
 
 | Criterio | RA – CE | Excelente (100 %) | Adecuado (50 %) | Insuficiente (0 %) | Peso |
 |---|---|---|---|---|---|
@@ -414,3 +414,5 @@ Sube el `.zip` a la tarea **«UT02 – Práctica 03: VS Code para Java»** del a
 | Personalización y automatización | RA2 – CE c) | Todas las opciones aplicadas y el formato al guardar comprobado | Opciones aplicadas sin comprobación | Sin personalizar | 10 % |
 | Configuración de actualizaciones | RA2 – CE d) | Opciones revisadas en ambos sistemas y diferencias explicadas | Opciones revisadas sin explicación | No realizado | 10 % |
 | Comparación Xubuntu/Windows y cuaderno | RA2 – CE g) | Diferencias bien explicadas; esquema y traza correctos | Incompletos | No presentado | 10 % |
+
+---
