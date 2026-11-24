@@ -16,6 +16,12 @@ nav:
     - PRÁCTICA 02: ut02-entornos-integrados-ide/practicas/practica02.md
     - PRÁCTICA 03: ut02-entornos-integrados-ide/practicas/practica03.md
     - PRÁCTICA 04: ut02-entornos-integrados-ide/practicas/practica04.md
+  - UT03:
+    - CONTENIDOS: ut03-pruebas/teoria/ut03.md
+    - PRÁCTICA 01: ut03-pruebas/practicas/practica01.md
+    - PRÁCTICA 02: ut03-pruebas/practicas/practica02.md
+    - PRÁCTICA 03: ut03-pruebas/practicas/practica03.md
+    - EJERCICIOS DE CLASE: ut03-pruebas/practicas/ejercicios-clase.md
 
 theme:
   name: readthedocs
